@@ -17,7 +17,7 @@ class IssueRow extends React.Component {
   }	
 }
 class IssueTable extends React.Component {
- render() {	
+ render()  {	
     const rowStyle = {border: "1px solid silver", padding: 4};	
     return (	
       <table style={{borderCollapse: "collapse"}}>	
