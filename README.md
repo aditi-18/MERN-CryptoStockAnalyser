@@ -1,5 +1,14 @@
 PRO MERN stack book
 
+Chapter 5
+
+This chapter deals with the knowledge of graphql and Express. The advantages of graphql over express are mentioned and the concepts of routing, request matching, route parameters, route lookup, handler functions, etc are discussed. REST APIs are resource based, whereas GraphQL is graph based. This means that relationships between objects are naturally handled in GraphQL APIs. The about API is discussed and implemented and tested in GraphQL playground on port 3000. Then the list API is discussed, implemented and tested, it is then integrated in the code. A function that looks for a date-like pattern in the input and converts all such values to a date is created. A regular expression to detect this pattern, and a simple conversion using new Date().Create API is An API for creating a new issue in the server, which will be appended to the list of issues in the server’s memory. Then the changes for using query variables are done. Then the input validation is implemented to check for invalid inputs, the errors are also logged to the console.
+
+![CH-4](https://github.ccs.neu.edu/NEU-CS5610-SU21/SahaiAyush-book/blob/master/Screenshots/ch5.JPG)
+![CH-4](https://github.ccs.neu.edu/NEU-CS5610-SU21/SahaiAyush-book/blob/master/Screenshots/ch5-4.JPG)
+![CH-4](https://github.ccs.neu.edu/NEU-CS5610-SU21/SahaiAyush-book/blob/master/Screenshots/ch5-5.JPG)
+
+
 Chapter 4
 
 This chapter mainly involves knowledge about React states and to make components that respond to user input and other events. The state of a component is captured in a variable called this.state in the component’s class, which should be an object consisting of one or more key-value pairs, where each key is a state variable name and the value .is the current value of that variable. In updating state a minor change is made to the state and a new issue is added and updated. Now As for IssueAdd, we  moved the timer into the constructor of this class and trigger the addition of a new issue from within this component. On refreshing the browser, we see an empty table to start with, which soon populates withtwo issues and after two seconds, another issue gets added. In a well-designed application, most components would be stateless functions of their properties. All states would be captured in a few components at the top of the hierarchy, from where the props of all the descendants are derived. This is covered in commit of stateless components, the final working screenshot is attached in the Readme and also uploaded in Screenshots folder.
