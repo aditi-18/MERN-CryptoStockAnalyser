@@ -1,7 +1,8 @@
 scalar GraphQLDate
 type Issue {
-  id: Int!
-  title: String!
+  _id: ID! 
+ id: Int!
+ title: String!
   status: String!
   owner: String
   effort: Int
