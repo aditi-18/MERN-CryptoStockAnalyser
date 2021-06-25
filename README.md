@@ -1,12 +1,19 @@
 PRO MERN stack book
 
+Chapter 6
+
+This chapter deals with the basics of addting a backend database to the application. Mongo DB is the databse used here. The installation for mongo db is done and the account is created. Cluster creation is done and the database is created. Mainly everything is done through the mongo shell, but here there are other options avaliable as well such as the Atlas. The data is entered in the database and is edited, searched, read, deleted and displayed. The Node.js mongo driver is also installed and is used to access the database and perform CRUD operations. Schema initialization is also done and data is written and read from Mongodb for the issue traceker database. On the set of changes will show that new issues can be added, and even on a restart of the Node. js server, or the database server, the newly added issues are still there.
+
+![CH-6](https://github.ccs.neu.edu/NEU-CS5610-SU21/SahaiAyush-book/blob/master/Screenshots/mongo-read.JPG)
+
+
 Chapter 5
 
 This chapter deals with the knowledge of graphql and Express. The advantages of graphql over express are mentioned and the concepts of routing, request matching, route parameters, route lookup, handler functions, etc are discussed. REST APIs are resource based, whereas GraphQL is graph based. This means that relationships between objects are naturally handled in GraphQL APIs. The about API is discussed and implemented and tested in GraphQL playground on port 3000. Then the list API is discussed, implemented and tested, it is then integrated in the code. A function that looks for a date-like pattern in the input and converts all such values to a date is created. A regular expression to detect this pattern, and a simple conversion using new Date().Create API is An API for creating a new issue in the server, which will be appended to the list of issues in the server’s memory. Then the changes for using query variables are done. Then the input validation is implemented to check for invalid inputs, the errors are also logged to the console.
 
-![CH-4](https://github.ccs.neu.edu/NEU-CS5610-SU21/SahaiAyush-book/blob/master/Screenshots/ch5.JPG)
-![CH-4](https://github.ccs.neu.edu/NEU-CS5610-SU21/SahaiAyush-book/blob/master/Screenshots/ch5-4.JPG)
-![CH-4](https://github.ccs.neu.edu/NEU-CS5610-SU21/SahaiAyush-book/blob/master/Screenshots/ch5-5.JPG)
+![CH-5](https://github.ccs.neu.edu/NEU-CS5610-SU21/SahaiAyush-book/blob/master/Screenshots/ch5.JPG)
+![CH-5](https://github.ccs.neu.edu/NEU-CS5610-SU21/SahaiAyush-book/blob/master/Screenshots/ch5-4.JPG)
+![CH-5](https://github.ccs.neu.edu/NEU-CS5610-SU21/SahaiAyush-book/blob/master/Screenshots/ch5-5.JPG)
 
 
 Chapter 4
