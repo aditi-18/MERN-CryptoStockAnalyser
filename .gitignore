@@ -11,3 +11,4 @@ HISTORY.txt
 node_modules
 .vscode/
 .Rhistory
+.env
