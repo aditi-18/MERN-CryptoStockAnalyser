@@ -5,7 +5,6 @@ const { GraphQLScalarType } = require('graphql');
 const { Kind } = require('graphql/language');
 const { MongoClient } = require('mongodb');
 const url = process.env.DB_URL || 'mongodb://localhost/issuetracker';
-const url = 'mongodb://localhost/issuetracker';
 let aboutMessage = "Issue Tracker API v1.0";
 let db;
 const fs = require('fs');
