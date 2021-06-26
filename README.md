@@ -1,5 +1,13 @@
 PRO MERN stack book
 
+Chapter 7
+
+This chapter deals with big architectural change by separating the UI and the API servers. The chapter looked at the architecture and makes it more flexible so that it can cater to larger applications with lots of traffic. A package called dotenv to help us run the same code on different environments using different configurations for each environment, such as development and production.
+Finally, checks are added to verify that the code we write follows standards and good practices and catches possible bugs earlier in the testing cycle. Then eslint standards are used and the errors are fixed and the screenshots are updated.
+
+![CH-6](https://github.ccs.neu.edu/NEU-CS5610-SU21/SahaiAyush-book/blob/master/Screenshots/ch7-1.JPG)
+![CH-6](https://github.ccs.neu.edu/NEU-CS5610-SU21/SahaiAyush-book/blob/master/Screenshots/ch7-2.JPG)
+
 Chapter 6
 
 This chapter deals with the basics of addting a backend database to the application. Mongo DB is the databse used here. The installation for mongo db is done and the account is created. Cluster creation is done and the database is created. Mainly everything is done through the mongo shell, but here there are other options avaliable as well such as the Atlas. The data is entered in the database and is edited, searched, read, deleted and displayed. The Node.js mongo driver is also installed and is used to access the database and perform CRUD operations. Schema initialization is also done and data is written and read from Mongodb for the issue traceker database. On the set of changes will show that new issues can be added, and even on a restart of the Node. js server, or the database server, the newly added issues are still there.
