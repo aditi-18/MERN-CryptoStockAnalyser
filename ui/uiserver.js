@@ -1,6 +1,6 @@
 require('dotenv').config();
 const express = require('express');
-
+const proxy = require('http-proxy-middleware');
 const app = express();
 
 app.use(express.static('public'));
