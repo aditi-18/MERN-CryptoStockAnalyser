@@ -1,5 +1,8 @@
+require('dotenv').config();
 const { MongoClient } = require('mongodb');
+
 const url = process.env.DB_URL || 'mongodb://localhost/issuetracker';
+
 function testWithCallbacks(callback) {
   console.log('\n--- testWithCallbacks ---');
   const client = new MongoClient(url, { useNewUrlParser: true });
@@ -35,6 +38,7 @@ function testWithCallbacks(callback) {
     });
   });
 }
+
 async function testWithAsync() {
   console.log('\n--- testWithAsync ---');
   const client = new MongoClient(url, { useNewUrlParser: true });
