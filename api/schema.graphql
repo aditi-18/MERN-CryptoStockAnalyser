@@ -3,7 +3,7 @@ type Issue {
   _id: ID! 
  id: Int!
  title: String!
-  status: String!
+  status: String
   owner: String
   effort: Int
   created: GraphQLDate!
