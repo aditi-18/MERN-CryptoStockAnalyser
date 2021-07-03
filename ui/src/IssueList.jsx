@@ -1,12 +1,13 @@
 
 import React from 'react';
 import { Route } from 'react-router-dom';
+import URLSearchParams from 'url-search-params';
 import IssueFilter from './IssueFilter.jsx';
 import IssueTable from './IssueTable.jsx';
 import IssueAdd from './IssueAdd.jsx';
 import graphQLFetch from './graphQLFetch.js';
-import URLSearchParams from 'url-search-params';
 import IssueDetail from './IssueDetail.jsx';
+
 export default class IssueList extends React.Component {
   constructor() {
     super();
@@ -17,13 +18,15 @@ export default class IssueList extends React.Component {
   componentDidMount() {
     this.loadData();
   }
+
   componentDidUpdate(prevProps) {
     const { location: { search: prevSearch } } = prevProps;
     const { location: { search } } = this.props;
     if (prevSearch !== search) {
-    this.loadData();
+      this.loadData();
     }
-    }
+  }
+
   async loadData() {
     const { location: { search } } = this.props;
     const params = new URLSearchParams(search);
@@ -36,7 +39,7 @@ export default class IssueList extends React.Component {
           created effort due
         }
       }`;
-    const data = await graphQLFetch(query,vars);
+    const data = await graphQLFetch(query, vars);
     if (data) {
       this.setState({ issues: data.issueList });
     }

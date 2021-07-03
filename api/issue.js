@@ -1,4 +1,5 @@
 const { UserInputError } = require('apollo-server-express');
+// eslint-disable-next-line import/extensions
 const { getDb, getNextSequence } = require('./db.js');
 
 async function get(_, { id }) {

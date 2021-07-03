@@ -1,5 +1,11 @@
 PRO MERN stack book
 
+Chapter 9
+
+This chapter deals with adding more features in the application. We also implement client-side routing, that is, show different pages depending on links in a menu or a navigation bar. The React Router library helped with this. In this chapter we set up routing for a single page application using React's router component. Implementing routing correctly is key to giving the user a natural feel when clicking on hyperlinks and using the back/forward buttons in the browser. A new navigation bar is added and the issues are separated on the basis of new, assigned or fixed or closed. The application is up and running and the screenshots are updated in the Readme file.
+
+![CH-9](https://github.ccs.neu.edu/NEU-CS5610-SU21/SahaiAyush-book/blob/master/Screenshots/ch-9.JPG)
+
 Chapter 8
 
 This chapter mainly deals about Modularization and Webpack and splitting the code into multiple files and adding tools to ease the process of development. Since JavaScript was not originally designed for modularity, we needed the tool Webpack to put together and
