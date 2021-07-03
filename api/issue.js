@@ -1,12 +1,14 @@
 const { UserInputError } = require('apollo-server-express');
-// eslint-disable-next-line import/extensions
 const { getDb, getNextSequence } = require('./db.js');
 
-async function list() {
+async function list(_, { status }) {
   const db = getDb();
-  const issues = await db.collection('issues').find({}).toArray();
+  const filter = {};
+  if (status) filter.status = status;
+  const issues = await db.collection('issues').find(filter).toArray();
   return issues;
 }
+
 function validate(issue) {
   const errors = [];
   if (issue.title.length < 3) {
@@ -19,6 +21,7 @@ function validate(issue) {
     throw new UserInputError('Invalid input(s)', { errors });
   }
 }
+
 async function add(_, { issue }) {
   const db = getDb();
   validate(issue);
@@ -32,4 +35,5 @@ async function add(_, { issue }) {
     .findOne({ _id: result.insertedId });
   return savedIssue;
 }
+
 module.exports = { list, add };
