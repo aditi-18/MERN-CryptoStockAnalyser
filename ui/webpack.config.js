@@ -1,4 +1,5 @@
 const path = require('path');
+
 module.exports = {
   mode: 'development',
   entry: { app: ['./src/App.jsx'] },
@@ -21,5 +22,5 @@ module.exports = {
       chunks: 'all',
     },
   },
-  devtool: 'source-map'
+  devtool: 'source-map',
 };

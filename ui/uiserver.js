@@ -17,7 +17,7 @@ if (enableHMR && (process.env.NODE_ENV !== 'production')) {
   const compiler = webpack(config);
   app.use(devMiddleware(compiler));
   app.use(hotMiddleware(compiler));
-} 
+}
 app.use(express.static('public'));
 
 const apiProxyTarget = process.env.API_PROXY_TARGET;
