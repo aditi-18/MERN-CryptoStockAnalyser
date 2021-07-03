@@ -1,3 +1,4 @@
+/* eslint-disable no-alert */
 const dateRegex = new RegExp('^\\d\\d\\d\\d-\\d\\d-\\d\\d');
 function jsonDateReviver(key, value) {
   if (dateRegex.test(value)) return new Date(value);
@@ -19,6 +20,7 @@ export default async function graphQLFetch(query, variables = {}) {
         const details = error.extensions.exception.errors.join('\n ');
         alert(`${error.message}:\n ${details}`);
       } else {
+        // eslint-disable-next-line no-alert
         alert(`${error.extensions.code}: ${error.message}`);
       }
     }

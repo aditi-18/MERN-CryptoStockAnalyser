@@ -1,8 +1,11 @@
 const fs = require('fs');
 require('dotenv').config();
 const { ApolloServer } = require('apollo-server-express');
+// eslint-disable-next-line import/extensions
 const GraphQLDate = require('./graphql_date.js');
+// eslint-disable-next-line import/extensions
 const about = require('./about.js');
+// eslint-disable-next-line import/extensions
 const issue = require('./issue.js');
 
 const resolvers = {

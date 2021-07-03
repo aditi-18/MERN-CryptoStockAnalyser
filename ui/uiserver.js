@@ -1,3 +1,4 @@
+/* eslint-disable global-require */
 require('dotenv').config();
 const express = require('express');
 const proxy = require('http-proxy-middleware');
@@ -7,9 +8,15 @@ const enableHMR = (process.env.ENABLE_HMR || 'true') === 'true';
 
 if (enableHMR && (process.env.NODE_ENV !== 'production')) {
   console.log('Adding dev middlware, enabling HMR');
+  // eslint-disable-next-line global-require
+  // eslint "import/no-extraneous-dependencies": "off"
+  // eslint-disable-next-line import/no-extraneous-dependencies
   const webpack = require('webpack');
+  // eslint-disable-next-line import/no-extraneous-dependencies
   const devMiddleware = require('webpack-dev-middleware');
+  // eslint-disable-next-line import/no-extraneous-dependencies
   const hotMiddleware = require('webpack-hot-middleware');
+  // eslint-disable-next-line import/extensions
   const config = require('./webpack.config.js');
   config.entry.app.push('webpack-hot-middleware/client');
   config.plugins = config.plugins || [];

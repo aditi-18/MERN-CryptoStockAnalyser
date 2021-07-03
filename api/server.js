@@ -1,6 +1,8 @@
 require('dotenv').config();
 const express = require('express');
+// eslint-disable-next-line import/extensions
 const { connectToDb } = require('./db.js');
+// eslint-disable-next-line import/extensions
 const { installHandler } = require('./api_handler.js');
 
 const app = express();

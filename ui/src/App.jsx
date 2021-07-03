@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 /* globals React ReactDOM  */
 import 'babel-polyfill';
 import 'whatwg-fetch';
