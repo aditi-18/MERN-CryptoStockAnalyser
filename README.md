@@ -1,5 +1,13 @@
 PRO MERN stack book
 
+Chapter 8
+
+This chapter mainly deals about Modularization and Webpack and splitting the code into multiple files and adding tools to ease the process of development. Since JavaScript was not originally designed for modularity, we needed the tool Webpack to put together and
+generate a few bundles from a handful of small JavaScript files and React components. Modularization was done for both the frontend and the backend part. Then the dependencies were removed from CDN for runtime libraries such as React and the polyfills. Again,
+Webpack helped resolve dependencies and create bundles for these. Webpacks HMR was used to optimize the code and the get and post methods in the console were logged during the connection and the screenshots are updated.
+
+![CH-8](https://github.ccs.neu.edu/NEU-CS5610-SU21/SahaiAyush-book/blob/master/Screenshots/ch-8.JPG)
+
 Chapter 7
 
 This chapter deals with big architectural change by separating the UI and the API servers. The chapter looked at the architecture and makes it more flexible so that it can cater to larger applications with lots of traffic. A package called dotenv to help us run the same code on different environments using different configurations for each environment, such as development and production.
