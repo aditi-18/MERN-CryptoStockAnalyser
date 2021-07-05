@@ -545,9 +545,13 @@ var IssueFilter = /*#__PURE__*/function (_React$Component) {
     var params = new url_search_params__WEBPACK_IMPORTED_MODULE_1___default.a(search);
     _this.state = {
       status: params.get('status') || '',
+      effortMin: params.get('effortMin') || '',
+      effortMax: params.get('effortMax') || '',
       changed: false
     };
     _this.onChangeStatus = _this.onChangeStatus.bind(_assertThisInitialized(_this));
+    _this.onChangeEffortMin = _this.onChangeEffortMin.bind(_assertThisInitialized(_this));
+    _this.onChangeEffortMax = _this.onChangeEffortMax.bind(_assertThisInitialized(_this));
     _this.applyFilter = _this.applyFilter.bind(_assertThisInitialized(_this));
     _this.showOriginalFilter = _this.showOriginalFilter.bind(_assertThisInitialized(_this));
     return _this;
@@ -572,31 +576,68 @@ var IssueFilter = /*#__PURE__*/function (_React$Component) {
       });
     }
   }, {
+    key: "onChangeEffortMin",
+    value: function onChangeEffortMin(e) {
+      var effortString = e.target.value;
+
+      if (effortString.match(/^\d*$/)) {
+        this.setState({
+          effortMin: e.target.value,
+          changed: true
+        });
+      }
+    }
+  }, {
+    key: "onChangeEffortMax",
+    value: function onChangeEffortMax(e) {
+      var effortString = e.target.value;
+
+      if (effortString.match(/^\d*$/)) {
+        this.setState({
+          effortMax: e.target.value,
+          changed: true
+        });
+      }
+    }
+  }, {
     key: "showOriginalFilter",
     value: function showOriginalFilter() {
       var search = this.props.location.search;
       var params = new url_search_params__WEBPACK_IMPORTED_MODULE_1___default.a(search);
       this.setState({
         status: params.get('status') || '',
+        effortMin: params.get('effortMin') || '',
+        effortMax: params.get('effortMax') || '',
         changed: false
       });
     }
   }, {
     key: "applyFilter",
     value: function applyFilter() {
-      var status = this.state.status;
+      var _this$state = this.state,
+          status = _this$state.status,
+          effortMin = _this$state.effortMin,
+          effortMax = _this$state.effortMax;
       var history = this.props.history;
+      var params = new url_search_params__WEBPACK_IMPORTED_MODULE_1___default.a();
+      if (status) params.set('status', status);
+      if (effortMin) params.set('effortMin', effortMin);
+      if (effortMax) params.set('effortMax', effortMax);
+      var search = params.toString() ? "?".concat(params.toString()) : '';
       history.push({
         pathname: '/issues',
-        search: status ? "?status=".concat(status) : ''
+        search: search
       });
     }
   }, {
     key: "render",
     value: function render() {
-      var _this$state = this.state,
-          status = _this$state.status,
-          changed = _this$state.changed;
+      var _this$state2 = this.state,
+          status = _this$state2.status,
+          changed = _this$state2.changed;
+      var _this$state3 = this.state,
+          effortMin = _this$state3.effortMin,
+          effortMax = _this$state3.effortMax;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Status:", ' ', /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
         value: status,
         onChange: this.onChangeStatus
@@ -610,7 +651,15 @@ var IssueFilter = /*#__PURE__*/function (_React$Component) {
         value: "Fixed"
       }, "Fixed"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
         value: "Closed"
-      }, "Closed")), ' ', /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }, "Closed")), ' ', "Effort between:", ' ', /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        size: 5,
+        value: effortMin,
+        onChange: this.onChangeEffortMin
+      }), ' - ', /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        size: 5,
+        value: effortMax,
+        onChange: this.onChangeEffortMax
+      }), ' ', /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         type: "button",
         onClick: this.applyFilter
       }, "Apply"), ' ', /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
@@ -640,14 +689,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return IssueList; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
-/* harmony import */ var url_search_params__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! url-search-params */ "./node_modules/url-search-params/build/url-search-params.node.js");
-/* harmony import */ var url_search_params__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(url_search_params__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var url_search_params__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! url-search-params */ "./node_modules/url-search-params/build/url-search-params.node.js");
+/* harmony import */ var url_search_params__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(url_search_params__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
 /* harmony import */ var _IssueFilter_jsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./IssueFilter.jsx */ "./src/IssueFilter.jsx");
 /* harmony import */ var _IssueTable_jsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./IssueTable.jsx */ "./src/IssueTable.jsx");
 /* harmony import */ var _IssueAdd_jsx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./IssueAdd.jsx */ "./src/IssueAdd.jsx");
-/* harmony import */ var _graphQLFetch_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./graphQLFetch.js */ "./src/graphQLFetch.js");
-/* harmony import */ var _IssueDetail_jsx__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./IssueDetail.jsx */ "./src/IssueDetail.jsx");
+/* harmony import */ var _IssueDetail_jsx__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./IssueDetail.jsx */ "./src/IssueDetail.jsx");
+/* harmony import */ var _graphQLFetch_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./graphQLFetch.js */ "./src/graphQLFetch.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
@@ -720,20 +769,24 @@ var IssueList = /*#__PURE__*/function (_React$Component) {
     key: "loadData",
     value: function () {
       var _loadData = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {
-        var search, params, vars, query, data;
+        var search, params, vars, effortMin, effortMax, query, data;
         return regeneratorRuntime.wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
                 search = this.props.location.search;
-                params = new url_search_params__WEBPACK_IMPORTED_MODULE_2___default.a(search);
+                params = new url_search_params__WEBPACK_IMPORTED_MODULE_1___default.a(search);
                 vars = {};
                 if (params.get('status')) vars.status = params.get('status');
-                query = "query issueList($status: StatusType) {\n      issueList (status: $status) {\n          id title status owner\n          created effort due\n        }\n      }";
-                _context.next = 7;
-                return Object(_graphQLFetch_js__WEBPACK_IMPORTED_MODULE_6__["default"])(query, vars);
+                effortMin = parseInt(params.get('effortMin'), 10);
+                if (!Number.isNaN(effortMin)) vars.effortMin = effortMin;
+                effortMax = parseInt(params.get('effortMax'), 10);
+                if (!Number.isNaN(effortMax)) vars.effortMax = effortMax;
+                query = "query issueList(\n      $status: StatusType\n      $effortMin: Int\n      $effortMax: Int\n    ) {\n      issueList(\n        status: $status\n        effortMin: $effortMin\n        effortMax: $effortMax\n      ) {\n        id title status owner\n        created effort due\n      }\n    }";
+                _context.next = 11;
+                return Object(_graphQLFetch_js__WEBPACK_IMPORTED_MODULE_7__["default"])(query, vars);
 
-              case 7:
+              case 11:
                 data = _context.sent;
 
                 if (data) {
@@ -742,7 +795,7 @@ var IssueList = /*#__PURE__*/function (_React$Component) {
                   });
                 }
 
-              case 9:
+              case 13:
               case "end":
                 return _context.stop();
             }
@@ -765,9 +818,9 @@ var IssueList = /*#__PURE__*/function (_React$Component) {
           while (1) {
             switch (_context2.prev = _context2.next) {
               case 0:
-                query = "mutation issueAdd($issue: IssueInputs!) {\n        issueAdd(issue: $issue) {\n          id\n        }\n      }";
+                query = "mutation issueAdd($issue: IssueInputs!) {\n      issueAdd(issue: $issue) {\n        id\n      }\n    }";
                 _context2.next = 3;
-                return Object(_graphQLFetch_js__WEBPACK_IMPORTED_MODULE_6__["default"])(query, {
+                return Object(_graphQLFetch_js__WEBPACK_IMPORTED_MODULE_7__["default"])(query, {
                   issue: issue
                 });
 
@@ -801,9 +854,9 @@ var IssueList = /*#__PURE__*/function (_React$Component) {
         issues: issues
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_IssueAdd_jsx__WEBPACK_IMPORTED_MODULE_5__["default"], {
         createIssue: this.createIssue
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
         path: "".concat(match.path, "/:id"),
-        component: _IssueDetail_jsx__WEBPACK_IMPORTED_MODULE_7__["default"]
+        component: _IssueDetail_jsx__WEBPACK_IMPORTED_MODULE_6__["default"]
       }));
     }
   }]);
