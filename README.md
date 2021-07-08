@@ -1,5 +1,12 @@
 PRO MERN stack book
 
+Chapter 10
+
+This chapter is about adding more and more features to our application. This focuses on taking more and more of user input and processing it. The edit page is filled with a form and the delete and update issue fields are added. Close button is added to close an issue. Backend API's are modified to do the functions and new delete and update API's are created. The new API's added cater to the CRUD operations, we also we created specialized input components that could deal with different data types that one expects in most applications. The screenshots of edit page and the homepage are updated and the application is up and running.
+
+![CH-10](https://github.ccs.neu.edu/NEU-CS5610-SU21/SahaiAyush-book/blob/master/Screenshots/ch-10.JPG)
+![CH-10](https://github.ccs.neu.edu/NEU-CS5610-SU21/SahaiAyush-book/blob/master/Screenshots/ch-10.1.JPG)
+
 Chapter 9
 
 This chapter deals with adding more features in the application. We also implement client-side routing, that is, show different pages depending on links in a menu or a navigation bar. The React Router library helped with this. In this chapter we set up routing for a single page application using React's router component. Implementing routing correctly is key to giving the user a natural feel when clicking on hyperlinks and using the back/forward buttons in the browser. A new navigation bar is added and the issues are separated on the basis of new, assigned or fixed or closed. The application is up and running and the screenshots are updated in the Readme file.
