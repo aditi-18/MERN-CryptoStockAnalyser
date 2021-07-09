@@ -4,7 +4,7 @@ Chapter 11
 
 This chapter deals with making the view better for the user and involves changes mainly in the UI part. React-Bootstrap is used for the pupose. Bootstrap installation is done, then the ui is updated one by one. Navigation bar is added, buttons are added, panels, tables, forms, inline forms, grid system, horizontal forms, toasts, modals are added. All of these make the ui appear better and more visualizable. Bootstrap, a pioneer in this area, enabled browser independence and a responsive behavior out of the box. React-Bootstrap replaced the separate JavaScript code that dealt with the Bootstrap elements and made self-contained components possible. The application is up and running and the screenshots are updated.
 
-![CH-11](https://github.ccs.neu.edu/NEU-CS5610-SU21/SahaiAyush-book/blob/master/Screenshots/ch-11.JPG)
+![CH-11](https://github.ccs.neu.edu/NEU-CS5610-SU21/SahaiAyush-book/blob/master/Screenshots/ch-11-1.JPG)
 
 Chapter 10
 
