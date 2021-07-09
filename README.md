@@ -1,5 +1,11 @@
 PRO MERN stack book
 
+Chapter 11
+
+This chapter deals with making the view better for the user and involves changes mainly in the UI part. React-Bootstrap is used for the pupose. Bootstrap installation is done, then the ui is updated one by one. Navigation bar is added, buttons are added, panels, tables, forms, inline forms, grid system, horizontal forms, toasts, modals are added. All of these make the ui appear better and more visualizable. Bootstrap, a pioneer in this area, enabled browser independence and a responsive behavior out of the box. React-Bootstrap replaced the separate JavaScript code that dealt with the Bootstrap elements and made self-contained components possible. The application is up and running and the screenshots are updated.
+
+![CH-11](https://github.ccs.neu.edu/NEU-CS5610-SU21/SahaiAyush-book/blob/master/Screenshots/ch-11.JPG)
+
 Chapter 10
 
 This chapter is about adding more and more features to our application. This focuses on taking more and more of user input and processing it. The edit page is filled with a form and the delete and update issue fields are added. Close button is added to close an issue. Backend API's are modified to do the functions and new delete and update API's are created. The new API's added cater to the CRUD operations, we also we created specialized input components that could deal with different data types that one expects in most applications. The screenshots of edit page and the homepage are updated and the application is up and running.
