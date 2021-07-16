@@ -22,7 +22,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "000394ae189cca74bd15";
+/******/ 	var hotCurrentHash = "90e5db733c52bd063974";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -998,6 +998,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_router_dom__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _src_Page_jsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../src/Page.jsx */ "./src/Page.jsx");
 /* harmony import */ var _template_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./template.js */ "./server/template.js");
+/* harmony import */ var _template_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_template_js__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _src_graphQLFetch_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../src/graphQLFetch.js */ "./src/graphQLFetch.js");
 /* harmony import */ var _src_store_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../src/store.js */ "./src/store.js");
 
@@ -1016,7 +1017,7 @@ async function render(req, res) {
     context: {}
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_src_Page_jsx__WEBPACK_IMPORTED_MODULE_3__["default"], null));
   const body = react_dom_server__WEBPACK_IMPORTED_MODULE_1___default.a.renderToString(element);
-  res.send(Object(_template_js__WEBPACK_IMPORTED_MODULE_4__["default"])(body));
+  res.send(_template_js__WEBPACK_IMPORTED_MODULE_4___default()(body, initialData));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (render);
@@ -1027,35 +1028,10 @@ async function render(req, res) {
 /*!****************************!*\
   !*** ./server/template.js ***!
   \****************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/*! no static exports found */
+/***/ (function(module, exports) {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return template; });
-function template(body) {
-  return `<!DOCTYPE HTML>
-<html>
-<head>
-  <meta charset="utf-8">
-  <title>Pro MERN Stack</title>
-  <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css" >
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    table.table-hover tr {cursor: pointer;}
-    .panel-title a {display: block; width: 100%; cursor: pointer;}
-  </style>
-</head>
-<body>
-  <!-- Page generated from template. -->
-  <div id="contents">${body}</div>
-  <script src="/env.js"></script>
-  <script src="/vendor.bundle.js"></script>
-  <script src="/app.bundle.js"></script>
-</body>
-</html>
-`;
-}
+throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: C:\\Users\\aishwarya\\MERN-Ayush\\SahaiAyush-book\\ui\\server\\template.js: 'import' and 'export' may only appear at the top level. (2:2)\n\n  1 | export default function template(body) {\n> 2 |   export default function template(body, data) {\n    |   ^\n  3 |     return `<!DOCTYPE HTML>\n  4 |   <html>\n  5 |   <head>\n    at Object._raise (C:\\Users\\aishwarya\\MERN-Ayush\\SahaiAyush-book\\ui\\node_modules\\@babel\\parser\\lib\\index.js:816:17)\n    at Object.raiseWithData (C:\\Users\\aishwarya\\MERN-Ayush\\SahaiAyush-book\\ui\\node_modules\\@babel\\parser\\lib\\index.js:809:17)\n    at Object.raise (C:\\Users\\aishwarya\\MERN-Ayush\\SahaiAyush-book\\ui\\node_modules\\@babel\\parser\\lib\\index.js:770:17)\n    at Object.parseStatementContent (C:\\Users\\aishwarya\\MERN-Ayush\\SahaiAyush-book\\ui\\node_modules\\@babel\\parser\\lib\\index.js:12627:18)\n    at Object.parseStatement (C:\\Users\\aishwarya\\MERN-Ayush\\SahaiAyush-book\\ui\\node_modules\\@babel\\parser\\lib\\index.js:12534:17)\n    at Object.parseBlockOrModuleBlockBody (C:\\Users\\aishwarya\\MERN-Ayush\\SahaiAyush-book\\ui\\node_modules\\@babel\\parser\\lib\\index.js:13123:25)\n    at Object.parseBlockBody (C:\\Users\\aishwarya\\MERN-Ayush\\SahaiAyush-book\\ui\\node_modules\\@babel\\parser\\lib\\index.js:13114:10)\n    at Object.parseBlock (C:\\Users\\aishwarya\\MERN-Ayush\\SahaiAyush-book\\ui\\node_modules\\@babel\\parser\\lib\\index.js:13098:10)\n    at Object.parseFunctionBody (C:\\Users\\aishwarya\\MERN-Ayush\\SahaiAyush-book\\ui\\node_modules\\@babel\\parser\\lib\\index.js:11989:24)\n    at Object.parseFunctionBodyAndFinish (C:\\Users\\aishwarya\\MERN-Ayush\\SahaiAyush-book\\ui\\node_modules\\@babel\\parser\\lib\\index.js:11973:10)\n    at withTopicForbiddingContext (C:\\Users\\aishwarya\\MERN-Ayush\\SahaiAyush-book\\ui\\node_modules\\@babel\\parser\\lib\\index.js:13256:12)\n    at Object.withTopicForbiddingContext (C:\\Users\\aishwarya\\MERN-Ayush\\SahaiAyush-book\\ui\\node_modules\\@babel\\parser\\lib\\index.js:12303:14)\n    at Object.parseFunction (C:\\Users\\aishwarya\\MERN-Ayush\\SahaiAyush-book\\ui\\node_modules\\@babel\\parser\\lib\\index.js:13255:10)\n    at Object.parseExportDefaultExpression (C:\\Users\\aishwarya\\MERN-Ayush\\SahaiAyush-book\\ui\\node_modules\\@babel\\parser\\lib\\index.js:13733:19)\n    at Object.parseExport (C:\\Users\\aishwarya\\MERN-Ayush\\SahaiAyush-book\\ui\\node_modules\\@babel\\parser\\lib\\index.js:13656:31)\n    at Object.parseStatementContent (C:\\Users\\aishwarya\\MERN-Ayush\\SahaiAyush-book\\ui\\node_modules\\@babel\\parser\\lib\\index.js:12640:27)\n    at Object.parseStatement (C:\\Users\\aishwarya\\MERN-Ayush\\SahaiAyush-book\\ui\\node_modules\\@babel\\parser\\lib\\index.js:12534:17)\n    at Object.parseBlockOrModuleBlockBody (C:\\Users\\aishwarya\\MERN-Ayush\\SahaiAyush-book\\ui\\node_modules\\@babel\\parser\\lib\\index.js:13123:25)\n    at Object.parseBlockBody (C:\\Users\\aishwarya\\MERN-Ayush\\SahaiAyush-book\\ui\\node_modules\\@babel\\parser\\lib\\index.js:13114:10)\n    at Object.parseProgram (C:\\Users\\aishwarya\\MERN-Ayush\\SahaiAyush-book\\ui\\node_modules\\@babel\\parser\\lib\\index.js:12457:10)\n    at Object.parseTopLevel (C:\\Users\\aishwarya\\MERN-Ayush\\SahaiAyush-book\\ui\\node_modules\\@babel\\parser\\lib\\index.js:12448:25)\n    at Object.parse (C:\\Users\\aishwarya\\MERN-Ayush\\SahaiAyush-book\\ui\\node_modules\\@babel\\parser\\lib\\index.js:14175:10)\n    at parse (C:\\Users\\aishwarya\\MERN-Ayush\\SahaiAyush-book\\ui\\node_modules\\@babel\\parser\\lib\\index.js:14227:38)\n    at parser (C:\\Users\\aishwarya\\MERN-Ayush\\SahaiAyush-book\\ui\\node_modules\\@babel\\core\\lib\\parser\\index.js:52:34)\n    at parser.next (<anonymous>)\n    at normalizeFile (C:\\Users\\aishwarya\\MERN-Ayush\\SahaiAyush-book\\ui\\node_modules\\@babel\\core\\lib\\transformation\\normalize-file.js:82:38)\n    at normalizeFile.next (<anonymous>)\n    at run (C:\\Users\\aishwarya\\MERN-Ayush\\SahaiAyush-book\\ui\\node_modules\\@babel\\core\\lib\\transformation\\index.js:29:50)\n    at run.next (<anonymous>)\n    at Function.transform (C:\\Users\\aishwarya\\MERN-Ayush\\SahaiAyush-book\\ui\\node_modules\\@babel\\core\\lib\\transform.js:25:41)");
 
 /***/ }),
 
