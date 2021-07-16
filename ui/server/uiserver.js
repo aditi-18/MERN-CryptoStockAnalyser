@@ -1,33 +1,35 @@
-/* eslint-disable global-require */
-require('dotenv').config();
-const path = require('path');
-const express = require('express');
-const proxy = require('http-proxy-middleware');
-const render = require('./render.js');
+import dotenv from 'dotenv';
+import path from 'path';
+import express from 'express';
+import proxy from 'http-proxy-middleware';
+import SourceMapSupport from 'source-map-support';
+
+import render from './render.jsx';
 
 const app = express();
+
+SourceMapSupport.install();
+dotenv.config();
 const enableHMR = (process.env.ENABLE_HMR || 'true') === 'true';
 
 if (enableHMR && (process.env.NODE_ENV !== 'production')) {
   console.log('Adding dev middlware, enabling HMR');
-  // eslint-disable-next-line global-require
-  // eslint "import/no-extraneous-dependencies": "off"
-  // eslint-disable-next-line import/no-extraneous-dependencies
+  /* eslint "global-require": "off" */
+  /* eslint "import/no-extraneous-dependencies": "off" */
   const webpack = require('webpack');
-  // eslint-disable-next-line import/no-extraneous-dependencies
   const devMiddleware = require('webpack-dev-middleware');
-  // eslint-disable-next-line import/no-extraneous-dependencies
   const hotMiddleware = require('webpack-hot-middleware');
-  // eslint-disable-next-line import/extensions
-  const config = require('../webpack.config.js');
-  
+
+  const config = require('../webpack.config.js')[0];
   config.entry.app.push('webpack-hot-middleware/client');
   config.plugins = config.plugins || [];
   config.plugins.push(new webpack.HotModuleReplacementPlugin());
+
   const compiler = webpack(config);
   app.use(devMiddleware(compiler));
   app.use(hotMiddleware(compiler));
 }
+
 app.use(express.static('public'));
 
 const apiProxyTarget = process.env.API_PROXY_TARGET;
@@ -42,6 +44,7 @@ const env = { UI_API_ENDPOINT };
 app.get('/env.js', (req, res) => {
   res.send(`window.ENV = ${JSON.stringify(env)}`);
 });
+
 app.get('/about', render);
 
 app.get('*', (req, res) => {
