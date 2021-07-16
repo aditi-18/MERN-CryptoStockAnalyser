@@ -18,7 +18,7 @@ if (enableHMR && (process.env.NODE_ENV !== 'production')) {
   // eslint-disable-next-line import/no-extraneous-dependencies
   const hotMiddleware = require('webpack-hot-middleware');
   // eslint-disable-next-line import/extensions
-  const config = require('./webpack.config.js');
+  const config = require('../webpack.config.js');
   config.entry.app.push('webpack-hot-middleware/client');
   config.plugins = config.plugins || [];
   config.plugins.push(new webpack.HotModuleReplacementPlugin());
