@@ -22,7 +22,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "69c904ef66cf95914134";
+/******/ 	var hotCurrentHash = "1ccc62820b02a108d7e3";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -998,9 +998,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_router_dom__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _src_Page_jsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../src/Page.jsx */ "./src/Page.jsx");
 /* harmony import */ var _template_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./template.js */ "./server/template.js");
-/* harmony import */ var _template_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_template_js__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _src_About_jsx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../src/About.jsx */ "./src/About.jsx");
-/* harmony import */ var _src_store_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../src/store.js */ "./src/store.js");
+/* harmony import */ var _src_store_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../src/store.js */ "./src/store.js");
+!(function webpackMissingModule() { var e = new Error("Cannot find module '../src/routes.js'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
 
 
 
@@ -1010,14 +1009,20 @@ __webpack_require__.r(__webpack_exports__);
 
 
 async function render(req, res) {
-  const initialData = _src_About_jsx__WEBPACK_IMPORTED_MODULE_5__["default"].fetchData();
-  _src_store_js__WEBPACK_IMPORTED_MODULE_6__["default"].initialData = initialData;
+  const activeRoute = !(function webpackMissingModule() { var e = new Error("Cannot find module '../src/routes.js'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()).find(route => Object(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["matchPath"])(req.path, route));
+  let initialData;
+
+  if (activeRoute && activeRoute.component.fetchData) {
+    initialData = await activeRoute.component.fetchData();
+  }
+
+  _src_store_js__WEBPACK_IMPORTED_MODULE_5__["default"].initialData = initialData;
   const element = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["StaticRouter"], {
     location: req.url,
     context: {}
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_src_Page_jsx__WEBPACK_IMPORTED_MODULE_3__["default"], null));
   const body = react_dom_server__WEBPACK_IMPORTED_MODULE_1___default.a.renderToString(element);
-  res.send(_template_js__WEBPACK_IMPORTED_MODULE_4___default()(body, initialData));
+  res.send(Object(_template_js__WEBPACK_IMPORTED_MODULE_4__["default"])(body, initialData));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (render);
@@ -1028,10 +1033,36 @@ async function render(req, res) {
 /*!****************************!*\
   !*** ./server/template.js ***!
   \****************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: C:\\Users\\aishwarya\\MERN-Ayush\\SahaiAyush-book\\ui\\server\\template.js: 'import' and 'export' may only appear at the top level. (2:2)\n\n  1 | export default function template(body) {\n> 2 |   export default function template(body, data) {\n    |   ^\n  3 |     return `<!DOCTYPE HTML>\n  4 |   <html>\n  5 |   <head>\n    at Object._raise (C:\\Users\\aishwarya\\MERN-Ayush\\SahaiAyush-book\\ui\\node_modules\\@babel\\parser\\lib\\index.js:816:17)\n    at Object.raiseWithData (C:\\Users\\aishwarya\\MERN-Ayush\\SahaiAyush-book\\ui\\node_modules\\@babel\\parser\\lib\\index.js:809:17)\n    at Object.raise (C:\\Users\\aishwarya\\MERN-Ayush\\SahaiAyush-book\\ui\\node_modules\\@babel\\parser\\lib\\index.js:770:17)\n    at Object.parseStatementContent (C:\\Users\\aishwarya\\MERN-Ayush\\SahaiAyush-book\\ui\\node_modules\\@babel\\parser\\lib\\index.js:12627:18)\n    at Object.parseStatement (C:\\Users\\aishwarya\\MERN-Ayush\\SahaiAyush-book\\ui\\node_modules\\@babel\\parser\\lib\\index.js:12534:17)\n    at Object.parseBlockOrModuleBlockBody (C:\\Users\\aishwarya\\MERN-Ayush\\SahaiAyush-book\\ui\\node_modules\\@babel\\parser\\lib\\index.js:13123:25)\n    at Object.parseBlockBody (C:\\Users\\aishwarya\\MERN-Ayush\\SahaiAyush-book\\ui\\node_modules\\@babel\\parser\\lib\\index.js:13114:10)\n    at Object.parseBlock (C:\\Users\\aishwarya\\MERN-Ayush\\SahaiAyush-book\\ui\\node_modules\\@babel\\parser\\lib\\index.js:13098:10)\n    at Object.parseFunctionBody (C:\\Users\\aishwarya\\MERN-Ayush\\SahaiAyush-book\\ui\\node_modules\\@babel\\parser\\lib\\index.js:11989:24)\n    at Object.parseFunctionBodyAndFinish (C:\\Users\\aishwarya\\MERN-Ayush\\SahaiAyush-book\\ui\\node_modules\\@babel\\parser\\lib\\index.js:11973:10)\n    at withTopicForbiddingContext (C:\\Users\\aishwarya\\MERN-Ayush\\SahaiAyush-book\\ui\\node_modules\\@babel\\parser\\lib\\index.js:13256:12)\n    at Object.withTopicForbiddingContext (C:\\Users\\aishwarya\\MERN-Ayush\\SahaiAyush-book\\ui\\node_modules\\@babel\\parser\\lib\\index.js:12303:14)\n    at Object.parseFunction (C:\\Users\\aishwarya\\MERN-Ayush\\SahaiAyush-book\\ui\\node_modules\\@babel\\parser\\lib\\index.js:13255:10)\n    at Object.parseExportDefaultExpression (C:\\Users\\aishwarya\\MERN-Ayush\\SahaiAyush-book\\ui\\node_modules\\@babel\\parser\\lib\\index.js:13733:19)\n    at Object.parseExport (C:\\Users\\aishwarya\\MERN-Ayush\\SahaiAyush-book\\ui\\node_modules\\@babel\\parser\\lib\\index.js:13656:31)\n    at Object.parseStatementContent (C:\\Users\\aishwarya\\MERN-Ayush\\SahaiAyush-book\\ui\\node_modules\\@babel\\parser\\lib\\index.js:12640:27)\n    at Object.parseStatement (C:\\Users\\aishwarya\\MERN-Ayush\\SahaiAyush-book\\ui\\node_modules\\@babel\\parser\\lib\\index.js:12534:17)\n    at Object.parseBlockOrModuleBlockBody (C:\\Users\\aishwarya\\MERN-Ayush\\SahaiAyush-book\\ui\\node_modules\\@babel\\parser\\lib\\index.js:13123:25)\n    at Object.parseBlockBody (C:\\Users\\aishwarya\\MERN-Ayush\\SahaiAyush-book\\ui\\node_modules\\@babel\\parser\\lib\\index.js:13114:10)\n    at Object.parseProgram (C:\\Users\\aishwarya\\MERN-Ayush\\SahaiAyush-book\\ui\\node_modules\\@babel\\parser\\lib\\index.js:12457:10)\n    at Object.parseTopLevel (C:\\Users\\aishwarya\\MERN-Ayush\\SahaiAyush-book\\ui\\node_modules\\@babel\\parser\\lib\\index.js:12448:25)\n    at Object.parse (C:\\Users\\aishwarya\\MERN-Ayush\\SahaiAyush-book\\ui\\node_modules\\@babel\\parser\\lib\\index.js:14175:10)\n    at parse (C:\\Users\\aishwarya\\MERN-Ayush\\SahaiAyush-book\\ui\\node_modules\\@babel\\parser\\lib\\index.js:14227:38)\n    at parser (C:\\Users\\aishwarya\\MERN-Ayush\\SahaiAyush-book\\ui\\node_modules\\@babel\\core\\lib\\parser\\index.js:52:34)\n    at parser.next (<anonymous>)\n    at normalizeFile (C:\\Users\\aishwarya\\MERN-Ayush\\SahaiAyush-book\\ui\\node_modules\\@babel\\core\\lib\\transformation\\normalize-file.js:82:38)\n    at normalizeFile.next (<anonymous>)\n    at run (C:\\Users\\aishwarya\\MERN-Ayush\\SahaiAyush-book\\ui\\node_modules\\@babel\\core\\lib\\transformation\\index.js:29:50)\n    at run.next (<anonymous>)\n    at Function.transform (C:\\Users\\aishwarya\\MERN-Ayush\\SahaiAyush-book\\ui\\node_modules\\@babel\\core\\lib\\transform.js:25:41)");
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return template; });
+function template(body, data) {
+  return `<!DOCTYPE HTML>
+  <html>
+  <head>
+    <meta charset="utf-8">
+    <title>Pro MERN Stack</title>
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      table.table-hover tr {cursor: pointer;}
+      .panel-title a {display: block; width: 100%; cursor: pointer;}
+    </style>
+  </head>
+  <body>
+    <!-- Page generated from template. -->
+    <div id="contents">${body}</div>
+    <script>window.__INITIAL_DATA__ = ${JSON.stringify(data)}</script>
+    <script src="/env.js"></script>
+    <script src="/vendor.bundle.js"></script>
+    <script src="/app.bundle.js"></script>
+  </body>
+  </html>
+  `;
+}
 
 /***/ }),
 
@@ -1046,23 +1077,20 @@ throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var dotenv__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! dotenv */ "dotenv");
 /* harmony import */ var dotenv__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(dotenv__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var path__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! path */ "path");
-/* harmony import */ var path__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(path__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var express__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! express */ "express");
-/* harmony import */ var express__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(express__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var http_proxy_middleware__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! http-proxy-middleware */ "http-proxy-middleware");
-/* harmony import */ var http_proxy_middleware__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(http_proxy_middleware__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var source_map_support__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! source-map-support */ "source-map-support");
-/* harmony import */ var source_map_support__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(source_map_support__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _render_jsx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./render.jsx */ "./server/render.jsx");
+/* harmony import */ var express__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! express */ "express");
+/* harmony import */ var express__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(express__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var http_proxy_middleware__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! http-proxy-middleware */ "http-proxy-middleware");
+/* harmony import */ var http_proxy_middleware__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(http_proxy_middleware__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var source_map_support__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! source-map-support */ "source-map-support");
+/* harmony import */ var source_map_support__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(source_map_support__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _render_jsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./render.jsx */ "./server/render.jsx");
 
 
 
 
 
-
-const app = express__WEBPACK_IMPORTED_MODULE_2___default()();
-source_map_support__WEBPACK_IMPORTED_MODULE_4___default.a.install();
+const app = express__WEBPACK_IMPORTED_MODULE_1___default()();
+source_map_support__WEBPACK_IMPORTED_MODULE_3___default.a.install();
 dotenv__WEBPACK_IMPORTED_MODULE_0___default.a.config();
 const enableHMR = (process.env.ENABLE_HMR || 'true') === 'true';
 
@@ -1088,11 +1116,11 @@ if (enableHMR && "development" !== 'production') {
   app.use(hotMiddleware(compiler));
 }
 
-app.use(express__WEBPACK_IMPORTED_MODULE_2___default.a.static('public'));
+app.use(express__WEBPACK_IMPORTED_MODULE_1___default.a.static('public'));
 const apiProxyTarget = process.env.API_PROXY_TARGET;
 
 if (apiProxyTarget) {
-  app.use('/graphql', http_proxy_middleware__WEBPACK_IMPORTED_MODULE_3___default()({
+  app.use('/graphql', http_proxy_middleware__WEBPACK_IMPORTED_MODULE_2___default()({
     target: apiProxyTarget
   }));
 }
@@ -1111,11 +1139,8 @@ app.get('/env.js', (req, res) => {
   };
   res.send(`window.ENV = ${JSON.stringify(env)}`);
 });
-app.get('/about', (req, res, next) => {
-  Object(_render_jsx__WEBPACK_IMPORTED_MODULE_5__["default"])(req, res, next);
-});
-app.get('*', (req, res) => {
-  res.sendFile(path__WEBPACK_IMPORTED_MODULE_1___default.a.resolve('public/index.html'));
+app.get('*', (req, res, next) => {
+  Object(_render_jsx__WEBPACK_IMPORTED_MODULE_4__["default"])(req, res, next);
 });
 const port = process.env.UI_SERVER_PORT || 8000;
 app.listen(port, () => {
@@ -1123,65 +1148,8 @@ app.listen(port, () => {
 });
 
 if (true) {
-  module.hot.accept(/*! ./render.jsx */ "./server/render.jsx", function() { /* harmony import */ _render_jsx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./render.jsx */ "./server/render.jsx");
+  module.hot.accept(/*! ./render.jsx */ "./server/render.jsx", function() { /* harmony import */ _render_jsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./render.jsx */ "./server/render.jsx");
  });
-}
-
-/***/ }),
-
-/***/ "./src/About.jsx":
-/*!***********************!*\
-  !*** ./src/About.jsx ***!
-  \***********************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return About; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _store_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./store.js */ "./src/store.js");
-/* harmony import */ var _graphQLFetch_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./graphQLFetch.js */ "./src/graphQLFetch.js");
-
-
-
-class About extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
-  static async fetchData() {
-    const data = await Object(_graphQLFetch_js__WEBPACK_IMPORTED_MODULE_2__["default"])('query {about}');
-    return data;
-  }
-
-  constructor(props) {
-    super(props);
-    const apiAbout = _store_js__WEBPACK_IMPORTED_MODULE_1__["default"].initialData ? _store_js__WEBPACK_IMPORTED_MODULE_1__["default"].initialData.about : null;
-    this.state = {
-      apiAbout
-    };
-  }
-
-  async componentDidMount() {
-    const {
-      apiAbout
-    } = this.state;
-
-    if (apiAbout == null) {
-      const data = await About.fetchData();
-      this.setState({
-        apiAbout: data.about
-      });
-    }
-  }
-
-  render() {
-    const {
-      apiAbout
-    } = this.state;
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      className: "text-center"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Issue Tracker version 0.9"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, apiAbout));
-  }
-
 }
 
 /***/ }),
@@ -1200,144 +1168,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "react-router-dom");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_router_dom__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _IssueList_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./IssueList.jsx */ "./src/IssueList.jsx");
-/* harmony import */ var _IssueReport_jsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./IssueReport.jsx */ "./src/IssueReport.jsx");
-/* harmony import */ var _IssueEdit_jsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./IssueEdit.jsx */ "./src/IssueEdit.jsx");
-/* harmony import */ var _About_jsx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./About.jsx */ "./src/About.jsx");
+!(function webpackMissingModule() { var e = new Error("Cannot find module './routes.js'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 
 
 
- // eslint-disable-next-line import/no-unresolved
-
-
-
-
-const NotFound = () => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Page Not Found");
 
 function Contents() {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Switch"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Redirect"], {
     exact: true,
     from: "/",
     to: "/issues"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
-    path: "/issues",
-    component: _IssueList_jsx__WEBPACK_IMPORTED_MODULE_2__["default"]
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
-    path: "/edit/:id",
-    component: _IssueEdit_jsx__WEBPACK_IMPORTED_MODULE_4__["default"]
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
-    path: "/report",
-    component: _IssueReport_jsx__WEBPACK_IMPORTED_MODULE_3__["default"]
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
-    path: "/about",
-    component: _About_jsx__WEBPACK_IMPORTED_MODULE_5__["default"]
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
-    component: NotFound
-  }));
-}
-
-/***/ }),
-
-/***/ "./src/DateInput.jsx":
-/*!***************************!*\
-  !*** ./src/DateInput.jsx ***!
-  \***************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return DateInput; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
-
-
-function displayFormat(date) {
-  return date != null ? date.toDateString() : '';
-}
-
-function editFormat(date) {
-  return date != null ? date.toISOString().substr(0, 10) : '';
-}
-
-function unformat(str) {
-  const val = new Date(str);
-  return Number.isNaN(val.getTime()) ? null : val;
-}
-
-class DateInput extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      value: editFormat(props.value),
-      focused: false,
-      valid: true
-    };
-    this.onFocus = this.onFocus.bind(this);
-    this.onBlur = this.onBlur.bind(this);
-    this.onChange = this.onChange.bind(this);
-  }
-
-  onFocus() {
-    this.setState({
-      focused: true
-    });
-  }
-
-  onBlur(e) {
-    const {
-      value,
-      valid: oldValid
-    } = this.state;
-    const {
-      onValidityChange,
-      onChange
-    } = this.props;
-    const dateValue = unformat(value);
-    const valid = value === '' || dateValue != null;
-
-    if (valid !== oldValid && onValidityChange) {
-      onValidityChange(e, valid);
-    }
-
-    this.setState({
-      focused: false,
-      valid
-    });
-    if (valid) onChange(e, dateValue);
-  }
-
-  onChange(e) {
-    if (e.target.value.match(/^[\d-]*$/)) {
-      this.setState({
-        value: e.target.value
-      });
-    }
-  }
-
-  render() {
-    const {
-      valid,
-      focused,
-      value
-    } = this.state;
-    const {
-      value: origValue,
-      onValidityChange,
-      ...props
-    } = this.props;
-    const displayValue = focused || !valid ? value : displayFormat(origValue);
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", _extends({}, props, {
-      value: displayValue,
-      placeholder: focused ? 'yyyy-mm-dd' : null,
-      onFocus: this.onFocus,
-      onBlur: this.onBlur,
-      onChange: this.onChange
-    }));
-  }
-
+  }), !(function webpackMissingModule() { var e = new Error("Cannot find module './routes.js'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()).map(attrs => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], _extends({}, attrs, {
+    key: attrs.path
+  }))));
 }
 
 /***/ }),
@@ -1485,1116 +1329,6 @@ class IssueAddNavItem extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Compo
 
 /***/ }),
 
-/***/ "./src/IssueDetail.jsx":
-/*!*****************************!*\
-  !*** ./src/IssueDetail.jsx ***!
-  \*****************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return IssueDetail; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _graphQLFetch_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./graphQLFetch.js */ "./src/graphQLFetch.js");
-/* harmony import */ var _Toast_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Toast.jsx */ "./src/Toast.jsx");
-
-
-
-class IssueDetail extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
-  constructor() {
-    super();
-    this.state = {
-      issue: {},
-      toastVisible: false,
-      toastMessage: '',
-      toastType: 'info'
-    };
-    this.showError = this.showError.bind(this);
-    this.dismissToast = this.dismissToast.bind(this);
-  }
-
-  componentDidMount() {
-    this.loadData();
-  }
-
-  componentDidUpdate(prevProps) {
-    const {
-      match: {
-        params: {
-          id: prevId
-        }
-      }
-    } = prevProps;
-    const {
-      match: {
-        params: {
-          id
-        }
-      }
-    } = this.props;
-
-    if (prevId !== id) {
-      this.loadData();
-    }
-  }
-
-  showError(message) {
-    this.setState({
-      toastVisible: true,
-      toastMessage: message,
-      toastType: 'danger'
-    });
-  }
-
-  dismissToast() {
-    this.setState({
-      toastVisible: false
-    });
-  }
-
-  async loadData() {
-    const {
-      match: {
-        params: {
-          id
-        }
-      }
-    } = this.props;
-    const query = `query issue($id: Int!) {
-      issue (id: $id) {
-        id description
-      }
-    }`;
-    const data = await Object(_graphQLFetch_js__WEBPACK_IMPORTED_MODULE_1__["default"])(query, {
-      id
-    }, this.showError);
-
-    if (data) {
-      this.setState({
-        issue: data.issue
-      });
-    } else {
-      this.setState({
-        issue: {}
-      });
-    }
-  }
-
-  render() {
-    const {
-      issue: {
-        description
-      }
-    } = this.state;
-    const {
-      toastVisible,
-      toastType,
-      toastMessage
-    } = this.state;
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Description"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("pre", null, description), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Toast_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], {
-      showing: toastVisible,
-      onDismiss: this.dismissToast,
-      bsStyle: toastType
-    }, toastMessage));
-  }
-
-}
-
-/***/ }),
-
-/***/ "./src/IssueEdit.jsx":
-/*!***************************!*\
-  !*** ./src/IssueEdit.jsx ***!
-  \***************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return IssueEdit; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "react-router-dom");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_router_dom__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var react_router_bootstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-bootstrap */ "react-router-bootstrap");
-/* harmony import */ var react_router_bootstrap__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_router_bootstrap__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-bootstrap */ "react-bootstrap");
-/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _graphQLFetch_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./graphQLFetch.js */ "./src/graphQLFetch.js");
-/* harmony import */ var _NumInput_jsx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./NumInput.jsx */ "./src/NumInput.jsx");
-/* harmony import */ var _DateInput_jsx__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./DateInput.jsx */ "./src/DateInput.jsx");
-/* harmony import */ var _TextInput_jsx__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./TextInput.jsx */ "./src/TextInput.jsx");
-/* harmony import */ var _Toast_jsx__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./Toast.jsx */ "./src/Toast.jsx");
-
-
-
-
-
-
-
-
-
-class IssueEdit extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
-  constructor() {
-    super();
-    this.state = {
-      issue: {},
-      invalidFields: {},
-      showingValidation: false,
-      toastVisible: false,
-      toastMessage: '',
-      toastType: 'success'
-    };
-    this.onChange = this.onChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.onValidityChange = this.onValidityChange.bind(this);
-    this.dismissValidation = this.dismissValidation.bind(this);
-    this.showValidation = this.showValidation.bind(this);
-    this.showSuccess = this.showSuccess.bind(this);
-    this.showError = this.showError.bind(this);
-    this.dismissToast = this.dismissToast.bind(this);
-  }
-
-  componentDidMount() {
-    this.loadData();
-  }
-
-  componentDidUpdate(prevProps) {
-    const {
-      match: {
-        params: {
-          id: prevId
-        }
-      }
-    } = prevProps;
-    const {
-      match: {
-        params: {
-          id
-        }
-      }
-    } = this.props;
-
-    if (id !== prevId) {
-      this.loadData();
-    }
-  }
-
-  onChange(event, naturalValue) {
-    const {
-      name,
-      value: textValue
-    } = event.target;
-    const value = naturalValue === undefined ? textValue : naturalValue;
-    this.setState(prevState => ({
-      issue: { ...prevState.issue,
-        [name]: value
-      }
-    }));
-  }
-
-  onValidityChange(event, valid) {
-    const {
-      name
-    } = event.target;
-    this.setState(prevState => {
-      const invalidFields = { ...prevState.invalidFields,
-        [name]: !valid
-      };
-      if (valid) delete invalidFields[name];
-      return {
-        invalidFields
-      };
-    });
-  }
-
-  async handleSubmit(e) {
-    e.preventDefault();
-    this.showValidation();
-    const {
-      issue,
-      invalidFields
-    } = this.state;
-    if (Object.keys(invalidFields).length !== 0) return;
-    const query = `mutation issueUpdate(
-      $id: Int!
-      $changes: IssueUpdateInputs!
-    ) {
-      issueUpdate(
-        id: $id
-        changes: $changes
-      ) {
-        id title status owner
-        effort created due description
-      }
-    }`;
-    const {
-      id,
-      created,
-      ...changes
-    } = issue;
-    const data = await Object(_graphQLFetch_js__WEBPACK_IMPORTED_MODULE_4__["default"])(query, {
-      changes,
-      id
-    }, this.showError);
-
-    if (data) {
-      this.setState({
-        issue: data.issueUpdate
-      });
-      this.showSuccess('Updated issue successfully');
-    }
-  }
-
-  async loadData() {
-    const query = `query issue($id: Int!) {
-      issue(id: $id) {
-        id title status owner
-        effort created due description
-      }
-    }`;
-    const {
-      match: {
-        params: {
-          id
-        }
-      }
-    } = this.props;
-    const data = await Object(_graphQLFetch_js__WEBPACK_IMPORTED_MODULE_4__["default"])(query, {
-      id
-    }, this.showError);
-    this.setState({
-      issue: data ? data.issue : {},
-      invalidFields: {}
-    });
-  }
-
-  showValidation() {
-    this.setState({
-      showingValidation: true
-    });
-  }
-
-  dismissValidation() {
-    this.setState({
-      showingValidation: false
-    });
-  }
-
-  showSuccess(message) {
-    this.setState({
-      toastVisible: true,
-      toastMessage: message,
-      toastType: 'success'
-    });
-  }
-
-  showError(message) {
-    this.setState({
-      toastVisible: true,
-      toastMessage: message,
-      toastType: 'danger'
-    });
-  }
-
-  dismissToast() {
-    this.setState({
-      toastVisible: false
-    });
-  }
-
-  render() {
-    const {
-      issue: {
-        id
-      }
-    } = this.state;
-    const {
-      match: {
-        params: {
-          id: propsId
-        }
-      }
-    } = this.props;
-
-    if (id == null) {
-      if (propsId != null) {
-        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, `Issue with ID ${propsId} not found.`);
-      }
-
-      return null;
-    }
-
-    const {
-      invalidFields,
-      showingValidation
-    } = this.state;
-    let validationMessage;
-
-    if (Object.keys(invalidFields).length !== 0 && showingValidation) {
-      validationMessage = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Alert"], {
-        bsStyle: "danger",
-        onDismiss: this.dismissValidation
-      }, "Please correct invalid fields before submitting.");
-    }
-
-    const {
-      issue: {
-        title,
-        status
-      }
-    } = this.state;
-    const {
-      issue: {
-        owner,
-        effort,
-        description
-      }
-    } = this.state;
-    const {
-      issue: {
-        created,
-        due
-      }
-    } = this.state;
-    const {
-      toastVisible,
-      toastMessage,
-      toastType
-    } = this.state;
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Panel"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Panel"].Heading, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Panel"].Title, null, `Editing issue: ${id}`)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Panel"].Body, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Form"], {
-      horizontal: true,
-      onSubmit: this.handleSubmit
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["FormGroup"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Col"], {
-      componentClass: react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["ControlLabel"],
-      sm: 3
-    }, "Created"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Col"], {
-      sm: 9
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["FormControl"].Static, null, created.toDateString()))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["FormGroup"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Col"], {
-      componentClass: react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["ControlLabel"],
-      sm: 3
-    }, "Status"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Col"], {
-      sm: 9
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["FormControl"], {
-      componentClass: "select",
-      name: "status",
-      value: status,
-      onChange: this.onChange
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-      value: "New"
-    }, "New"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-      value: "Assigned"
-    }, "Assigned"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-      value: "Fixed"
-    }, "Fixed"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-      value: "Closed"
-    }, "Closed")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["FormGroup"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Col"], {
-      componentClass: react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["ControlLabel"],
-      sm: 3
-    }, "Owner"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Col"], {
-      sm: 9
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["FormControl"], {
-      componentClass: _TextInput_jsx__WEBPACK_IMPORTED_MODULE_7__["default"],
-      name: "owner",
-      value: owner,
-      onChange: this.onChange,
-      key: id
-    }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["FormGroup"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Col"], {
-      componentClass: react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["ControlLabel"],
-      sm: 3
-    }, "Effort"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Col"], {
-      sm: 9
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["FormControl"], {
-      componentClass: _NumInput_jsx__WEBPACK_IMPORTED_MODULE_5__["default"],
-      name: "effort",
-      value: effort,
-      onChange: this.onChange,
-      key: id
-    }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["FormGroup"], {
-      validationState: invalidFields.due ? 'error' : null
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Col"], {
-      componentClass: react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["ControlLabel"],
-      sm: 3
-    }, "Due"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Col"], {
-      sm: 9
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["FormControl"], {
-      componentClass: _DateInput_jsx__WEBPACK_IMPORTED_MODULE_6__["default"],
-      onValidityChange: this.onValidityChange,
-      name: "due",
-      value: due,
-      onChange: this.onChange,
-      key: id
-    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["FormControl"].Feedback, null))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["FormGroup"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Col"], {
-      componentClass: react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["ControlLabel"],
-      sm: 3
-    }, "Title"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Col"], {
-      sm: 9
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["FormControl"], {
-      componentClass: _TextInput_jsx__WEBPACK_IMPORTED_MODULE_7__["default"],
-      size: 50,
-      name: "title",
-      value: title,
-      onChange: this.onChange,
-      key: id
-    }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["FormGroup"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Col"], {
-      componentClass: react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["ControlLabel"],
-      sm: 3
-    }, "Description"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Col"], {
-      sm: 9
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["FormControl"], {
-      componentClass: _TextInput_jsx__WEBPACK_IMPORTED_MODULE_7__["default"],
-      tag: "textarea",
-      rows: 4,
-      cols: 50,
-      name: "description",
-      value: description,
-      onChange: this.onChange,
-      key: id
-    }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["FormGroup"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Col"], {
-      smOffset: 3,
-      sm: 6
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["ButtonToolbar"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Button"], {
-      bsStyle: "primary",
-      type: "submit"
-    }, "Submit"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_bootstrap__WEBPACK_IMPORTED_MODULE_2__["LinkContainer"], {
-      to: "/issues"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Button"], {
-      bsStyle: "link"
-    }, "Back"))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["FormGroup"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Col"], {
-      smOffset: 3,
-      sm: 9
-    }, validationMessage)))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Panel"].Footer, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-      to: `/edit/${id - 1}`
-    }, "Prev"), ' | ', /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-      to: `/edit/${id + 1}`
-    }, "Next")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Toast_jsx__WEBPACK_IMPORTED_MODULE_8__["default"], {
-      showing: toastVisible,
-      onDismiss: this.dismissToast,
-      bsStyle: toastType
-    }, toastMessage));
-  }
-
-}
-
-/***/ }),
-
-/***/ "./src/IssueFilter.jsx":
-/*!*****************************!*\
-  !*** ./src/IssueFilter.jsx ***!
-  \*****************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var url_search_params__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! url-search-params */ "url-search-params");
-/* harmony import */ var url_search_params__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(url_search_params__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "react-router-dom");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_router_dom__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-bootstrap */ "react-bootstrap");
-/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__);
-
-
-
-
-
-class IssueFilter extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
-  constructor({
-    location: {
-      search
-    }
-  }) {
-    super();
-    const params = new url_search_params__WEBPACK_IMPORTED_MODULE_1___default.a(search);
-    this.state = {
-      status: params.get('status') || '',
-      effortMin: params.get('effortMin') || '',
-      effortMax: params.get('effortMax') || '',
-      changed: false
-    };
-    this.onChangeStatus = this.onChangeStatus.bind(this);
-    this.onChangeEffortMin = this.onChangeEffortMin.bind(this);
-    this.onChangeEffortMax = this.onChangeEffortMax.bind(this);
-    this.applyFilter = this.applyFilter.bind(this);
-    this.showOriginalFilter = this.showOriginalFilter.bind(this);
-  }
-
-  componentDidUpdate(prevProps) {
-    const {
-      location: {
-        search: prevSearch
-      }
-    } = prevProps;
-    const {
-      location: {
-        search
-      }
-    } = this.props;
-
-    if (prevSearch !== search) {
-      this.showOriginalFilter();
-    }
-  }
-
-  onChangeStatus(e) {
-    this.setState({
-      status: e.target.value,
-      changed: true
-    });
-  }
-
-  onChangeEffortMin(e) {
-    const effortString = e.target.value;
-
-    if (effortString.match(/^\d*$/)) {
-      this.setState({
-        effortMin: e.target.value,
-        changed: true
-      });
-    }
-  }
-
-  onChangeEffortMax(e) {
-    const effortString = e.target.value;
-
-    if (effortString.match(/^\d*$/)) {
-      this.setState({
-        effortMax: e.target.value,
-        changed: true
-      });
-    }
-  }
-
-  showOriginalFilter() {
-    const {
-      location: {
-        search
-      }
-    } = this.props;
-    const params = new url_search_params__WEBPACK_IMPORTED_MODULE_1___default.a(search);
-    this.setState({
-      status: params.get('status') || '',
-      effortMin: params.get('effortMin') || '',
-      effortMax: params.get('effortMax') || '',
-      changed: false
-    });
-  }
-
-  applyFilter() {
-    const {
-      status,
-      effortMin,
-      effortMax
-    } = this.state;
-    const {
-      history
-    } = this.props;
-    const params = new url_search_params__WEBPACK_IMPORTED_MODULE_1___default.a();
-    if (status) params.set('status', status);
-    if (effortMin) params.set('effortMin', effortMin);
-    if (effortMax) params.set('effortMax', effortMax);
-    const search = params.toString() ? `?${params.toString()}` : '';
-    history.push({
-      pathname: '/issues',
-      search
-    });
-  }
-
-  render() {
-    const {
-      status,
-      changed
-    } = this.state;
-    const {
-      effortMin,
-      effortMax
-    } = this.state;
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Row"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Col"], {
-      xs: 6,
-      sm: 4,
-      md: 3,
-      lg: 2
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["FormGroup"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["ControlLabel"], null, "Status:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["FormControl"], {
-      componentClass: "select",
-      value: status,
-      onChange: this.onChangeStatus
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-      value: ""
-    }, "(All)"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-      value: "New"
-    }, "New"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-      value: "Assigned"
-    }, "Assigned"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-      value: "Fixed"
-    }, "Fixed"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-      value: "Closed"
-    }, "Closed")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Col"], {
-      xs: 6,
-      sm: 4,
-      md: 3,
-      lg: 2
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["FormGroup"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["ControlLabel"], null, "Effort between:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["InputGroup"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["FormControl"], {
-      value: effortMin,
-      onChange: this.onChangeEffortMin
-    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["InputGroup"].Addon, null, "-"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["FormControl"], {
-      value: effortMax,
-      onChange: this.onChangeEffortMax
-    })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Col"], {
-      xs: 6,
-      sm: 4,
-      md: 3,
-      lg: 2
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["FormGroup"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["ControlLabel"], null, "\xA0"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["ButtonToolbar"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Button"], {
-      bsStyle: "primary",
-      type: "button",
-      onClick: this.applyFilter
-    }, "Apply"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Button"], {
-      type: "button",
-      onClick: this.showOriginalFilter,
-      disabled: !changed
-    }, "Reset")))));
-  }
-
-}
-
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["withRouter"])(IssueFilter));
-
-/***/ }),
-
-/***/ "./src/IssueList.jsx":
-/*!***************************!*\
-  !*** ./src/IssueList.jsx ***!
-  \***************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return IssueList; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var url_search_params__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! url-search-params */ "url-search-params");
-/* harmony import */ var url_search_params__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(url_search_params__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "react-router-dom");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_router_dom__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-bootstrap */ "react-bootstrap");
-/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _IssueFilter_jsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./IssueFilter.jsx */ "./src/IssueFilter.jsx");
-/* harmony import */ var _IssueTable_jsx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./IssueTable.jsx */ "./src/IssueTable.jsx");
-/* harmony import */ var _IssueDetail_jsx__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./IssueDetail.jsx */ "./src/IssueDetail.jsx");
-/* harmony import */ var _graphQLFetch_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./graphQLFetch.js */ "./src/graphQLFetch.js");
-/* harmony import */ var _Toast_jsx__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./Toast.jsx */ "./src/Toast.jsx");
-
-
-
-
-
-
-
-
-
-class IssueList extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
-  constructor() {
-    super();
-    this.state = {
-      issues: [],
-      toastVisible: false,
-      toastMessage: '',
-      toastType: 'info'
-    };
-    this.closeIssue = this.closeIssue.bind(this);
-    this.deleteIssue = this.deleteIssue.bind(this);
-    this.showSuccess = this.showSuccess.bind(this);
-    this.showError = this.showError.bind(this);
-    this.dismissToast = this.dismissToast.bind(this);
-  }
-
-  componentDidMount() {
-    this.loadData();
-  }
-
-  componentDidUpdate(prevProps) {
-    const {
-      location: {
-        search: prevSearch
-      }
-    } = prevProps;
-    const {
-      location: {
-        search
-      }
-    } = this.props;
-
-    if (prevSearch !== search) {
-      this.loadData();
-    }
-  }
-
-  async loadData() {
-    const {
-      location: {
-        search
-      }
-    } = this.props;
-    const params = new url_search_params__WEBPACK_IMPORTED_MODULE_1___default.a(search);
-    const vars = {};
-    if (params.get('status')) vars.status = params.get('status');
-    const effortMin = parseInt(params.get('effortMin'), 10);
-    if (!Number.isNaN(effortMin)) vars.effortMin = effortMin;
-    const effortMax = parseInt(params.get('effortMax'), 10);
-    if (!Number.isNaN(effortMax)) vars.effortMax = effortMax;
-    const query = `query issueList(
-      $status: StatusType
-      $effortMin: Int
-      $effortMax: Int
-    ) {
-      issueList(
-        status: $status
-        effortMin: $effortMin
-        effortMax: $effortMax
-      ) {
-        id title status owner
-        created effort due
-      }
-    }`;
-    const data = await Object(_graphQLFetch_js__WEBPACK_IMPORTED_MODULE_7__["default"])(query, vars, this.showError);
-
-    if (data) {
-      this.setState({
-        issues: data.issueList
-      });
-    }
-  }
-
-  async closeIssue(index) {
-    const query = `mutation issueClose($id: Int!) {
-      issueUpdate(id: $id, changes: { status: Closed }) {
-        id title status owner
-        effort created due description
-      }
-    }`;
-    const {
-      issues
-    } = this.state;
-    const data = await Object(_graphQLFetch_js__WEBPACK_IMPORTED_MODULE_7__["default"])(query, {
-      id: issues[index].id
-    }, this.showError);
-
-    if (data) {
-      this.setState(prevState => {
-        const newList = [...prevState.issues];
-        newList[index] = data.issueUpdate;
-        return {
-          issues: newList
-        };
-      });
-    } else {
-      this.loadData();
-    }
-  }
-
-  async deleteIssue(index) {
-    const query = `mutation issueDelete($id: Int!) {
-      issueDelete(id: $id)
-    }`;
-    const {
-      issues
-    } = this.state;
-    const {
-      location: {
-        pathname,
-        search
-      },
-      history
-    } = this.props;
-    const {
-      id
-    } = issues[index];
-    const data = await Object(_graphQLFetch_js__WEBPACK_IMPORTED_MODULE_7__["default"])(query, {
-      id
-    }, this.showError);
-
-    if (data && data.issueDelete) {
-      this.setState(prevState => {
-        const newList = [...prevState.issues];
-
-        if (pathname === `/issues/${id}`) {
-          history.push({
-            pathname: '/issues',
-            search
-          });
-        }
-
-        newList.splice(index, 1);
-        return {
-          issues: newList
-        };
-      });
-      this.showSuccess(`Deleted issue ${id} successfully.`);
-    } else {
-      this.loadData();
-    }
-  }
-
-  showSuccess(message) {
-    this.setState({
-      toastVisible: true,
-      toastMessage: message,
-      toastType: 'success'
-    });
-  }
-
-  showError(message) {
-    this.setState({
-      toastVisible: true,
-      toastMessage: message,
-      toastType: 'danger'
-    });
-  }
-
-  dismissToast() {
-    this.setState({
-      toastVisible: false
-    });
-  }
-
-  render() {
-    const {
-      issues
-    } = this.state;
-    const {
-      toastVisible,
-      toastType,
-      toastMessage
-    } = this.state;
-    const {
-      match
-    } = this.props;
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Panel"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Panel"].Heading, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Panel"].Title, {
-      toggle: true
-    }, "Filter")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Panel"].Body, {
-      collapsible: true
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_IssueFilter_jsx__WEBPACK_IMPORTED_MODULE_4__["default"], null))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_IssueTable_jsx__WEBPACK_IMPORTED_MODULE_5__["default"], {
-      issues: issues,
-      closeIssue: this.closeIssue,
-      deleteIssue: this.deleteIssue
-    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Route"], {
-      path: `${match.path}/:id`,
-      component: _IssueDetail_jsx__WEBPACK_IMPORTED_MODULE_6__["default"]
-    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Toast_jsx__WEBPACK_IMPORTED_MODULE_8__["default"], {
-      showing: toastVisible,
-      onDismiss: this.dismissToast,
-      bsStyle: toastType
-    }, toastMessage));
-  }
-
-}
-
-/***/ }),
-
-/***/ "./src/IssueReport.jsx":
-/*!*****************************!*\
-  !*** ./src/IssueReport.jsx ***!
-  \*****************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return IssueReport; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-
-function IssueReport() {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "This is a placeholder for the Issue Report"));
-}
-
-/***/ }),
-
-/***/ "./src/IssueTable.jsx":
-/*!****************************!*\
-  !*** ./src/IssueTable.jsx ***!
-  \****************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return IssueTable; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "react-router-dom");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_router_dom__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var react_router_bootstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-bootstrap */ "react-router-bootstrap");
-/* harmony import */ var react_router_bootstrap__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_router_bootstrap__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-bootstrap */ "react-bootstrap");
-/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__);
-
-
-
-
-const IssueRow = Object(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["withRouter"])(({
-  issue,
-  location: {
-    search
-  },
-  closeIssue,
-  deleteIssue,
-  index
-}) => {
-  const selectLocation = {
-    pathname: `/issues/${issue.id}`,
-    search
-  };
-  const editTooltip = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Tooltip"], {
-    id: "close-tooltip",
-    placement: "top"
-  }, "Edit Issue");
-  const closeTooltip = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Tooltip"], {
-    id: "close-tooltip",
-    placement: "top"
-  }, "Close Issue");
-  const deleteTooltip = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Tooltip"], {
-    id: "delete-tooltip",
-    placement: "top"
-  }, "Delete Issue");
-
-  function onClose(e) {
-    e.preventDefault();
-    closeIssue(index);
-  }
-
-  function onDelete(e) {
-    e.preventDefault();
-    deleteIssue(index);
-  }
-
-  const tableRow = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, issue.id), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, issue.status), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, issue.owner), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, issue.created.toDateString()), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, issue.effort), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, issue.due ? issue.due.toDateString() : ''), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, issue.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_bootstrap__WEBPACK_IMPORTED_MODULE_2__["LinkContainer"], {
-    to: `/edit/${issue.id}`
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["OverlayTrigger"], {
-    delayShow: 1000,
-    overlay: editTooltip
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Button"], {
-    bsSize: "xsmall"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Glyphicon"], {
-    glyph: "edit"
-  })))), ' ', /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["OverlayTrigger"], {
-    delayShow: 1000,
-    overlay: closeTooltip
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Button"], {
-    bsSize: "xsmall",
-    onClick: onClose
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Glyphicon"], {
-    glyph: "remove"
-  }))), ' ', /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["OverlayTrigger"], {
-    delayShow: 1000,
-    overlay: deleteTooltip
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Button"], {
-    bsSize: "xsmall",
-    onClick: onDelete
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Glyphicon"], {
-    glyph: "trash"
-  })))));
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_bootstrap__WEBPACK_IMPORTED_MODULE_2__["LinkContainer"], {
-    to: selectLocation
-  }, tableRow);
-});
-function IssueTable({
-  issues,
-  closeIssue,
-  deleteIssue
-}) {
-  const issueRows = issues.map((issue, index) => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(IssueRow, {
-    key: issue.id,
-    issue: issue,
-    closeIssue: closeIssue,
-    deleteIssue: deleteIssue,
-    index: index
-  }));
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Table"], {
-    bordered: true,
-    condensed: true,
-    hover: true,
-    responsive: true
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("thead", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "ID"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Status"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Owner"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Created"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Effort"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Due Date"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Title"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Action"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, issueRows));
-}
-
-/***/ }),
-
-/***/ "./src/NumInput.jsx":
-/*!**************************!*\
-  !*** ./src/NumInput.jsx ***!
-  \**************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return NumInput; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
-
-
-function format(num) {
-  return num != null ? num.toString() : '';
-}
-
-function unformat(str) {
-  const val = parseInt(str, 10);
-  return Number.isNaN(val) ? null : val;
-}
-
-class NumInput extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      value: format(props.value)
-    };
-    this.onBlur = this.onBlur.bind(this);
-    this.onChange = this.onChange.bind(this);
-  }
-
-  onChange(e) {
-    if (e.target.value.match(/^\d*$/)) {
-      this.setState({
-        value: e.target.value
-      });
-    }
-  }
-
-  onBlur(e) {
-    const {
-      onChange
-    } = this.props;
-    const {
-      value
-    } = this.state;
-    onChange(e, unformat(value));
-  }
-
-  render() {
-    const {
-      value
-    } = this.state;
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", _extends({
-      type: "text"
-    }, this.props, {
-      value: value,
-      onBlur: this.onBlur,
-      onChange: this.onChange
-    }));
-  }
-
-}
-
-/***/ }),
-
 /***/ "./src/Page.jsx":
 /*!**********************!*\
   !*** ./src/Page.jsx ***!
@@ -2654,73 +1388,6 @@ function Page() {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(NavBar, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Grid"], {
     fluid: true
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Contents_jsx__WEBPACK_IMPORTED_MODULE_3__["default"], null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Footer, null));
-}
-
-/***/ }),
-
-/***/ "./src/TextInput.jsx":
-/*!***************************!*\
-  !*** ./src/TextInput.jsx ***!
-  \***************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return TextInput; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-
-
-function format(text) {
-  return text != null ? text : '';
-}
-
-function unformat(text) {
-  return text.trim().length === 0 ? null : text;
-}
-
-class TextInput extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      value: format(props.value)
-    };
-    this.onBlur = this.onBlur.bind(this);
-    this.onChange = this.onChange.bind(this);
-  }
-
-  onChange(e) {
-    this.setState({
-      value: e.target.value
-    });
-  }
-
-  onBlur(e) {
-    const {
-      onChange
-    } = this.props;
-    const {
-      value
-    } = this.state;
-    onChange(e, unformat(value));
-  }
-
-  render() {
-    const {
-      value
-    } = this.state;
-    const {
-      tag = 'input',
-      ...props
-    } = this.props;
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(tag, { ...props,
-      value,
-      onBlur: this.onBlur,
-      onChange: this.onChange
-    });
-  }
-
 }
 
 /***/ }),
@@ -3076,17 +1743,6 @@ module.exports = require("react-router-dom");
 /***/ (function(module, exports) {
 
 module.exports = require("source-map-support");
-
-/***/ }),
-
-/***/ "url-search-params":
-/*!************************************!*\
-  !*** external "url-search-params" ***!
-  \************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("url-search-params");
 
 /***/ }),
 
