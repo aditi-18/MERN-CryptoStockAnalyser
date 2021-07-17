@@ -20,4 +20,3 @@ async function render(req, res) {
 }
 
 export default render;
-
