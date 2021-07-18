@@ -8,6 +8,7 @@ This chapter deals with adding functionality to the application. The UI code is 
 ![CH-13](https://github.ccs.neu.edu/NEU-CS5610-SU21/SahaiAyush-book/blob/master/Screenshots/ch-13.JPG)
 ![CH-13](https://github.ccs.neu.edu/NEU-CS5610-SU21/SahaiAyush-book/blob/master/Screenshots/search.JPG)
 
+
 Chapter 12
 
 This chapter deals with the ability of React to generate HTML on the server in addition to being able to render directly to the DOM. This enables creation of isomorphic applications, that is, applications that use the same codebase on the server as well as the client to do either task: render to the DOM or create HTML. Server rendering (also known as server-side rendering or SSR for short) is the opposite of what characterizes an SPA. So, to have pages from an application be properly indexed by search engines, the server needs to respond with the same HTML that will result after the Ajax call in componentDidMount() methods and subsequent re-rendering of the page.
