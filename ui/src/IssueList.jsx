@@ -39,8 +39,10 @@ class IssueList extends React.Component {
         effortMin: $effortMin
         effortMax: $effortMax
       ) {
-        id title status owner
-        created effort due
+        issues {
+          id title status owner
+          created effort due
+        }
       }
       issue(id: $selectedId) @include (if : $hasSelection) {
         id description
@@ -53,7 +55,8 @@ class IssueList extends React.Component {
 
   constructor() {
     super();
-    const issues = store.initialData ? store.initialData.issueList : null;
+    const issues = store.initialData
+      ? store.initialData.issueList.issues : null;
     const selectedIssue = store.initialData
       ? store.initialData.issue
       : null;
@@ -86,7 +89,10 @@ class IssueList extends React.Component {
     const { location: { search }, match, showError } = this.props;
     const data = await IssueList.fetchData(match, search, showError);
     if (data) {
-      this.setState({ issues: data.issueList, selectedIssue: data.issue });
+      this.setState({
+        issues: data.issueList.issues,
+        selectedIssue: data.issue,
+      });
     }
   }
 
@@ -148,7 +154,7 @@ class IssueList extends React.Component {
             <Panel.Title toggle>Filter</Panel.Title>
           </Panel.Heading>
           <Panel.Body collapsible>
-            <IssueFilter />
+            <IssueFilter urlBase="/issues" />
           </Panel.Body>
         </Panel>
         <IssueTable
