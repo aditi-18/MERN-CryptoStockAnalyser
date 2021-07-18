@@ -2,12 +2,13 @@ import React from 'react';
 import {
   Navbar, Nav, NavItem, NavDropdown,
   MenuItem, Glyphicon,
-  Grid,
+  Grid, Col,
 } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 
 import Contents from './Contents.jsx';
 import IssueAddNavItem from './IssueAddNavItem.jsx';
+import Search from './Search.jsx';
 
 function NavBar() {
   return (
@@ -26,6 +27,11 @@ function NavBar() {
           <NavItem>Report</NavItem>
         </LinkContainer>
       </Nav>
+      <Col sm={5}>
+        <Navbar.Form>
+          <Search />
+        </Navbar.Form>
+      </Col>
       <Nav pullRight>
         <IssueAddNavItem />
         <NavDropdown
@@ -49,8 +55,8 @@ function Footer() {
       <p className="text-center">
         Full source code available at this
         {' '}
-        <a href="https://github.ccs.neu.edu/NEU-CS5610-SU21/SahaiAyush-book">
-          SahaiAyush-Book
+        <a href="https://github.com/vasansr/pro-mern-stack-2">
+          GitHub repository
         </a>
       </p>
     </small>
