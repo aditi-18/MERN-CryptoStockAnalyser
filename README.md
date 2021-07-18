@@ -1,5 +1,12 @@
 PRO MERN stack book
 
+Chapter 12
+
+Thischapter deals with the ability of React to generate HTML on the server in addition to being able to render directly to the DOM. This enables creation of isomorphic applications, that is, applications that use the same codebase on the server as well as the client to do either task: render to the DOM or create HTML. Server rendering (also known as server-side rendering or SSR for short) is the opposite of what characterizes an SPA. So, to have pages from an application be properly indexed by search engines, the server needs to respond with the same HTML that will result after the Ajax call in componentDidMount() methods and subsequent re-rendering of the page.
+Server side rendering works, the application is up and running and screenshots updated.
+
+![CH-12](https://github.ccs.neu.edu/NEU-CS5610-SU21/SahaiAyush-book/blob/master/Screenshots/ch-12.JPG)
+
 Chapter 11
 
 This chapter deals with making the view better for the user and involves changes mainly in the UI part. React-Bootstrap is used for the pupose. Bootstrap installation is done, then the ui is updated one by one. Navigation bar is added, buttons are added, panels, tables, forms, inline forms, grid system, horizontal forms, toasts, modals are added. All of these make the ui appear better and more visualizable. Bootstrap, a pioneer in this area, enabled browser independence and a responsive behavior out of the box. React-Bootstrap replaced the separate JavaScript code that dealt with the Bootstrap elements and made self-contained components possible. The application is up and running and the screenshots are updated.
