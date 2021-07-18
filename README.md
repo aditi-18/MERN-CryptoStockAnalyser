@@ -1,8 +1,15 @@
 PRO MERN stack book
 
+Chapter 13
+
+This chapter deals with adding functionality to the application. The UI code is refactored to reuse common code across many components that display the Toast messages. Most of the repetitive code is also removed. The report page which was a placeholder is updated. The aggregate function of mongodb is used for the same. The pagination feature is implemented in both UI and API side to get rid of the large lists populating on the screen. Earlier the issues used to get deleted permanently, now the undo delete option is added. This is used to recover the deleted issue. The search bar is also added in which the user can search for the issues with the keywords. The application is up and running and the screenshots for the report page and the search bar are attached.
+
+![CH-12](https://github.ccs.neu.edu/NEU-CS5610-SU21/SahaiAyush-book/blob/master/Screenshots/ch-13.JPG)
+![CH-12](https://github.ccs.neu.edu/NEU-CS5610-SU21/SahaiAyush-book/blob/master/Screenshots/ch-13.1.JPG)
+
 Chapter 12
 
-Thischapter deals with the ability of React to generate HTML on the server in addition to being able to render directly to the DOM. This enables creation of isomorphic applications, that is, applications that use the same codebase on the server as well as the client to do either task: render to the DOM or create HTML. Server rendering (also known as server-side rendering or SSR for short) is the opposite of what characterizes an SPA. So, to have pages from an application be properly indexed by search engines, the server needs to respond with the same HTML that will result after the Ajax call in componentDidMount() methods and subsequent re-rendering of the page.
+This chapter deals with the ability of React to generate HTML on the server in addition to being able to render directly to the DOM. This enables creation of isomorphic applications, that is, applications that use the same codebase on the server as well as the client to do either task: render to the DOM or create HTML. Server rendering (also known as server-side rendering or SSR for short) is the opposite of what characterizes an SPA. So, to have pages from an application be properly indexed by search engines, the server needs to respond with the same HTML that will result after the Ajax call in componentDidMount() methods and subsequent re-rendering of the page.
 Server side rendering works, the application is up and running and screenshots updated.
 
 ![CH-12](https://github.ccs.neu.edu/NEU-CS5610-SU21/SahaiAyush-book/blob/master/Screenshots/ch-12.JPG)
