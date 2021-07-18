@@ -6,6 +6,7 @@ This chapter deals with adding functionality to the application. The UI code is 
 
 
 ![CH-13](https://github.ccs.neu.edu/NEU-CS5610-SU21/SahaiAyush-book/blob/master/Screenshots/ch-13.JPG)
+![CH-13](https://github.ccs.neu.edu/NEU-CS5610-SU21/SahaiAyush-book/blob/master/Screenshots/search.JPG)
 
 Chapter 12
 
