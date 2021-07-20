@@ -5,7 +5,7 @@ import {
   Grid, Col,
 } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
-
+import SignInNavItem from './SignInNavItem.jsx';
 import Contents from './Contents.jsx';
 import IssueAddNavItem from './IssueAddNavItem.jsx';
 import Search from './Search.jsx';
@@ -34,6 +34,7 @@ function NavBar() {
       </Col>
       <Nav pullRight>
         <IssueAddNavItem />
+        <SignInNavItem />
         <NavDropdown
           id="user-dropdown"
           title={<Glyphicon glyph="option-vertical" />}
