@@ -1,13 +1,17 @@
 require('dotenv').config();
 const express = require('express');
-// eslint-disable-next-line import/extensions
 const { connectToDb } = require('./db.js');
-// eslint-disable-next-line import/extensions
 const { installHandler } = require('./api_handler.js');
+const auth = require('./auth.js');
 
 const app = express();
+
+app.use('/auth', auth.routes);
+
 installHandler(app);
+
 const port = process.env.API_SERVER_PORT || 3000;
+
 (async function start() {
   try {
     await connectToDb();
