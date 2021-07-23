@@ -1,3 +1,4 @@
+/* eslint-disable import/extensions */
 const fs = require('fs');
 require('dotenv').config();
 const { ApolloServer } = require('apollo-server-express');
@@ -10,6 +11,7 @@ const auth = require('./auth.js');
 const resolvers = {
   Query: {
     about: about.getMessage,
+    user: auth.resolveUser,
     issueList: issue.list,
     issue: issue.get,
     issueCounts: issue.counts,
