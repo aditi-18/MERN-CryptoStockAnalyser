@@ -5,7 +5,7 @@ import {
   Grid, Col,
 } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
-
+import UserContext from './UserContext.js';
 import Contents from './Contents.jsx';
 import IssueAddNavItem from './IssueAddNavItem.jsx';
 import SignInNavItem from './SignInNavItem.jsx';
@@ -94,7 +94,9 @@ export default class Page extends React.Component {
       <div>
         <NavBar user={user} onUserChange={this.onUserChange} />
         <Grid fluid>
+        <UserContext.Provider value={user}>
           <Contents />
+          </UserContext.Provider>
         </Grid>
         <Footer />
       </div>
