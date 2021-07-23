@@ -1,5 +1,16 @@
 PRO MERN stack book
 
+Chapter 14
+
+This chapter deals with creating a custom sign-up and authentication mechanism, and integrating with one of the social sign-ins. Google sign in used here. This serves as a good example for other integrations, since it uses the OAuth2 mechanism, which most other authentication integrations also use. 
+
+Few errors in this chapter are:
+There is some misleading wording on page 474 in the "Google Sign-In" section. The text directs you to save the client ID into the .env file in "the UI server directory". In fact, the .env file should reside in the ui directory itself, not ui/server.
+
+The listing 14-5 is assuming that process.env.GOOGLE_CLIENT_ID is defined. However, there's no code shown that defines this in case it's undefined, as in previous process.env environment variables. So the assumption is that environment variables are being defined in a .env file. The sample.env file should be copied in .env file and used.
+
+![CH-14](https://github.ccs.neu.edu/NEU-CS5610-SU21/SahaiAyush-book/blob/master/Screenshots/ch-14.JPG)
+
 Chapter 13
 
 This chapter deals with adding functionality to the application. The UI code is refactored to reuse common code across many components that display the Toast messages. Most of the repetitive code is also removed. The report page which was a placeholder is updated. The aggregate function of mongodb is used for the same. The pagination feature is implemented in both UI and API side to get rid of the large lists populating on the screen. Earlier the issues used to get deleted permanently, now the undo delete option is added. This is used to recover the deleted issue. The search bar is also added in which the user can search for the issues with the keywords. The application is up and running and the screenshots for the report page and the search bar are attached.
