@@ -19,7 +19,7 @@ if (!JWT_SECRET) {
 const routes = new Router();
 routes.use(bodyParser.json());
 
-const origin = process.env.UI_SERVER_ORIGIN || 'http://localhost:8000';
+const origin = process.env.UI_SERVER_ORIGIN || 'http://ui.promernstack.com:8000';
 routes.use(cors({ origin, credentials: true }));
 
 function getUser(req) {
@@ -60,7 +60,7 @@ routes.post('/signin', async (req, res) => {
   };
 
   const token = jwt.sign(credentials, JWT_SECRET);
-  res.cookie('jwt', token, { httpOnly: true });
+  res.cookie('jwt', token, { httpOnly: true, domain: process.env.COOKIE_DOMAIN });
 
   res.json(credentials);
 });
