@@ -1,5 +1,16 @@
 PRO MERN stack book
 
+Chapter 15
+
+https://tracker-ui--mern.herokuapp.com/
+
+This chapter deals with app deployment using heroku. The simplest way to deploy an app on Heroku is using a Git repository. This chapter deals with how the Issue Tracker source code can be controlled and shared among a team for collaboration. Although we made the Issue Tracker application work on your local computer, deploying it to the cloud,
+especially to a Platform-as-a-Service, introduced some challenges. In the proxy mode, we had to set up the http-proxy-middleware correctly to change the Host header
+when proxying requests. Working link of application is posted and the screenshot and readme are updated.
+
+![CH-14](https://github.ccs.neu.edu/NEU-CS5610-SU21/SahaiAyush-book/blob/master/Screenshots/ch-15.JPG)
+
+
 Chapter 14
 
 This chapter deals with creating a custom sign-up and authentication mechanism, and integrating with one of the social sign-ins. Google sign in used here. This serves as a good example for other integrations, since it uses the OAuth2 mechanism, which most other authentication integrations also use. 
