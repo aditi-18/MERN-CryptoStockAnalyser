@@ -87,16 +87,16 @@ class IssueFilter extends React.Component {
               onChange={this.onChangeStatus}
             >
               <option value="">(All)</option>
-              <option value="New">New</option>
-              <option value="Assigned">Assigned</option>
-              <option value="Fixed">Fixed</option>
-              <option value="Closed">Closed</option>
+              <option value="Income">Income</option>
+              <option value="Expenditure">Expenditure</option>
+              <option value="Fixed">Savings</option>
+              <option value="Closed">Credits</option>
             </FormControl>
           </FormGroup>
         </Col>
         <Col xs={6} sm={4} md={3} lg={2}>
           <FormGroup>
-            <ControlLabel>Effort between:</ControlLabel>
+            <ControlLabel>Expense between:</ControlLabel>
             <InputGroup>
               <FormControl value={effortMin} onChange={this.onChangeEffortMin} />
               <InputGroup.Addon>-</InputGroup.Addon>

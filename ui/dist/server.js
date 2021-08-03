@@ -22,7 +22,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "6c411cd58316e11102aa";
+/******/ 	var hotCurrentHash = "e552250d1bfc73de10da";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -1239,6 +1239,59 @@ class About extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
 
 /***/ }),
 
+/***/ "./src/Coin.js":
+/*!*********************!*\
+  !*** ./src/Coin.js ***!
+  \*********************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+ //require('./style.css');
+//import './Coin.css';
+
+const Coin = ({
+  name,
+  price,
+  symbol,
+  marketcap,
+  volume,
+  image,
+  priceChange
+}) => {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "coin-container"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "coin-row"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "coin"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: image,
+    alt: "crypto"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "coin-symbol"
+  }, symbol)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "coin-data"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "coin-price"
+  }, "$", price), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "coin-volume"
+  }, "$", volume.toLocaleString()), priceChange < 0 ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "coin-percent red"
+  }, priceChange.toFixed(2), "%") : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "coin-percent green"
+  }, priceChange.toFixed(2), "%"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "coin-marketcap"
+  }, "Mkt Cap: $", marketcap.toLocaleString()))));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Coin);
+
+/***/ }),
+
 /***/ "./src/Contents.jsx":
 /*!**************************!*\
   !*** ./src/Contents.jsx ***!
@@ -1268,6 +1321,71 @@ function Contents() {
     key: attrs.path
   }))));
 }
+
+/***/ }),
+
+/***/ "./src/Crypto.jsx":
+/*!************************!*\
+  !*** ./src/Crypto.jsx ***!
+  \************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./axios */ "./src/axios.js");
+/* harmony import */ var _Coin__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Coin */ "./src/Coin.js");
+
+ //require('./style.css');
+//import './App.css';
+
+
+
+function Crypto() {
+  const [coins, setCoins] = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])([]);
+  const [search, setSearch] = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])('');
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
+    _axios__WEBPACK_IMPORTED_MODULE_1__["default"].get('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=250&page=1&sparkline=false').then(res => {
+      setCoins(res.data);
+      console.log(res.data);
+    }).catch(error => console.log(error));
+  }, []);
+
+  const handleChange = e => {
+    setSearch(e.target.value);
+  };
+
+  const filteredCoins = coins.filter(coin => coin.name.toLowerCase().includes(search.toLowerCase()));
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "coin-app"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "coin-search"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+    className: "coin-text"
+  }, "Search a currency"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    className: "coin-input",
+    type: "text",
+    onChange: handleChange,
+    placeholder: "Search"
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "header"
+  }, "Symbol   Coin   Price    Volume    %change    Market Cap"), filteredCoins.map(coin => {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Coin__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      key: coin.id,
+      name: coin.name,
+      price: coin.current_price,
+      symbol: coin.symbol,
+      marketcap: coin.total_volume,
+      volume: coin.market_cap,
+      image: coin.image,
+      priceChange: coin.price_change_percentage_24h
+    });
+  }));
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (Crypto);
 
 /***/ }),
 
@@ -2799,6 +2917,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _UserContext_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./UserContext.js */ "./src/UserContext.js");
 /* harmony import */ var _graphQLFetch_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./graphQLFetch.js */ "./src/graphQLFetch.js");
 /* harmony import */ var _store_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./store.js */ "./src/store.js");
+/* harmony import */ var _Crypto_jsx__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./Crypto.jsx */ "./src/Crypto.jsx");
+
 
 
 
@@ -2822,8 +2942,12 @@ function NavBar({
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["NavItem"], null, "Home")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_bootstrap__WEBPACK_IMPORTED_MODULE_2__["LinkContainer"], {
     to: "/issues"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["NavItem"], null, "Issue List")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_bootstrap__WEBPACK_IMPORTED_MODULE_2__["LinkContainer"], {
+    to: "/crypto"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["NavItem"], null, "CryptoCurrency")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_bootstrap__WEBPACK_IMPORTED_MODULE_2__["LinkContainer"], {
     to: "/report"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["NavItem"], null, "Report"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["NavItem"], null, "Stock")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_bootstrap__WEBPACK_IMPORTED_MODULE_2__["LinkContainer"], {
+    to: "/crypto"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["NavItem"], null, "CurrencyConvert"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
     sm: 5
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Navbar"].Form, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Search_jsx__WEBPACK_IMPORTED_MODULE_6__["default"], null))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Nav"], {
     pullRight: true
@@ -3317,6 +3441,25 @@ const UserContext = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.cr
 
 /***/ }),
 
+/***/ "./src/axios.js":
+/*!**********************!*\
+  !*** ./src/axios.js ***!
+  \**********************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "axios");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+
+const instance = axios__WEBPACK_IMPORTED_MODULE_0___default.a.create({
+  baseURL: 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=250&page=1&sparkline=false'
+});
+/* harmony default export */ __webpack_exports__["default"] = (instance);
+
+/***/ }),
+
 /***/ "./src/graphQLFetch.js":
 /*!*****************************!*\
   !*** ./src/graphQLFetch.js ***!
@@ -3391,7 +3534,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _IssueReport_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./IssueReport.jsx */ "./src/IssueReport.jsx");
 /* harmony import */ var _IssueEdit_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./IssueEdit.jsx */ "./src/IssueEdit.jsx");
 /* harmony import */ var _About_jsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./About.jsx */ "./src/About.jsx");
-/* harmony import */ var _NotFound_jsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./NotFound.jsx */ "./src/NotFound.jsx");
+/* harmony import */ var _Crypto_jsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Crypto.jsx */ "./src/Crypto.jsx");
+/* harmony import */ var _NotFound_jsx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./NotFound.jsx */ "./src/NotFound.jsx");
+
 
 
 
@@ -3410,8 +3555,11 @@ const routes = [{
   path: '/about',
   component: _About_jsx__WEBPACK_IMPORTED_MODULE_3__["default"]
 }, {
+  path: '/crypto',
+  component: _Crypto_jsx__WEBPACK_IMPORTED_MODULE_4__["default"]
+}, {
   path: '*',
-  component: _NotFound_jsx__WEBPACK_IMPORTED_MODULE_4__["default"]
+  component: _NotFound_jsx__WEBPACK_IMPORTED_MODULE_5__["default"]
 }];
 /* harmony default export */ __webpack_exports__["default"] = (routes);
 
@@ -3607,6 +3755,17 @@ module.exports = [browserConfig, serverConfig];
 __webpack_require__(/*! ./server/uiserver.js */"./server/uiserver.js");
 module.exports = __webpack_require__(/*! ./node_modules/webpack/hot/poll?1000 */"./node_modules/webpack/hot/poll.js?1000");
 
+
+/***/ }),
+
+/***/ "axios":
+/*!************************!*\
+  !*** external "axios" ***!
+  \************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("axios");
 
 /***/ }),
 

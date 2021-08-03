@@ -1,8 +1,8 @@
 scalar GraphQLDate
 
 enum StatusType {
-  New
-  Assigned
+  Income
+  Expenditure
   Fixed
   Closed
 }
@@ -11,7 +11,7 @@ type Issue {
   _id: ID!
   id: Int!
   title: String!
-  status: StatusType!
+  status: StatusType
   owner: String
   effort: Int
   created: GraphQLDate!
@@ -21,8 +21,8 @@ type Issue {
 
 type IssueCounts {
   owner: String!
-  New: Int
-  Assigned: Int
+  Income: Int
+  Expenditure: Int
   Fixed: Int
   Closed: Int
 }

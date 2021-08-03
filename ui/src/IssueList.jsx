@@ -164,7 +164,7 @@ class IssueList extends React.Component {
       });
       const undoMessage = (
         <span>
-          {`Deleted issue ${id} successfully.`}
+          {`Deleted Expense ${id} successfully.`}
           <Button bsStyle="link" onClick={() => this.restoreIssue(id)}>
             UNDO
           </Button>
@@ -183,7 +183,7 @@ class IssueList extends React.Component {
     const { showSuccess, showError } = this.props;
     const data = await graphQLFetch(query, { id }, showError);
     if (data) {
-      showSuccess(`Issue ${id} restored successfully.`);
+      showSuccess(`Expense ${id} restored successfully.`);
       this.loadData();
     }
   }

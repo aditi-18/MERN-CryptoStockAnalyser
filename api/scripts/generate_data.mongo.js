@@ -2,7 +2,7 @@
 /* eslint no-restricted-globals: "off" */
 
 const owners = ['Ravan', 'Eddie', 'Pieta', 'Parvati', 'Victor'];
-const statuses = ['New', 'Assigned', 'Fixed', 'Closed'];
+const statuses = ['Income', 'Expenditure', 'Fixed', 'Closed'];
 
 const initialCount = db.issues.count();
 

@@ -6,7 +6,8 @@ import withToast from './withToast.jsx';
 import graphQLFetch from './graphQLFetch.js';
 import store from './store.js';
 
-const statuses = ['New', 'Assigned', 'Fixed', 'Closed'];
+
+const statuses = ['Income', 'Expenditure', 'Fixed', 'Closed'];
 
 class IssueReport extends React.Component {
   static async fetchData(match, search, showError) {
@@ -29,7 +30,7 @@ class IssueReport extends React.Component {
         effortMin: $effortMin
         effortMax: $effortMax
       ) {
-        owner New Assigned Fixed Closed
+        owner Income Expenditure Fixed Closed
       }
     }`;
     const data = await graphQLFetch(query, vars, showError);
@@ -112,4 +113,4 @@ class IssueReport extends React.Component {
 const IssueReportWithToast = withToast(IssueReport);
 IssueReportWithToast.fetchData = IssueReport.fetchData;
 
-export default IssueReportWithToast;
+export default IssueReportWithToast; 

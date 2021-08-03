@@ -59,14 +59,14 @@ class IssueAddNavItem extends React.Component {
           <OverlayTrigger
             placement="left"
             delayShow={1000}
-            overlay={<Tooltip id="create-issue">Create Issue</Tooltip>}
+            overlay={<Tooltip id="create-issue">Create Expense</Tooltip>}
           >
             <Glyphicon glyph="plus" />
           </OverlayTrigger>
         </NavItem>
         <Modal keyboard show={showing} onHide={this.hideModal}>
           <Modal.Header closeButton>
-            <Modal.Title>Create Issue</Modal.Title>
+            <Modal.Title>Create Expense</Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <Form name="issueAdd">

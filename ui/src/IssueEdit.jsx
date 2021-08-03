@@ -98,7 +98,7 @@ class IssueEdit extends React.Component {
     const data = await graphQLFetch(query, { changes, id }, showError);
     if (data) {
       this.setState({ issue: data.issueUpdate });
-      showSuccess('Updated issue successfully');
+      showSuccess('Updated Expense successfully');
     }
   }
 
@@ -148,7 +148,7 @@ class IssueEdit extends React.Component {
     return (
       <Panel>
         <Panel.Heading>
-          <Panel.Title>{`Editing issue: ${id}`}</Panel.Title>
+          <Panel.Title>{`Editing Expense: ${id}`}</Panel.Title>
         </Panel.Heading>
         <Panel.Body>
           <Form horizontal onSubmit={this.handleSubmit}>
@@ -169,10 +169,10 @@ class IssueEdit extends React.Component {
                   value={status}
                   onChange={this.onChange}
                 >
-                  <option value="New">New</option>
-                  <option value="Assigned">Assigned</option>
-                  <option value="Fixed">Fixed</option>
-                  <option value="Closed">Closed</option>
+                  <option value="Income">Income</option>
+                  <option value="Expenditure">Expenditure</option>
+                  <option value="Fixed">Savings</option>
+                  <option value="Closed">Credits</option>
                 </FormControl>
               </Col>
             </FormGroup>
@@ -189,7 +189,7 @@ class IssueEdit extends React.Component {
               </Col>
             </FormGroup>
             <FormGroup>
-              <Col componentClass={ControlLabel} sm={3}>Effort</Col>
+              <Col componentClass={ControlLabel} sm={3}>Expense</Col>
               <Col sm={9}>
                 <FormControl
                   componentClass={NumInput}
@@ -204,18 +204,7 @@ class IssueEdit extends React.Component {
               invalidFields.due ? 'error' : null
             }
             >
-              <Col componentClass={ControlLabel} sm={3}>Due</Col>
-              <Col sm={9}>
-                <FormControl
-                  componentClass={DateInput}
-                  onValidityChange={this.onValidityChange}
-                  name="due"
-                  value={due}
-                  onChange={this.onChange}
-                  key={id}
-                />
-                <FormControl.Feedback />
-              </Col>
+             
             </FormGroup>
             <FormGroup>
               <Col componentClass={ControlLabel} sm={3}>Title</Col>

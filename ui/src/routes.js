@@ -2,6 +2,7 @@ import IssueList from './IssueList.jsx';
 import IssueReport from './IssueReport.jsx';
 import IssueEdit from './IssueEdit.jsx';
 import About from './About.jsx';
+import Crypto from './Crypto.jsx';
 import NotFound from './NotFound.jsx';
 
 const routes = [
@@ -9,6 +10,7 @@ const routes = [
   { path: '/edit/:id', component: IssueEdit },
   { path: '/report', component: IssueReport },
   { path: '/about', component: About },
+  { path: '/crypto', component: Crypto },
   { path: '*', component: NotFound },
 ];
 

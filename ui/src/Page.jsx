@@ -13,22 +13,29 @@ import Search from './Search.jsx';
 import UserContext from './UserContext.js';
 import graphQLFetch from './graphQLFetch.js';
 import store from './store.js';
+import Crypto from './Crypto.jsx'
 
 function NavBar({ user, onUserChange }) {
   return (
     <Navbar fluid>
       <Navbar.Header>
-        <Navbar.Brand>Issue Tracker</Navbar.Brand>
+        <Navbar.Brand>Crypto Exchange Tool</Navbar.Brand>
       </Navbar.Header>
       <Nav>
         <LinkContainer exact to="/">
           <NavItem>Home</NavItem>
         </LinkContainer>
         <LinkContainer to="/issues">
-          <NavItem>Issue List</NavItem>
+          <NavItem>Expense List</NavItem>
+        </LinkContainer>
+        <LinkContainer to="/crypto">
+          <NavItem>CryptoCurrency</NavItem>
         </LinkContainer>
         <LinkContainer to="/report">
-          <NavItem>Report</NavItem>
+          <NavItem>Stock</NavItem>
+        </LinkContainer>
+        <LinkContainer to="/crypto">
+          <NavItem>CurrencyConvert</NavItem>
         </LinkContainer>
       </Nav>
       <Col sm={5}>

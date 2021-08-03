@@ -42,8 +42,8 @@ function validate(issue) {
   if (issue.title.length < 3) {
     errors.push('Field "title" must be at least 3 characters long.');
   }
-  if (issue.status === 'Assigned' && !issue.owner) {
-    errors.push('Field "owner" is required when status is "Assigned"');
+  if (issue.status === 'Expenditure' && !issue.owner) {
+    errors.push('Field "owner" is required when status is "Expenditure"');
   }
   if (errors.length > 0) {
     throw new UserInputError('Invalid input(s)', { errors });

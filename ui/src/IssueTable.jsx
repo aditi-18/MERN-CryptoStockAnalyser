@@ -101,8 +101,8 @@ export default function IssueTable({ issues, closeIssue, deleteIssue }) {
           <th>Status</th>
           <th>Owner</th>
           <th>Created</th>
-          <th>Effort</th>
-          <th>Due Date</th>
+          <th>Expenses</th>
+          <th>Due</th>
           <th>Title</th>
           <th>Action</th>
         </tr>

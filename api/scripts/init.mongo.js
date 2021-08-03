@@ -18,11 +18,11 @@ db.deleted_issues.remove({});
 const issuesDB = [
   {
     id: 1,
-    status: 'New',
+    status: 'Expenditure',
     owner: 'Ravan',
     effort: 5,
     created: new Date('2019-01-15'),
-    due: undefined,
+    
     title: 'Error in console when clicking Add',
     description: 'Steps to recreate the problem:'
     + '\n1. Refresh the browser.'
@@ -35,11 +35,11 @@ const issuesDB = [
   },
   {
     id: 2,
-    status: 'Assigned',
+    status: 'Expenditure',
     owner: 'Eddie',
     effort: 14,
     created: new Date('2019-01-16'),
-    due: new Date('2019-02-01'),
+    
     title: 'Missing bottom border on panel',
     description: 'There needs to be a border in the bottom in the panel'
     + ' that appears when clicking on Add',
