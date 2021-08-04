@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 import React from 'react';
 import {
   Navbar, Nav, NavItem, NavDropdown,
@@ -13,7 +14,7 @@ import Search from './Search.jsx';
 import UserContext from './UserContext.js';
 import graphQLFetch from './graphQLFetch.js';
 import store from './store.js';
-import Crypto from './Crypto.jsx'
+import Crypto from './Crypto.jsx';
 
 function NavBar({ user, onUserChange }) {
   return (
@@ -65,11 +66,14 @@ function Footer() {
     <small>
       <hr />
       <p className="text-center">
-        Full source code available at this
-        {' '}
-        <a href="https://github.ccs.neu.edu/NEU-CS5610-SU21/SahaiAyush-book">
-          SahaiAyush-Book
-        </a>
+        <h4>
+          Full source code available at this
+          {' '}
+          <a href="https://github.ccs.neu.edu/NEU-CS5610-SU21/CryptoStockAnalyzer" target="/">
+            here.
+
+          </a>
+        </h4>
       </p>
     </small>
   );
