@@ -1,9 +1,11 @@
+/* eslint-disable linebreak-style */
 import IssueList from './IssueList.jsx';
 import IssueReport from './IssueReport.jsx';
 import IssueEdit from './IssueEdit.jsx';
 import About from './About.jsx';
 import Crypto from './Crypto.jsx';
 import NotFound from './NotFound.jsx';
+import HomeUi from './HomeUi.jsx';
 
 const routes = [
   { path: '/issues/:id?', component: IssueList },
@@ -11,7 +13,8 @@ const routes = [
   { path: '/report', component: IssueReport },
   { path: '/about', component: About },
   { path: '/crypto', component: Crypto },
-  { path: '*', component: NotFound },
+  { path: '/HomeUi', component: HomeUi },
+  { path: '*', component: NotFound }
 ];
 
 export default routes;

@@ -1,4 +1,6 @@
 /* eslint-disable linebreak-style */
+/* eslint-disable no-unused-vars */
+/* eslint-disable linebreak-style */
 import React from 'react';
 import {
   Navbar, Nav, NavItem, NavDropdown,
@@ -15,6 +17,7 @@ import UserContext from './UserContext.js';
 import graphQLFetch from './graphQLFetch.js';
 import store from './store.js';
 import Crypto from './Crypto.jsx';
+import HomeUi from './HomeUi.jsx';
 
 function NavBar({ user, onUserChange }) {
   return (
@@ -23,8 +26,9 @@ function NavBar({ user, onUserChange }) {
         <Navbar.Brand>Crypto Exchange Tool</Navbar.Brand>
       </Navbar.Header>
       <Nav>
-        <LinkContainer exact to="/">
-          <NavItem>Home</NavItem>
+        <LinkContainer exact to="/HomeUi">
+          <NavItem>Home </NavItem>
+       
         </LinkContainer>
         <LinkContainer to="/issues">
           <NavItem>Expense List</NavItem>
