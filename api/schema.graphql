@@ -3,8 +3,8 @@ scalar GraphQLDate
 enum StatusType {
   Income
   Expenditure
-  Fixed
-  Closed
+  Savings
+  Credit
 }
 
 type Issue {
@@ -23,8 +23,8 @@ type IssueCounts {
   owner: String!
   Income: Int
   Expenditure: Int
-  Fixed: Int
-  Closed: Int
+  Savings: Int
+  Credit: Int
 }
 
 type IssueListWithPages {
@@ -43,7 +43,7 @@ type User {
 input IssueInputs {
   title: String!
   "Optional, if not supplied, will be set to 'New'"
-  status: StatusType = New
+  status: StatusType = Income
   owner: String
   effort: Int
   due: GraphQLDate

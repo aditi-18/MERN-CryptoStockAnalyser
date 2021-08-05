@@ -171,8 +171,8 @@ class IssueEdit extends React.Component {
                 >
                   <option value="Income">Income</option>
                   <option value="Expenditure">Expenditure</option>
-                  <option value="Fixed">Savings</option>
-                  <option value="Closed">Credits</option>
+                  <option value="Savings">Savings</option>
+                  <option value="Credit">Credits</option>
                 </FormControl>
               </Col>
             </FormGroup>

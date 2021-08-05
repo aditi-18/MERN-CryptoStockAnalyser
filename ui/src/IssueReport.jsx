@@ -7,7 +7,7 @@ import graphQLFetch from './graphQLFetch.js';
 import store from './store.js';
 
 
-const statuses = ['Income', 'Expenditure', 'Fixed', 'Closed'];
+const statuses = ['Income', 'Expenditure', 'Savings', 'Credit'];
 
 class IssueReport extends React.Component {
   static async fetchData(match, search, showError) {
@@ -30,7 +30,7 @@ class IssueReport extends React.Component {
         effortMin: $effortMin
         effortMax: $effortMax
       ) {
-        owner Income Expenditure Fixed Closed
+        owner Income Expenditure Savings Credit
       }
     }`;
     const data = await graphQLFetch(query, vars, showError);
