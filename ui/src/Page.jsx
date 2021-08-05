@@ -18,6 +18,7 @@ import graphQLFetch from './graphQLFetch.js';
 import store from './store.js';
 import Crypto from './Crypto.jsx';
 import HomeUi from './HomeUi.jsx';
+import CurrencyConversion from './CurrencyConversion.jsx';
 
 function NavBar({ user, onUserChange }) {
   return (
@@ -28,7 +29,7 @@ function NavBar({ user, onUserChange }) {
       <Nav>
         <LinkContainer exact to="/HomeUi">
           <NavItem>Home </NavItem>
-       
+
         </LinkContainer>
         <LinkContainer to="/issues">
           <NavItem>Expense List</NavItem>
@@ -39,7 +40,7 @@ function NavBar({ user, onUserChange }) {
         <LinkContainer to="/report">
           <NavItem>Stock</NavItem>
         </LinkContainer>
-        <LinkContainer to="/crypto">
+        <LinkContainer to="/CurrencyConversion">
           <NavItem>CurrencyConvert</NavItem>
         </LinkContainer>
       </Nav>
