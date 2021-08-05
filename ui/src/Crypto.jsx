@@ -1,9 +1,62 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 //require('./style.css');
-//import './App.css';
+//import  './App.css';
 import Coin from './Coin.js';
 import ReactPaginate from 'react-paginate';
+
+const ss = {
+  coinmain: {
+    boxSizing: "border-box",
+    margin: "0",
+    padding: "0",
+    fontFamily: "'Montserrat', sans-serif",
+    backgroundColor: "#1a1a1c",
+    color: "#fff"
+  },
+  coinStyle:{
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    marginTop: "64px",
+    color: "#fff"
+  },
+  
+   coinSearch: {
+     marginBottom: "64px",
+     display: "flex",
+     flexDirection: "column",
+     justifyContent: "center",
+     alignContent: "center"
+   },
+  
+   coinText: {
+     marginBottom: "32px",
+     textAlign: "center"
+   },
+  
+   coinInput: {
+     paddingLeft: "16px",
+     width: "300px",
+     height: "50px",
+     borderRadius: "4px",
+     border: "none",
+     color: "#e2e2e2"
+     //backgroundImage: "{
+      //-225deg,
+      //#ac32e4 0%,
+      //#7918f2 48%,
+      //#4801ff 100%
+   //}"
+   },
+  
+   header:{
+     display: "flex",
+       alignItems: "center",
+       paddingRight: "24px",
+       minWidth: "300px"
+   }
+};
 
  function Crypto() {
     const [coins, setCoins] = useState([]);
@@ -15,7 +68,7 @@ import ReactPaginate from 'react-paginate';
 
 
     const getData = async() => {
-        const res = await axios.get(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=10&page=25&sparkline=false`).then (res => {
+        const res = await axios.get(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=250&page=1&sparkline=false`).then (res => {
             setCoins(res.data); })
         const data = res.data;
         const slice = data.slice(offset, offset + perPage)
@@ -48,21 +101,21 @@ import ReactPaginate from 'react-paginate';
     );
   
     return (
-        
-      <div className='coin-app'>
-        <div className='coin-search'>
-          <h1 className='coin-text'>Search a currency</h1>
+        <div classname = 'coinmain' style ={ss.coinmain}>
+      <div className='coinStyle' style={ss.coinStyle}>
+        <div className='coinSearch' style={ss.coinSearch}>
+          <h1 className='coinText' style={ss.coinText}>Search a currency</h1>
           <form>
             <input
-              className='coin-input'
+              className='coinInput' style={ss.coinInput}
               type='text'
               onChange={handleChange}
-              placeholder='Search'
+              placeholder='Search' 
             />
           </form>
           
         </div>
-        <div className="header">
+        <div className="header" style={ss.header}>
             Symbol   Coin   Price    Volume    %change    Market Cap
           </div>
         {filteredCoins.map(coin => {
@@ -95,7 +148,9 @@ import ReactPaginate from 'react-paginate';
                     activeClassName={"active"}/>
     
       </div>
-      
+</div>
     );
   }
+
+ 
   export default Crypto;
