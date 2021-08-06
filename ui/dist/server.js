@@ -22,7 +22,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "e552250d1bfc73de10da";
+/******/ 	var hotCurrentHash = "4a4b76995c9dfa24ebb4";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -1232,7 +1232,7 @@ class About extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
     } = this.state;
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
       className: "text-center"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Issue Tracker version 0.9"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, apiAbout));
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Expense Tracker version 0.9"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, apiAbout));
   }
 
 }
@@ -1253,6 +1253,64 @@ __webpack_require__.r(__webpack_exports__);
  //require('./style.css');
 //import './Coin.css';
 
+const cc = {
+  coinContainer: {
+    display: "flex",
+    justifyContent: "center"
+  },
+  coinRow: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "start",
+    alignItems: "center",
+    height: "80px",
+    borderBottom: "1px solid #d7d7d7",
+    width: "900px"
+  },
+  coin: {
+    display: "flex",
+    alignItems: "center",
+    paddingRight: "24px",
+    minWidth: "300px"
+  },
+  coinp: {
+    fontSize: "16px",
+    width: "150px"
+  },
+  coinImg: {
+    height: "30px",
+    width: "30px",
+    marginRight: "10px"
+  },
+  coinSymbol: {
+    textTransform: "uppercase"
+  },
+  coinData: {
+    display: "flex",
+    textAlign: "right",
+    justifyContent: "space-between",
+    width: "100%"
+  },
+  coinPrice: {
+    width: "110px"
+  },
+  coinVolume: {
+    width: "155px"
+  },
+  coinMarketcap: {
+    width: "230px"
+  },
+  coinPercent: {
+    width: "100px"
+  } // .red {
+  //   color: #f00606;
+  // }
+  // .green {
+  //   color: #11d811;
+  // }
+
+};
+
 const Coin = ({
   name,
   price,
@@ -1263,28 +1321,37 @@ const Coin = ({
   priceChange
 }) => {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "coin-container"
+    className: "coinContainer",
+    style: cc.coinContainer
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "coin-row"
+    className: "coinRow",
+    style: cc.coinRow
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "coin"
+    className: "coin",
+    style: cc.coin
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     src: image,
+    style: cc.coinImg,
     alt: "crypto"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-    className: "coin-symbol"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "coinSymbol",
+    style: cc.coinSymbol
   }, symbol)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "coin-data"
+    className: "coinData",
+    style: cc.coinData
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-    className: "coin-price"
+    className: "coinPrice",
+    style: cc.coinPrice
   }, "$", price), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-    className: "coin-volume"
+    className: "coinVolume",
+    style: cc.coinVolume
   }, "$", volume.toLocaleString()), priceChange < 0 ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "coin-percent red"
   }, priceChange.toFixed(2), "%") : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "coin-percent green"
   }, priceChange.toFixed(2), "%"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-    className: "coin-marketcap"
+    className: "coinMarketcap",
+    style: cc.coinMarketcap
   }, "Mkt Cap: $", marketcap.toLocaleString()))));
 };
 
@@ -1335,44 +1402,127 @@ function Contents() {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./axios */ "./src/axios.js");
-/* harmony import */ var _Coin__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Coin */ "./src/Coin.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "axios");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _Coin_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Coin.js */ "./src/Coin.js");
+/* harmony import */ var react_paginate__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-paginate */ "react-paginate");
+/* harmony import */ var react_paginate__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_paginate__WEBPACK_IMPORTED_MODULE_3__);
 
  //require('./style.css');
-//import './App.css';
+//import  './App.css';
 
 
+
+const ss = {
+  coinmain: {
+    boxSizing: "border-box",
+    margin: "0",
+    padding: "0",
+    fontFamily: "'Montserrat', sans-serif",
+    backgroundColor: "#1a1a1c",
+    color: "#fff"
+  },
+  coinStyle: {
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    marginTop: "64px",
+    color: "#fff"
+  },
+  coinSearch: {
+    marginBottom: "64px",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignContent: "center"
+  },
+  coinText: {
+    marginBottom: "32px",
+    textAlign: "center"
+  },
+  coinInput: {
+    paddingLeft: "16px",
+    width: "300px",
+    height: "50px",
+    borderRadius: "4px",
+    border: "none",
+    color: "#e2e2e2" //backgroundImage: "{
+    //-225deg,
+    //#ac32e4 0%,
+    //#7918f2 48%,
+    //#4801ff 100%
+    //}"
+
+  },
+  header: {
+    display: "flex",
+    alignItems: "center",
+    paddingRight: "24px",
+    minWidth: "300px"
+  }
+};
 
 function Crypto() {
   const [coins, setCoins] = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])([]);
+  const [data, setData] = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])([]);
+  const [offset, setOffset] = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(0);
   const [search, setSearch] = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])('');
-  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
-    _axios__WEBPACK_IMPORTED_MODULE_1__["default"].get('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=250&page=1&sparkline=false').then(res => {
+  const [perPage] = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(10);
+  const [pageCount, setPageCount] = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(0);
+
+  const getData = async () => {
+    const res = await axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=250&page=1&sparkline=false`).then(res => {
       setCoins(res.data);
-      console.log(res.data);
-    }).catch(error => console.log(error));
-  }, []);
+    });
+    const data = res.data;
+    const slice = data.slice(offset, offset + perPage);
+    const postData = slice.map(pd => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      key: pd.id
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, pd.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+      src: pd.thumbnailUrl,
+      alt: ""
+    })));
+    setData(postData);
+    setPageCount(Math.ceil(25));
+  };
+
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
+    getData();
+  }, [offset]);
 
   const handleChange = e => {
     setSearch(e.target.value);
   };
 
+  const handlePageClick = e => {
+    const selectedPage = e.selected;
+    setOffset(selectedPage + 1);
+  };
+
   const filteredCoins = coins.filter(coin => coin.name.toLowerCase().includes(search.toLowerCase()));
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "coin-app"
+    classname: "coinmain",
+    style: ss.coinmain
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "coin-search"
+    className: "coinStyle",
+    style: ss.coinStyle
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "coinSearch",
+    style: ss.coinSearch
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
-    className: "coin-text"
+    className: "coinText",
+    style: ss.coinText
   }, "Search a currency"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-    className: "coin-input",
+    className: "coinInput",
+    style: ss.coinInput,
     type: "text",
     onChange: handleChange,
     placeholder: "Search"
   }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "header"
+    className: "header",
+    style: ss.header
   }, "Symbol   Coin   Price    Volume    %change    Market Cap"), filteredCoins.map(coin => {
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Coin__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Coin_js__WEBPACK_IMPORTED_MODULE_2__["default"], {
       key: coin.id,
       name: coin.name,
       price: coin.current_price,
@@ -1382,10 +1532,191 @@ function Crypto() {
       image: coin.image,
       priceChange: coin.price_change_percentage_24h
     });
-  }));
+  }), data, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_paginate__WEBPACK_IMPORTED_MODULE_3___default.a, {
+    previousLabel: "prev",
+    nextLabel: "next",
+    breakLabel: "...",
+    breakClassName: "break-me",
+    pageCount: pageCount,
+    marginPagesDisplayed: 2,
+    pageRangeDisplayed: 5,
+    onPageChange: handlePageClick,
+    containerClassName: "pagination",
+    subContainerClassName: "pages pagination",
+    activeClassName: "active"
+  })));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (Crypto);
+
+/***/ }),
+
+/***/ "./src/CurrencyConversion.jsx":
+/*!************************************!*\
+  !*** ./src/CurrencyConversion.jsx ***!
+  \************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-bootstrap */ "react-bootstrap");
+/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _CurrencyRow_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./CurrencyRow.jsx */ "./src/CurrencyRow.jsx");
+
+
+
+const head = {
+  color: 'white',
+  backgroundColor: 'black',
+  textAlign: 'center',
+  fontSize: 40,
+  paddingTop: 5,
+  paddingBottom: 10
+};
+const row = {
+  textAlign: 'center'
+};
+const box = {
+  // backgroundColor: '#000000',
+  padding: 80,
+  backgroundImage: 'linear-gradient(to bottom right, LightSlateGray, Black)'
+};
+const equals = {
+  textAlign: 'center',
+  marginLeft: 15,
+  marginTop: 50,
+  marginRight: 125
+}; // const BASE_URL = 'http://data.fixer.io/api/latest?access_key=3e17d038f709933e14a6ff98b3e1a832';
+
+const BASE_URL = 'https://api.exchangerate-api.com/v4/latest/USD';
+
+function CurrencyConversion() {
+  const [currencyOptions, setCurrencyOptions] = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])([]);
+  const [fromCurrency, setFromCurrency] = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])();
+  const [toCurrency, setToCurrency] = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])();
+  const [exchangeRate, setExchangeRate] = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])();
+  const [amount, setAmount] = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(1);
+  const [amountInFromCurrency, setAmountInFromCurrency] = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(true);
+  const myImg = './1.png';
+  let toAmount;
+  let fromAmount;
+
+  if (amountInFromCurrency) {
+    fromAmount = amount;
+    toAmount = amount * exchangeRate;
+  } else {
+    toAmount = amount;
+    fromAmount = amount / exchangeRate;
+  }
+
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
+    fetch(BASE_URL).then(res => res.json()).then(data => {
+      const firstCurrency = Object.keys(data.rates)[0];
+      setCurrencyOptions([...Object.keys(data.rates)]);
+      setFromCurrency(data.base);
+      setToCurrency(firstCurrency);
+      setExchangeRate(data.rates[firstCurrency]);
+    });
+  }, []);
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
+    if (fromCurrency != null && toCurrency != null) {
+      try {
+        fetch(`${BASE_URL}?base=${fromCurrency}&symbols=${toCurrency}`).then(res => res.json()).then(data => setExchangeRate(data.rates[toCurrency]));
+      } catch (e) {
+        this.setState({
+          errorMessage: e.message
+        });
+      }
+    }
+  }, [fromCurrency, toCurrency]);
+
+  function handleFromAmountChange(e) {
+    setAmount(e.target.value);
+    setAmountInFromCurrency(true);
+  }
+
+  function handleToAmountChange(e) {
+    setAmount(e.target.value);
+    setAmountInFromCurrency(false);
+  }
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    style: box
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+    style: head
+  }, "Currency Conversion"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_CurrencyRow_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    currencyOptions: currencyOptions,
+    selectedCurrency: fromCurrency,
+    onChangeCurrency: e => setFromCurrency(e.target.value),
+    onChangeAmount: handleFromAmountChange,
+    amount: fromAmount
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    style: equals
+  }, "="), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_CurrencyRow_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    currencyOptions: currencyOptions,
+    selectedCurrency: toCurrency,
+    onChangeCurrency: e => setToCurrency(e.target.value),
+    onChangeAmount: handleToAmountChange,
+    amount: toAmount
+  })));
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (CurrencyConversion);
+
+/***/ }),
+
+/***/ "./src/CurrencyRow.jsx":
+/*!*****************************!*\
+  !*** ./src/CurrencyRow.jsx ***!
+  \*****************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return CurrencyRow; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+const row = {
+  textAlign: 'center',
+  paddingTop: 60
+};
+const btn = {
+  backgroundColor: ' #d9d9d9',
+  marginLeft: 10
+};
+const btn2 = {};
+function CurrencyRow(props) {
+  const {
+    currencyOptions,
+    selectedCurrency,
+    onChangeCurrency,
+    onChangeAmount,
+    amount
+  } = props;
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    style: row
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    type: "number",
+    className: "input",
+    value: amount,
+    onChange: onChangeAmount,
+    style: btn2,
+    className: "btn btn-rounded btn-lg"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+    value: selectedCurrency,
+    onChange: onChangeCurrency,
+    style: btn,
+    className: "btn btn-default btn-rounded btn-lg dropdown-toggle"
+  }, currencyOptions.map(option => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+    key: option,
+    value: option
+  }, option))));
+}
 
 /***/ }),
 
@@ -1493,6 +1824,45 @@ class DateInput extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
 
 /***/ }),
 
+/***/ "./src/HomeUi.jsx":
+/*!************************!*\
+  !*** ./src/HomeUi.jsx ***!
+  \************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "axios");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-bootstrap */ "react-bootstrap");
+/* harmony import */ var react_bootstrap__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__);
+/* eslint-disable linebreak-style */
+
+/* eslint-disable no-unused-vars */
+
+/* eslint-disable max-len */
+
+/* eslint-disable linebreak-style */
+
+
+ // eslint-disable-next-line import/prefer-default-export
+
+function HomeUi() {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+    style: {
+      color: 'red',
+      textAlign: 'center'
+    }
+  }, "CryptoStock Analyser "));
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (HomeUi);
+
+/***/ }),
+
 /***/ "./src/IssueAddNavItem.jsx":
 /*!*********************************!*\
   !*** ./src/IssueAddNavItem.jsx ***!
@@ -1585,7 +1955,7 @@ class IssueAddNavItem extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Compo
       delayShow: 1000,
       overlay: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Tooltip"], {
         id: "create-issue"
-      }, "Create Issue")
+      }, "Create Expense")
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Glyphicon"], {
       glyph: "plus"
     }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Modal"], {
@@ -1594,7 +1964,7 @@ class IssueAddNavItem extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Compo
       onHide: this.hideModal
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Modal"].Header, {
       closeButton: true
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Modal"].Title, null, "Create Issue")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Modal"].Body, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Form"], {
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Modal"].Title, null, "Create Expense")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Modal"].Body, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Form"], {
       name: "issueAdd"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["FormGroup"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["ControlLabel"], null, "Title"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["FormControl"], {
       name: "title",
@@ -1807,7 +2177,7 @@ class IssueEdit extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       this.setState({
         issue: data.issueUpdate
       });
-      showSuccess('Updated issue successfully');
+      showSuccess('Updated Expense successfully');
     }
   }
 
@@ -1894,7 +2264,7 @@ class IssueEdit extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       }
     } = this.state;
     const user = this.context;
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Panel"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Panel"].Heading, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Panel"].Title, null, `Editing issue: ${id}`)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Panel"].Body, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Form"], {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Panel"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Panel"].Heading, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Panel"].Title, null, `Editing Expense: ${id}`)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Panel"].Body, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Form"], {
       horizontal: true,
       onSubmit: this.handleSubmit
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["FormGroup"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Col"], {
@@ -1913,14 +2283,14 @@ class IssueEdit extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       value: status,
       onChange: this.onChange
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-      value: "New"
-    }, "New"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-      value: "Assigned"
-    }, "Assigned"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-      value: "Fixed"
-    }, "Fixed"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-      value: "Closed"
-    }, "Closed")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["FormGroup"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Col"], {
+      value: "Income"
+    }, "Income"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+      value: "Expenditure"
+    }, "Expenditure"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+      value: "Savings"
+    }, "Savings"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+      value: "Credit"
+    }, "Credits")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["FormGroup"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Col"], {
       componentClass: react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["ControlLabel"],
       sm: 3
     }, "Owner"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Col"], {
@@ -1934,7 +2304,7 @@ class IssueEdit extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
     }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["FormGroup"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Col"], {
       componentClass: react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["ControlLabel"],
       sm: 3
-    }, "Effort"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Col"], {
+    }, "Expense"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Col"], {
       sm: 9
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["FormControl"], {
       componentClass: _NumInput_jsx__WEBPACK_IMPORTED_MODULE_5__["default"],
@@ -1944,19 +2314,7 @@ class IssueEdit extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
       key: id
     }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["FormGroup"], {
       validationState: invalidFields.due ? 'error' : null
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Col"], {
-      componentClass: react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["ControlLabel"],
-      sm: 3
-    }, "Due"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Col"], {
-      sm: 9
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["FormControl"], {
-      componentClass: _DateInput_jsx__WEBPACK_IMPORTED_MODULE_6__["default"],
-      onValidityChange: this.onValidityChange,
-      name: "due",
-      value: due,
-      onChange: this.onChange,
-      key: id
-    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["FormControl"].Feedback, null))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["FormGroup"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Col"], {
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["FormGroup"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Col"], {
       componentClass: react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["ControlLabel"],
       sm: 3
     }, "Title"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Col"], {
@@ -2158,19 +2516,19 @@ class IssueFilter extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
       value: ""
     }, "(All)"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-      value: "New"
-    }, "New"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-      value: "Assigned"
-    }, "Assigned"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-      value: "Fixed"
-    }, "Fixed"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-      value: "Closed"
-    }, "Closed")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Col"], {
+      value: "Income"
+    }, "Income"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+      value: "Expenditure"
+    }, "Expenditure"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+      value: "Savings"
+    }, "Savings"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+      value: "Credit"
+    }, "Credits")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["Col"], {
       xs: 6,
       sm: 4,
       md: 3,
       lg: 2
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["FormGroup"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["ControlLabel"], null, "Effort between:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["InputGroup"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["FormControl"], {
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["FormGroup"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["ControlLabel"], null, "Expense between:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["InputGroup"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["FormControl"], {
       value: effortMin,
       onChange: this.onChangeEffortMin
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["InputGroup"].Addon, null, "-"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_3__["FormControl"], {
@@ -2383,7 +2741,7 @@ class IssueList extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
 
   async closeIssue(index) {
     const query = `mutation issueClose($id: Int!) {
-      issueUpdate(id: $id, changes: { status: Closed }) {
+      issueUpdate(id: $id, changes: { status: Credit }) {
         id title status owner
         effort created due description
       }
@@ -2452,7 +2810,7 @@ class IssueList extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
           issues: newList
         };
       });
-      const undoMessage = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, `Deleted issue ${id} successfully.`, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Button"], {
+      const undoMessage = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, `Deleted Expense ${id} successfully.`, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_2__["Button"], {
         bsStyle: "link",
         onClick: () => this.restoreIssue(id)
       }, "UNDO"));
@@ -2475,7 +2833,7 @@ class IssueList extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
     }, showError);
 
     if (data) {
-      showSuccess(`Issue ${id} restored successfully.`);
+      showSuccess(`Expense ${id} restored successfully.`);
       this.loadData();
     }
   }
@@ -2565,7 +2923,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const statuses = ['New', 'Assigned', 'Fixed', 'Closed'];
+const statuses = ['Income', 'Expenditure', 'Savings', 'Credit'];
 
 class IssueReport extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
   static async fetchData(match, search, showError) {
@@ -2586,7 +2944,7 @@ class IssueReport extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component
         effortMin: $effortMin
         effortMax: $effortMax
       ) {
-        owner New Assigned Fixed Closed
+        owner Income Expenditure Savings Credit
       }
     }`;
     const data = await Object(_graphQLFetch_js__WEBPACK_IMPORTED_MODULE_4__["default"])(query, vars, showError);
@@ -2798,7 +3156,7 @@ function IssueTable({
     condensed: true,
     hover: true,
     responsive: true
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("thead", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "ID"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Status"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Owner"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Created"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Effort"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Due Date"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Title"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Action"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, issueRows));
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("thead", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "ID"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Status"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Owner"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Created"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Expenses"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Due"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Title"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", null, "Action"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, issueRows));
 }
 
 /***/ }),
@@ -2918,6 +3276,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _graphQLFetch_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./graphQLFetch.js */ "./src/graphQLFetch.js");
 /* harmony import */ var _store_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./store.js */ "./src/store.js");
 /* harmony import */ var _Crypto_jsx__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./Crypto.jsx */ "./src/Crypto.jsx");
+/* harmony import */ var _HomeUi_jsx__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./HomeUi.jsx */ "./src/HomeUi.jsx");
+/* harmony import */ var _CurrencyConversion_jsx__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./CurrencyConversion.jsx */ "./src/CurrencyConversion.jsx");
+/* eslint-disable linebreak-style */
+
+/* eslint-disable no-unused-vars */
+
+/* eslint-disable linebreak-style */
+
+
 
 
 
@@ -2936,17 +3303,17 @@ function NavBar({
 }) {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Navbar"], {
     fluid: true
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Navbar"].Header, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Navbar"].Brand, null, "Issue Tracker")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Nav"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_bootstrap__WEBPACK_IMPORTED_MODULE_2__["LinkContainer"], {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Navbar"].Header, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Navbar"].Brand, null, "Crypto Exchange Tool")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Nav"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_bootstrap__WEBPACK_IMPORTED_MODULE_2__["LinkContainer"], {
     exact: true,
-    to: "/"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["NavItem"], null, "Home")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_bootstrap__WEBPACK_IMPORTED_MODULE_2__["LinkContainer"], {
+    to: "/HomeUi"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["NavItem"], null, "Home ")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_bootstrap__WEBPACK_IMPORTED_MODULE_2__["LinkContainer"], {
     to: "/issues"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["NavItem"], null, "Issue List")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_bootstrap__WEBPACK_IMPORTED_MODULE_2__["LinkContainer"], {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["NavItem"], null, "Expense List")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_bootstrap__WEBPACK_IMPORTED_MODULE_2__["LinkContainer"], {
     to: "/crypto"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["NavItem"], null, "CryptoCurrency")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_bootstrap__WEBPACK_IMPORTED_MODULE_2__["LinkContainer"], {
     to: "/report"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["NavItem"], null, "Stock")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_bootstrap__WEBPACK_IMPORTED_MODULE_2__["LinkContainer"], {
-    to: "/crypto"
+    to: "/CurrencyConversion"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["NavItem"], null, "CurrencyConvert"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
     sm: 5
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Navbar"].Form, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Search_jsx__WEBPACK_IMPORTED_MODULE_6__["default"], null))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Nav"], {
@@ -2970,9 +3337,10 @@ function NavBar({
 function Footer() {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("small", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("hr", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "text-center"
-  }, "Full source code available at this", ' ', /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    href: "https://github.ccs.neu.edu/NEU-CS5610-SU21/SahaiAyush-book"
-  }, "SahaiAyush-Book")));
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "Full source code available at this", ' ', /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "https://github.ccs.neu.edu/NEU-CS5610-SU21/CryptoStockAnalyzer",
+    target: "/"
+  }, "here."))));
 }
 
 class Page extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
@@ -3441,25 +3809,6 @@ const UserContext = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.cr
 
 /***/ }),
 
-/***/ "./src/axios.js":
-/*!**********************!*\
-  !*** ./src/axios.js ***!
-  \**********************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "axios");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
-
-const instance = axios__WEBPACK_IMPORTED_MODULE_0___default.a.create({
-  baseURL: 'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=250&page=1&sparkline=false'
-});
-/* harmony default export */ __webpack_exports__["default"] = (instance);
-
-/***/ }),
-
 /***/ "./src/graphQLFetch.js":
 /*!*****************************!*\
   !*** ./src/graphQLFetch.js ***!
@@ -3536,6 +3885,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _About_jsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./About.jsx */ "./src/About.jsx");
 /* harmony import */ var _Crypto_jsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Crypto.jsx */ "./src/Crypto.jsx");
 /* harmony import */ var _NotFound_jsx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./NotFound.jsx */ "./src/NotFound.jsx");
+/* harmony import */ var _HomeUi_jsx__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./HomeUi.jsx */ "./src/HomeUi.jsx");
+/* harmony import */ var _CurrencyConversion_jsx__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./CurrencyConversion.jsx */ "./src/CurrencyConversion.jsx");
+/* eslint-disable linebreak-style */
+
+
 
 
 
@@ -3557,6 +3911,12 @@ const routes = [{
 }, {
   path: '/crypto',
   component: _Crypto_jsx__WEBPACK_IMPORTED_MODULE_4__["default"]
+}, {
+  path: '/HomeUi',
+  component: _HomeUi_jsx__WEBPACK_IMPORTED_MODULE_6__["default"]
+}, {
+  path: '/CurrencyConversion',
+  component: _CurrencyConversion_jsx__WEBPACK_IMPORTED_MODULE_7__["default"]
 }, {
   path: '*',
   component: _NotFound_jsx__WEBPACK_IMPORTED_MODULE_5__["default"]
@@ -3854,6 +4214,17 @@ module.exports = require("react-bootstrap");
 /***/ (function(module, exports) {
 
 module.exports = require("react-dom/server");
+
+/***/ }),
+
+/***/ "react-paginate":
+/*!*********************************!*\
+  !*** external "react-paginate" ***!
+  \*********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("react-paginate");
 
 /***/ }),
 

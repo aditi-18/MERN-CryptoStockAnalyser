@@ -1,6 +1,34 @@
 import React, { useEffect, useState } from 'react';
+import { Label } from 'react-bootstrap';
 import CurrencyRow from './CurrencyRow.jsx';
 
+const head = {
+  color: 'white',
+  backgroundColor: 'black',
+  textAlign: 'center',
+  fontSize: 40,
+  paddingTop: 5,
+  paddingBottom: 10,
+};
+
+const row = {
+
+  textAlign: 'center',
+};
+
+const box = {
+  // backgroundColor: '#000000',
+  padding: 80,
+  backgroundImage: 'linear-gradient(to bottom right, LightSlateGray, Black)',
+};
+
+const equals = {
+  textAlign: 'center',
+  marginLeft: 15,
+  marginTop: 50,
+  marginRight: 125,
+
+};
 // const BASE_URL = 'http://data.fixer.io/api/latest?access_key=3e17d038f709933e14a6ff98b3e1a832';
 const BASE_URL = 'https://api.exchangerate-api.com/v4/latest/USD';
 function CurrencyConversion() {
@@ -10,7 +38,7 @@ function CurrencyConversion() {
   const [exchangeRate, setExchangeRate] = useState();
   const [amount, setAmount] = useState(1);
   const [amountInFromCurrency, setAmountInFromCurrency] = useState(true);
-
+  const myImg = './1.png';
   let toAmount; let fromAmount;
   if (amountInFromCurrency) {
     fromAmount = amount;
@@ -58,22 +86,24 @@ function CurrencyConversion() {
 
   return (
     <>
-      <h2>Currency Conversion</h2>
-      <CurrencyRow
-        currencyOptions={currencyOptions}
-        selectedCurrency={fromCurrency}
-        onChangeCurrency={e => setFromCurrency(e.target.value)}
-        onChangeAmount={handleFromAmountChange}
-        amount={fromAmount}
-      />
-      <div className="equals">=</div>
-      <CurrencyRow
-        currencyOptions={currencyOptions}
-        selectedCurrency={toCurrency}
-        onChangeCurrency={e => setToCurrency(e.target.value)}
-        onChangeAmount={handleToAmountChange}
-        amount={toAmount}
-      />
+      <div style={box}>
+        <h2 style={head}>Currency Conversion</h2>
+        <CurrencyRow
+          currencyOptions={currencyOptions}
+          selectedCurrency={fromCurrency}
+          onChangeCurrency={e => setFromCurrency(e.target.value)}
+          onChangeAmount={handleFromAmountChange}
+          amount={fromAmount}
+        />
+        <div style={equals}>=</div>
+        <CurrencyRow
+          currencyOptions={currencyOptions}
+          selectedCurrency={toCurrency}
+          onChangeCurrency={e => setToCurrency(e.target.value)}
+          onChangeAmount={handleToAmountChange}
+          amount={toAmount}
+        />
+      </div>
     </>
   );
 }
