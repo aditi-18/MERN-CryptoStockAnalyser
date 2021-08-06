@@ -16,19 +16,21 @@ This application has the following features-
 
 ### Iteration1
 
-In this iteration we have implmented the following-
+In this iteration, we have implemented the following-
 
- 1)React Components.
- 
- 2)Routing links.
- 
- 3)CRUD schema (GraphQL) implemented in expense tracker feature.A new expense can be created, updated and deletd as per user's choice.
+1)React Components.
 
- 4)Home Page component with css styling.
+2)Routing links.
 
- 5)Crypto component with data being fetched from api with search feature. 
+3)CRUD schema (GraphQL) implemented in expense tracker feature. A new expense can be created, updated, and deleted as per the user's choice.
 
- 6)Currency converter component.
+4)Home Page component with CSS styling.
+
+5)Crypto component with data being fetched from API with the search feature.
+
+6)Currency converter component.
+
+7)CSS styling across components.
 
  7)CSS styling across components.
 
