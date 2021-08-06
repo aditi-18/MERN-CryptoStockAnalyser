@@ -2,7 +2,7 @@
 
 ## This is a repository for the project CryptoStockAnalyser.
 CryptoStockAnalyser has been built using the Issuetracker (Pro mern stack2 book) boilerplate.
-This application has the follwoing features-
+This application has the following features-
 
  1)Secure google login and registration.
 
@@ -37,7 +37,7 @@ In this iteration we have implmented the following-
  MainPage
  ![](/Screenshots/It1.PNG)
 
- Expense List
+ Expense List implementing CRUD operations.
 ![](/Screenshots/It2.PNG)
 
 CryptoCurrency
