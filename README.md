@@ -35,16 +35,16 @@ In this iteration we have implmented the following-
  #### Result from Iteration1
 
  MainPage
- ![](/ReadMeImages/It1.PNG)
+ ![](/Screenshots/It1.PNG)
 
  Expense List
-![](/ReadMeImages/It2.PNG)
+![](/Screenshots/It2.PNG)
 
 CryptoCurrency
-![](/ReadMeImages/It3.PNG)
+![](/Screenshots/It3.PNG)
 
 CurrencyConverter
-![](/ReadMeImages/It4.PNG)
+![](/Screenshots/It4.PNG)
 
 #### TeamMembers
 
