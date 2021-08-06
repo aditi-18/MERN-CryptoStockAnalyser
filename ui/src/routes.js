@@ -18,7 +18,6 @@ const routes = [
   { path: '/crypto', component: Crypto },
   { path: '/HomeUi', component: HomeUi },
   { path: '/Stock', component: Stock },
-  
   { path: '/CurrencyConversion', component: CurrencyConversion },
   { path: '*', component: NotFound },
 ];
