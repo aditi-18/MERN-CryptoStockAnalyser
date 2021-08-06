@@ -19,6 +19,7 @@ import store from './store.js';
 import Crypto from './Crypto.jsx';
 import HomeUi from './HomeUi.jsx';
 import CurrencyConversion from './CurrencyConversion.jsx';
+import Stock from './Stock.jsx';
 
 function NavBar({ user, onUserChange }) {
   return (
@@ -37,7 +38,7 @@ function NavBar({ user, onUserChange }) {
         <LinkContainer to="/crypto">
           <NavItem>CryptoCurrency</NavItem>
         </LinkContainer>
-        <LinkContainer to="/report">
+        <LinkContainer to="/Stock">
           <NavItem>Stock</NavItem>
         </LinkContainer>
         <LinkContainer to="/CurrencyConversion">

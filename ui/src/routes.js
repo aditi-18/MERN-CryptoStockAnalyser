@@ -7,6 +7,8 @@ import Crypto from './Crypto.jsx';
 import NotFound from './NotFound.jsx';
 import HomeUi from './HomeUi.jsx';
 import CurrencyConversion from './CurrencyConversion.jsx';
+import Stock from './Stock.jsx';
+
 
 const routes = [
   { path: '/issues/:id?', component: IssueList },
@@ -15,6 +17,8 @@ const routes = [
   { path: '/about', component: About },
   { path: '/crypto', component: Crypto },
   { path: '/HomeUi', component: HomeUi },
+  { path: '/Stock', component: Stock },
+  
   { path: '/CurrencyConversion', component: CurrencyConversion },
   { path: '*', component: NotFound },
 ];
