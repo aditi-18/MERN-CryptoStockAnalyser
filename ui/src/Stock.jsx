@@ -2,6 +2,15 @@ import React, { useState, useEffect } from 'react';
 import { MDBDataTable } from 'mdbreact';
 import axios from 'axios';
 
+const outer = {
+  backgroundImage: 'linear-gradient(to bottom right,LightSlateGrey, lightgrey)',
+};
+
+const heading = {
+  textAlign: 'center',
+  color: 'darkblue',
+};
+
 function Stock() {
   const [resp, setResp] = useState({
     columns: [
@@ -28,7 +37,6 @@ function Stock() {
     ],
   });
 
-
   useEffect(() => {
     if (resp) console.log(resp);
   }, [resp]);
@@ -43,9 +51,15 @@ function Stock() {
   }, []);
   return (
     <div>
-
-      <MDBDataTable data={resp} paging={false} searching={false} />
-
+      <h1 style={heading}>IBM Stock Data</h1>
+      <div style={outer}>
+        <MDBDataTable
+          data={resp}
+          striped
+          bordered
+          hover
+        />
+      </div>
     </div>
   );
 }

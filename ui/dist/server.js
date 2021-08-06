@@ -22,7 +22,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "af7b601bdac866123202";
+/******/ 	var hotCurrentHash = "f1c59195b21ce4fdc77b";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -3869,6 +3869,13 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+const outer = {
+  backgroundImage: 'linear-gradient(to bottom right,LightSlateGrey, lightgrey)'
+};
+const heading = {
+  textAlign: 'center',
+  color: 'darkblue'
+};
 
 function Stock() {
   const [resp, setResp] = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({
@@ -3902,11 +3909,16 @@ function Stock() {
       console.log(err);
     });
   }, []);
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(mdbreact__WEBPACK_IMPORTED_MODULE_1__["MDBDataTable"], {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+    style: heading
+  }, "IBM Stock Data"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    style: outer
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(mdbreact__WEBPACK_IMPORTED_MODULE_1__["MDBDataTable"], {
     data: resp,
-    paging: false,
-    searching: false
-  }));
+    striped: true,
+    bordered: true,
+    hover: true
+  })));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (Stock);
