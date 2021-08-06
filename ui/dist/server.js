@@ -22,7 +22,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "484201563de39035c604";
+/******/ 	var hotCurrentHash = "af7b601bdac866123202";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -3869,9 +3869,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const outer = {
-  backgroundImage: 'linear-gradient(to bottom right,LightSlateGrey, lightgrey)'
-};
 
 function Stock() {
   const [resp, setResp] = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({
@@ -3907,8 +3904,8 @@ function Stock() {
   }, []);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(mdbreact__WEBPACK_IMPORTED_MODULE_1__["MDBDataTable"], {
     data: resp,
-    searching: false,
-    paging: false
+    paging: false,
+    searching: false
   }));
 }
 
