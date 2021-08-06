@@ -1,7 +1,6 @@
-<<<<<<< HEAD
-=======
+// eslint-disable-next-line linebreak-style
+
 /* eslint-disable linebreak-style */
->>>>>>> edc861e (Adding home componment and css styling of the home component)
 import React from 'react';
 import URLSearchParams from 'url-search-params';
 import { Panel, Pagination, Button } from 'react-bootstrap';
@@ -15,15 +14,6 @@ import withToast from './withToast.jsx';
 import store from './store.js';
 
 const SECTION_SIZE = 5;
-
-<<<<<<< HEAD
-=======
-const listcss = {
-  color: 'white',
-  backgroundImage: 'linear-gradient(to bottom right,black, LightSlateGray)',
-};
-
->>>>>>> edc861e (Adding home componment and css styling of the home component)
 function PageLink({
   params, page, activePage, children,
 }) {
@@ -226,37 +216,21 @@ class IssueList extends React.Component {
     }
 
     return (
-<<<<<<< HEAD
-=======
-    // div className="listcss" style={listcss}>
->>>>>>> edc861e (Adding home componment and css styling of the home component)
       <React.Fragment>
         <Panel>
           <Panel.Heading>
             <Panel.Title toggle>Filter</Panel.Title>
           </Panel.Heading>
-<<<<<<< HEAD
-=======
-
->>>>>>> edc861e (Adding home componment and css styling of the home component)
           <Panel.Body collapsible>
             <IssueFilter urlBase="/issues" />
           </Panel.Body>
         </Panel>
-<<<<<<< HEAD
-=======
-
->>>>>>> edc861e (Adding home componment and css styling of the home component)
         <IssueTable
           issues={issues}
           closeIssue={this.closeIssue}
           deleteIssue={this.deleteIssue}
         />
         <IssueDetail issue={selectedIssue} />
-<<<<<<< HEAD
-=======
-
->>>>>>> edc861e (Adding home componment and css styling of the home component)
         <Pagination>
           <PageLink params={params} page={prevSection}>
             <Pagination.Item>{'<'}</Pagination.Item>

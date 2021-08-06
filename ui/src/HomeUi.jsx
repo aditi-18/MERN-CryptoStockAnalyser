@@ -4,17 +4,7 @@
 /* eslint-disable linebreak-style */
 import React from 'react';
 import Axios from 'axios';
-<<<<<<< HEAD
-import { Container, Col, Row } from 'react-bootstrap';
-// eslint-disable-next-line import/prefer-default-export
-function HomeUi() {
-  return (
-    <div >
-      
-      <h1 style={{color:'red',textAlign:'center'}}>CryptoStock Analyser </h1>
-      
-    </div>
-=======
+
 import {
   Container, Col, Row, Image,
 } from 'react-bootstrap';
@@ -222,8 +212,6 @@ function HomeUi() {
         </div>
       </div>
     </div>
-
->>>>>>> edc861e (Adding home componment and css styling of the home component)
   );
 }
 export default HomeUi;
