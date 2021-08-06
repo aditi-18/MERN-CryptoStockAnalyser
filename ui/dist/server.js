@@ -22,7 +22,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "454facdd4cccd976021c";
+/******/ 	var hotCurrentHash = "484201563de39035c604";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -1896,53 +1896,53 @@ const pie = {
     borderRadius: '100%',
     clip:'rect(0px, 75px, 150px, 0px)'
   },
-    hold: {
+   hold: {
     position: 'absolute',
     width: '150px',
     height: '150px',
     borderRadius: '100%',
     clip: 'rect(0px, 150px, 150px, 75px)'
   }
-    #pieSlice1 .pie {
+   #pieSlice1 .pie {
     background-color: #1b458b;
     transform:rotate(30deg);
   }
-    #pieSlice2 {
+   #pieSlice2 {
     transform: rotate(30deg);
   }
-    #pieSlice2 .pie {
+   #pieSlice2 .pie {
     background-color: #0a0;
     transform: rotate(60deg);
   }
-    #pieSlice3 {
+   #pieSlice3 {
     transform: rotate(90deg);
   }
-    #pieSlice3 .pie {
+   #pieSlice3 .pie {
     background-color: #f80;
     transform: rotate(120deg);
   }
-    #pieSlice4 {
+   #pieSlice4 {
     transform: rotate(210deg);
   }
-    #pieSlice4 .pie {
+   #pieSlice4 .pie {
     background-color: #08f;
     transform: rotate(10deg);
   }
-    #pieSlice5 {
+   #pieSlice5 {
     transform: rotate(220deg);
   }
-    #pieSlice5 .pie {
+   #pieSlice5 .pie {
     background-color: #a04;
     transform: rotate(70deg);
   }
-    #pieSlice6 {
+   #pieSlice6 {
     transform: rotate(290deg);
   }
-    #pieSlice6 .pie {
+   #pieSlice6 .pie {
     background-color: #ffd700;
     transform: rotate(70deg);
   }
-    .innerCircle {
+   .innerCircle {
     position: absolute;
     width: 120px;
     height: 120px;
@@ -3463,11 +3463,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Crypto_jsx__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./Crypto.jsx */ "./src/Crypto.jsx");
 /* harmony import */ var _HomeUi_jsx__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./HomeUi.jsx */ "./src/HomeUi.jsx");
 /* harmony import */ var _CurrencyConversion_jsx__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./CurrencyConversion.jsx */ "./src/CurrencyConversion.jsx");
+/* harmony import */ var _Stock_jsx__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./Stock.jsx */ "./src/Stock.jsx");
 /* eslint-disable linebreak-style */
 
 /* eslint-disable no-unused-vars */
 
 /* eslint-disable linebreak-style */
+
 
 
 
@@ -3496,7 +3498,7 @@ function NavBar({
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["NavItem"], null, "Expense List")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_bootstrap__WEBPACK_IMPORTED_MODULE_2__["LinkContainer"], {
     to: "/crypto"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["NavItem"], null, "CryptoCurrency")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_bootstrap__WEBPACK_IMPORTED_MODULE_2__["LinkContainer"], {
-    to: "/report"
+    to: "/Stock"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["NavItem"], null, "Stock")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_bootstrap__WEBPACK_IMPORTED_MODULE_2__["LinkContainer"], {
     to: "/CurrencyConversion"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["NavItem"], null, "CurrencyConvert"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
@@ -3849,6 +3851,71 @@ class SignInNavItem extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Compone
 
 /***/ }),
 
+/***/ "./src/Stock.jsx":
+/*!***********************!*\
+  !*** ./src/Stock.jsx ***!
+  \***********************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var mdbreact__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! mdbreact */ "mdbreact");
+/* harmony import */ var mdbreact__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(mdbreact__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "axios");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
+
+
+
+const outer = {
+  backgroundImage: 'linear-gradient(to bottom right,LightSlateGrey, lightgrey)'
+};
+
+function Stock() {
+  const [resp, setResp] = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({
+    columns: [{
+      label: 'Open',
+      field: '1. open'
+    }, {
+      label: 'High',
+      field: '2. high'
+    }, {
+      label: 'Low',
+      field: '3. low'
+    }, {
+      label: 'Close',
+      field: '4. close'
+    }, {
+      label: 'Volume',
+      field: '5. volume'
+    }]
+  });
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
+    if (resp) console.log(resp);
+  }, [resp]);
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
+    axios__WEBPACK_IMPORTED_MODULE_2___default.a.get('https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=IBM&interval=5min&outputsize=full&apikey=demo').then(response => {
+      setResp({
+        columns: resp.columns,
+        rows: Object.values(response.data['Time Series (5min)']).map(item => item)
+      });
+    }).catch(err => {
+      console.log(err);
+    });
+  }, []);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(mdbreact__WEBPACK_IMPORTED_MODULE_1__["MDBDataTable"], {
+    data: resp,
+    searching: false,
+    paging: false
+  }));
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (Stock);
+
+/***/ }),
+
 /***/ "./src/TextInput.jsx":
 /*!***************************!*\
   !*** ./src/TextInput.jsx ***!
@@ -4072,7 +4139,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _NotFound_jsx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./NotFound.jsx */ "./src/NotFound.jsx");
 /* harmony import */ var _HomeUi_jsx__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./HomeUi.jsx */ "./src/HomeUi.jsx");
 /* harmony import */ var _CurrencyConversion_jsx__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./CurrencyConversion.jsx */ "./src/CurrencyConversion.jsx");
+/* harmony import */ var _Stock_jsx__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./Stock.jsx */ "./src/Stock.jsx");
 /* eslint-disable linebreak-style */
+
 
 
 
@@ -4099,6 +4168,9 @@ const routes = [{
 }, {
   path: '/HomeUi',
   component: _HomeUi_jsx__WEBPACK_IMPORTED_MODULE_6__["default"]
+}, {
+  path: '/Stock',
+  component: _Stock_jsx__WEBPACK_IMPORTED_MODULE_8__["default"]
 }, {
   path: '/CurrencyConversion',
   component: _CurrencyConversion_jsx__WEBPACK_IMPORTED_MODULE_7__["default"]
@@ -4355,6 +4427,17 @@ module.exports = require("http-proxy-middleware");
 /***/ (function(module, exports) {
 
 module.exports = require("isomorphic-fetch");
+
+/***/ }),
+
+/***/ "mdbreact":
+/*!***************************!*\
+  !*** external "mdbreact" ***!
+  \***************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("mdbreact");
 
 /***/ }),
 
