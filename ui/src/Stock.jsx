@@ -41,9 +41,9 @@ function Stock() {
     if (resp) console.log(resp);
   }, [resp]);
   useEffect(() => {
-    axios.get('https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=IBM&interval=5min&outputsize=full&apikey=demo')
+    axios.get('https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=600104.SHH&outputsize=full&apikey=demo')
       .then((response) => {
-        setResp({ columns: resp.columns, rows: (Object.values(response.data['Time Series (5min)'])).map(item => item) });
+        setResp({ columns: resp.columns, rows: (Object.values(response.data['Time Series (Daily)'])).map(item => item) });
       })
       .catch((err) => {
         console.log(err);
