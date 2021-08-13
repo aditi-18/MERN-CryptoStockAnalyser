@@ -11,7 +11,7 @@ const heading = {
   color: 'darkblue',
 };
 
-function Crypto1() {
+function Stock() {
   const [resp, setResp] = useState({
     columns: [
       {
@@ -41,15 +41,17 @@ function Crypto1() {
     if (resp) console.log(resp);
   }, [resp]);
   useEffect(() => {
-    axios.get('https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=SHOP.TRT&outputsize=full&apikey=demo').then((response) => {
-      setResp({ columns: resp.columns, rows: (Object.values(response.data['Time Series (Daily)'])).map(item => item) });
-    }).catch((err) => {
-      console.log(err);
-    });
+    axios.get('https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=TSCO.LON&outputsize=full&apikey=GCND8F72CVVG07M6')
+      .then((response) => {
+        setResp({ columns: resp.columns, rows: (Object.values(response.data['Time Series (Daily)'])).map(item => item) });
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }, []);
   return (
     <div>
-      <h1 style={heading}>Shopify Stock Data</h1>
+      <h1 style={heading}>Tesco Stock Data</h1>
       <div style={outer}>
         <MDBDataTable
           data={resp}
@@ -63,4 +65,4 @@ function Crypto1() {
   );
 }
 
-export default Crypto1;
+export default Stock;

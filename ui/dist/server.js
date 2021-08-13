@@ -22,7 +22,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "234003bc66404f2135b5";
+/******/ 	var hotCurrentHash = "731e7ea893c216a6f894";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -1952,6 +1952,70 @@ function HomeUi() {
 
 /***/ }),
 
+/***/ "./src/IBM_Stock.jsx":
+/*!***************************!*\
+  !*** ./src/IBM_Stock.jsx ***!
+  \***************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var mdbreact__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! mdbreact */ "mdbreact");
+/* harmony import */ var mdbreact__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(mdbreact__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "axios");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
+
+
+
+
+function Crypto1() {
+  const [resp, setResp] = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({
+    columns: [{
+      label: 'Open',
+      field: '1. open'
+    }, {
+      label: 'High',
+      field: '2. high'
+    }, {
+      label: 'Low',
+      field: '3. low'
+    }, {
+      label: 'Close',
+      field: '4. close'
+    }, {
+      label: 'Volume',
+      field: '5. volume'
+    }]
+  });
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
+    if (resp) console.log(resp);
+  }, [resp]);
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
+    axios__WEBPACK_IMPORTED_MODULE_2___default.a.get('https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=IBM&interval=5min&outputsize=full&apikey=demo').then(response => {
+      setResp({
+        columns: resp.columns,
+        rows: Object.values(response.data['Time Series (5min)']).map(item => item)
+      });
+    }).catch(err => {
+      console.log(err);
+    });
+  }, []);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(mdbreact__WEBPACK_IMPORTED_MODULE_1__["MDBDataTable"], {
+    striped: true,
+    bordered: true,
+    hover: true,
+    data: resp,
+    searching: false
+  }));
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (Crypto1);
+
+/***/ }),
+
 /***/ "./src/IssueAddNavItem.jsx":
 /*!*********************************!*\
   !*** ./src/IssueAddNavItem.jsx ***!
@@ -3572,6 +3636,70 @@ class Search extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
 
 /***/ }),
 
+/***/ "./src/Shopify_Stock.jsx":
+/*!*******************************!*\
+  !*** ./src/Shopify_Stock.jsx ***!
+  \*******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var mdbreact__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! mdbreact */ "mdbreact");
+/* harmony import */ var mdbreact__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(mdbreact__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "axios");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
+
+
+
+
+function Crypto1() {
+  const [resp, setResp] = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({
+    columns: [{
+      label: 'Open',
+      field: '1. open'
+    }, {
+      label: 'High',
+      field: '2. high'
+    }, {
+      label: 'Low',
+      field: '3. low'
+    }, {
+      label: 'Close',
+      field: '4. close'
+    }, {
+      label: 'Volume',
+      field: '5. volume'
+    }]
+  });
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
+    if (resp) console.log(resp);
+  }, [resp]);
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
+    axios__WEBPACK_IMPORTED_MODULE_2___default.a.get('https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=SHOP.TRT&outputsize=full&apikey=demo').then(response => {
+      setResp({
+        columns: resp.columns,
+        rows: Object.values(response.data['Time Series (Daily)']).map(item => item)
+      });
+    }).catch(err => {
+      console.log(err);
+    });
+  }, []);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(mdbreact__WEBPACK_IMPORTED_MODULE_1__["MDBDataTable"], {
+    striped: true,
+    bordered: true,
+    hover: true,
+    data: resp,
+    searching: false
+  }));
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (Crypto1);
+
+/***/ }),
+
 /***/ "./src/SignInNavItem.jsx":
 /*!*******************************!*\
   !*** ./src/SignInNavItem.jsx ***!
@@ -3758,80 +3886,6 @@ class SignInNavItem extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Compone
 
 /***/ }),
 
-/***/ "./src/Stock.jsx":
-/*!***********************!*\
-  !*** ./src/Stock.jsx ***!
-  \***********************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var mdbreact__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! mdbreact */ "mdbreact");
-/* harmony import */ var mdbreact__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(mdbreact__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "axios");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
-
-
-
-const outer = {
-  backgroundImage: 'linear-gradient(to bottom right,LightSlateGrey, lightgrey)'
-};
-const heading = {
-  textAlign: 'center',
-  color: 'darkblue'
-};
-
-function Stock() {
-  const [resp, setResp] = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({
-    columns: [{
-      label: 'Open',
-      field: '1. open'
-    }, {
-      label: 'High',
-      field: '2. high'
-    }, {
-      label: 'Low',
-      field: '3. low'
-    }, {
-      label: 'Close',
-      field: '4. close'
-    }, {
-      label: 'Volume',
-      field: '5. volume'
-    }]
-  });
-  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
-    if (resp) console.log(resp);
-  }, [resp]);
-  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
-    axios__WEBPACK_IMPORTED_MODULE_2___default.a.get('https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=600104.SHH&outputsize=full&apikey=demo').then(response => {
-      setResp({
-        columns: resp.columns,
-        rows: Object.values(response.data['Time Series (Daily)']).map(item => item)
-      });
-    }).catch(err => {
-      console.log(err);
-    });
-  }, []);
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
-    style: heading
-  }, "IBM Stock Data"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    style: outer
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(mdbreact__WEBPACK_IMPORTED_MODULE_1__["MDBDataTable"], {
-    data: resp,
-    striped: true,
-    bordered: true,
-    hover: true
-  })));
-}
-
-/* harmony default export */ __webpack_exports__["default"] = (Stock);
-
-/***/ }),
-
 /***/ "./src/StockSearch.jsx":
 /*!*****************************!*\
   !*** ./src/StockSearch.jsx ***!
@@ -3841,37 +3895,21 @@ function Stock() {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react_select__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-select */ "react-select");
-/* harmony import */ var react_select__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_select__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _Stock_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Stock.jsx */ "./src/Stock.jsx");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _IBM_Stock_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./IBM_Stock.jsx */ "./src/IBM_Stock.jsx");
+/* harmony import */ var _Shopify_Stock_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Shopify_Stock.jsx */ "./src/Shopify_Stock.jsx");
 
 
- // import Demo3 from './Components/Demo3.js';
-// function App() {
-//   return (
-//  <Crypto/>
-//  </demo1>
-//   );
-// }
 
-const options = [{
-  name: 'IBM',
-  value: 'ibm'
-}, {
-  name: 'English',
-  value: 'en'
-}];
 
-class StockSearch extends react__WEBPACK_IMPORTED_MODULE_1__["Component"] {
+class StockSearch extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
   constructor() {
     super();
     this.state = {
       name: 'React',
-      showHideDemo1: false,
-      showHideDem02: false,
-      showHideDemo3: false
+      showHideDemo1: true,
+      showHideDemo2: false
     };
     this.hideComponent = this.hideComponent.bind(this);
   }
@@ -3882,37 +3920,19 @@ class StockSearch extends react__WEBPACK_IMPORTED_MODULE_1__["Component"] {
     switch (name) {
       case 'showHideDemo1':
         this.setState({
-          showHideDemo1: !this.state.showHideDemo1
+          showHideDemo1: true
         });
         this.setState({
           showHideDemo2: false
-        });
-        this.setState({
-          showHideDemo3: false
         });
         break;
 
       case 'showHideDemo2':
         this.setState({
+          showHideDemo1: false
+        });
+        this.setState({
           showHideDemo2: true
-        });
-        this.setState({
-          showHideDemo1: false
-        });
-        this.setState({
-          showHideDemo3: false
-        });
-        break;
-
-      case 'showHideDemo3':
-        this.setState({
-          showHideDemo3: !this.state.showHideDemo3
-        });
-        this.setState({
-          showHideDemo1: false
-        });
-        this.setState({
-          showHideDemo2: false
         });
         break;
 
@@ -3924,26 +3944,15 @@ class StockSearch extends react__WEBPACK_IMPORTED_MODULE_1__["Component"] {
   render() {
     const {
       showHideDemo1,
-      showHideDemo2,
-      showHideDemo3
+      showHideDemo2
     } = this.state;
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("form", {
-      onSubmit: this.handleSubmit
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", null, "Pick your favorite:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("select", {
-      value: this.state.value,
-      onChange: this.handleChange
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("option", {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Pick your favorite:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
       value: "IBM",
-      onClick: () => this.hideComponent('showHideDemo2')
-    }, "IBM"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("option", {
-      value: "lime",
       onClick: () => this.hideComponent('showHideDemo1')
-    }, "Lime"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("option", {
-      value: "coconut",
-      onClick: () => this.hideComponent('showHideDemo3')
-    }, "Coconut"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("option", {
-      value: "mango"
-    }, "Mango"))))), showHideDemo1 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Demo1, null), showHideDemo2 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Stock_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], null), showHideDemo3 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Demo3, null));
+    }, "IBM"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+      value: "lime",
+      onClick: () => this.hideComponent('showHideDemo2')
+    }, "Shopify"))))), showHideDemo1 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_IBM_Stock_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], null), showHideDemo2 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shopify_Stock_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], null));
   }
 
 }
@@ -4560,17 +4569,6 @@ module.exports = require("react-router-bootstrap");
 /***/ (function(module, exports) {
 
 module.exports = require("react-router-dom");
-
-/***/ }),
-
-/***/ "react-select":
-/*!*******************************!*\
-  !*** external "react-select" ***!
-  \*******************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("react-select");
 
 /***/ }),
 

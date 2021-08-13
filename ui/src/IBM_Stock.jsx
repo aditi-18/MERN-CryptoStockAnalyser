@@ -2,6 +2,15 @@ import React, { useState, useEffect } from 'react';
 import { MDBDataTable } from 'mdbreact';
 import axios from 'axios';
 
+const outer = {
+  backgroundImage: 'linear-gradient(to bottom right,LightSlateGrey, lightgrey)',
+};
+
+const heading = {
+  textAlign: 'center',
+  color: 'darkblue',
+};
+
 function Crypto1() {
   const [resp, setResp] = useState({
     columns: [
@@ -28,7 +37,6 @@ function Crypto1() {
     ],
   });
 
-
   useEffect(() => {
     if (resp) console.log(resp);
   }, [resp]);
@@ -41,7 +49,18 @@ function Crypto1() {
   }, []);
   return (
     <div>
-      <MDBDataTable striped bordered hover data={resp} searching={false} />
+      <h1 style={heading}>IBM Stock Data</h1>
+      <div style={outer}>
+        <MDBDataTable
+          data={resp}
+          striped
+          bordered
+          hover
+          searching={false}
+        />
+      </div>
+
+
     </div>
   );
 }
