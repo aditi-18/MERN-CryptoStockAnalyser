@@ -1,3 +1,5 @@
+/* eslint-disable linebreak-style */
+
 import serialize from 'serialize-javascript';
 
 export default function template(body, initialData, userData) {
@@ -7,8 +9,13 @@ export default function template(body, initialData, userData) {
   <meta charset="utf-8">
   <title>Pro MERN Stack</title>
   <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css" >
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Trirong">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://apis.google.com/js/api:client.js"></script>
+
   <style>
     table.table-hover tr {cursor: pointer;}
     .panel-title a {display: block; width: 100%; cursor: pointer;}

@@ -22,7 +22,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "f1c59195b21ce4fdc77b";
+/******/ 	var hotCurrentHash = "234003bc66404f2135b5";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -1052,6 +1052,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return template; });
 /* harmony import */ var serialize_javascript__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! serialize-javascript */ "serialize-javascript");
 /* harmony import */ var serialize_javascript__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(serialize_javascript__WEBPACK_IMPORTED_MODULE_0__);
+/* eslint-disable linebreak-style */
 
 function template(body, initialData, userData) {
   return `<!DOCTYPE HTML>
@@ -1060,8 +1061,13 @@ function template(body, initialData, userData) {
   <meta charset="utf-8">
   <title>Pro MERN Stack</title>
   <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css" >
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Trirong">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://apis.google.com/js/api:client.js"></script>
+
   <style>
     table.table-hover tr {cursor: pointer;}
     .panel-title a {display: block; width: 100%; cursor: pointer;}
@@ -1519,10 +1525,7 @@ function Crypto() {
     type: "text",
     onChange: handleChange,
     placeholder: "Search"
-  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "header",
-    style: ss.header
-  }, "Symbol   Coin   Price    Volume    %change    Market Cap"), filteredCoins.map(coin => {
+  }))), filteredCoins.map(coin => {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Coin_js__WEBPACK_IMPORTED_MODULE_2__["default"], {
       key: coin.id,
       name: coin.name,
@@ -1849,196 +1852,100 @@ __webpack_require__.r(__webpack_exports__);
 /* eslint-disable linebreak-style */
 
 
- // import CarouselCont from './Carousel.jsx';
-// import CarouselContainer from './Carousel.jsx';
-// import Button from 'react-bootstrap/Button';
-// mport {
-// Card, Button } from 'react-bootstrap';
-// import image from './image.jpg';
-// eslint-disable-next-line import/prefer-default-export
-// import CardHome from './Card.jsx';
-// import image from './image.jpg';
 
-/* const heading = {
-  color: 'white',
-  backgroundColor: 'DodgerBlue',
-  padding: '10px',
-  fontFamily: 'Arial',
-  columnCount: 3,
-  columnGap: 40,
-  columnRule: 100,
-  marginTop: 300,
-  //display: block,
-  width: 400,
-  height: 400,
-  borderRadius: 50,
-  //display: flex,
-
-}; */
-
-const pie = {
-  /* pieContainer: {
-    height: '150px',
-    position: 'relative',
+const team = {
+  style: {
+    padding: '128px 16px'
   },
-  pieBackground: {
-    position: 'absolute',
-    width: '150px',
-    height: '150px',
-    borderRadius: '100%',
-    boxShadow: '0px 0px 8px rgba(0,0,0,0.5)',
+  style1: {
+    marginTop: '64px'
   },
-  pie :{
-    transition: 'all 1s',
-    position: 'absolute',
-    width: '150px',
-    height: '150px',
-    borderRadius: '100%',
-    clip:'rect(0px, 75px, 150px, 0px)'
-  },
-   hold: {
-    position: 'absolute',
-    width: '150px',
-    height: '150px',
-    borderRadius: '100%',
-    clip: 'rect(0px, 150px, 150px, 75px)'
-  }
-   #pieSlice1 .pie {
-    background-color: #1b458b;
-    transform:rotate(30deg);
-  }
-   #pieSlice2 {
-    transform: rotate(30deg);
-  }
-   #pieSlice2 .pie {
-    background-color: #0a0;
-    transform: rotate(60deg);
-  }
-   #pieSlice3 {
-    transform: rotate(90deg);
-  }
-   #pieSlice3 .pie {
-    background-color: #f80;
-    transform: rotate(120deg);
-  }
-   #pieSlice4 {
-    transform: rotate(210deg);
-  }
-   #pieSlice4 .pie {
-    background-color: #08f;
-    transform: rotate(10deg);
-  }
-   #pieSlice5 {
-    transform: rotate(220deg);
-  }
-   #pieSlice5 .pie {
-    background-color: #a04;
-    transform: rotate(70deg);
-  }
-   #pieSlice6 {
-    transform: rotate(290deg);
-  }
-   #pieSlice6 .pie {
-    background-color: #ffd700;
-    transform: rotate(70deg);
-  }
-   .innerCircle {
-    position: absolute;
-    width: 120px;
-    height: 120px;
-    background-color: #444;
-    border-radius: 100%;
-    top: 15px;
-    left: 15px;
-    box-shadow: 0px 0px 8px rgba(0,0,0,0.5) inset;
-    color: white;
-  }
-  .innerCircle .content {
-    position: absolute;
-    display: block;
-    width: 120px;
-    top: 30px;
-    left: 0;
-    text-align: center;
-    font-size: 14px;
-  } */
-  pie: {
-    backgroundImage: 'linear-gradient(to bottom right,LightSlateGrey, black)'
-  },
-  row: {
-    display: 'flex'
-  },
-
-  /* Create two equal columns that sits next to each other */
-  column: {
-    flex: '52%',
-    padding: '10px',
-    height: '510px',
-    backgroundColor: '#999999'
-  },
-  column1: {
-    flex: '50%',
-    marginTop: '16%',
-    padding: '40px',
-    height: '450px',
-    backgroundColor: '#595959'
-  },
-  maintext: {
-    fontFamily: 'Lucida Console',
-    fontSize: '80px',
-    textAlign: 'center',
-    color: 'White'
-  },
-  text: {
-    paddingTop: '10%',
-    textAlign: 'left',
-    fontFamily: 'Candara',
-    fontSize: '60px',
-    // fontSize: 'large',
-    color: 'WHITE'
-  },
-  text2: {
-    fontFamily: 'Candara',
-    fontSize: '29px',
-    // fontSize: 'large',
-    color: 'WHITE'
-  },
-  text1: {
-    textAlign: 'left',
-    paddingTop: '4%',
-    fontFamily: 'Candara',
-    // fontSize: '70%',
-    // fontSize: 'large',
-    color: 'WHITE'
+  style2: {
+    width: '100%'
   }
 };
 
 function HomeUi() {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "pie",
-    style: pie.pie
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
-    className: "maintext",
-    style: pie.maintext
-  }, "CryptoStockAnalyzer"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "row",
-    style: pie.row
+    className: "ro row1"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "column",
-    style: pie.column
+    className: "column"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "w3-container w3-animate-top"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
-    className: "text",
-    style: pie.text
-  }, "TRACK YOUR EXPENSES!"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
-    className: "text2",
-    style: pie.text2
-  }, "EXPLORE THE WORLD OF CRYPTO, STOCKS AND CURRENCY CONVERSION HERE.")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "column1",
-    style: pie.column1
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
-    className: "text1",
-    style: pie.text1
-  }, "We bring you the ability to track all your transactions from income to expenses to savings. All transactions are displayed in a neat table with editable features! All your information is safe and secure from unauthorized access. Not only that, you can also search crypto-currencies and view its prices histories, health index such as its Fundamental Score or its Market Maturity Score. We also offer a currency converter to add convenience. You can also review essential information about stocks."))));
+    className: "textcolor header "
+  }, "TRACK YOUR EXPENSES!"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "column1"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "text1"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "hclass2 subheader"
+  }, "We bring you the ability to track all your transactions from income to expenses to savings. All transactions are displayed in a neat table with editable features! All your information is safe and secure from unauthorized access."))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "text1"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "hclass1 subheader"
+  }, "Not only that, you can also search crypto-currencies and view its prices histories, health index such as its Fundamental Score or its Market Maturity Score. We also offer a currency converter to add convenience. You can also review essential information about stocks.")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "column3"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "w3-container",
+    id: "team",
+    style: team.style
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+    className: "w3-center"
+  }, "THE TEAM"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "w3-center w3-large"
+  }, "The ones who runs this company"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "w3-row-padding w3-grayscale",
+    style: team.style1
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "w3-col l3 m6 w3-margin-bottom"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "w3-card"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: "https://i.ibb.co/qFLY530/Whats-App-Image-2021-08-12-at-18-03-21.jpg",
+    alt: "Whats-App-Image-2021-08-12-at-18-03-21",
+    style: team.style2
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "w3-container"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Aditi Shrivastava"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "w3-opacity"
+  }, "Full Stack Developer"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Fun loving coder, loves to click photos. Ready everytime for chai.")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "w3-col l3 m6 w3-margin-bottom"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "w3-card"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: "https://i.ibb.co/xfs1Kfs/Whats-App-Image-2021-08-12-at-17-57-36.jpg",
+    alt: "John",
+    style: team.style2
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "w3-container"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Krina Dankhara"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "w3-opacity"
+  }, "Full Stack Developer"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Friendly Teaching Assistant, but pro at making plans and planning trips.")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "w3-col l3 m6 w3-margin-bottom"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "w3-card"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: "https://i.ibb.co/BghCmKz/Whats-App-Image-2021-08-12-at-17-57-22.jpg",
+    style: team.style2
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "w3-container"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Janvi Dankhara"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "w3-opacity"
+  }, "Full Stack Developer"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Strict one in the group. Never ready for photos.")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "w3-col l3 m6 w3-margin-bottom"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "w3-card"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+    src: "https://i.ibb.co/vB6sCXC/Whats-App-Image-2021-08-12-at-18-29-31.jpg",
+    alt: "Whats-App-Image-2021-08-12-at-18-29-31",
+    alt: "John",
+    style: team.style2
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "w3-container"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Ayush Sahai"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "w3-opacity"
+  }, "Full Stack Developer"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Not found."))))))));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (HomeUi);
@@ -3463,7 +3370,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Crypto_jsx__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./Crypto.jsx */ "./src/Crypto.jsx");
 /* harmony import */ var _HomeUi_jsx__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./HomeUi.jsx */ "./src/HomeUi.jsx");
 /* harmony import */ var _CurrencyConversion_jsx__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./CurrencyConversion.jsx */ "./src/CurrencyConversion.jsx");
-/* harmony import */ var _Stock_jsx__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./Stock.jsx */ "./src/Stock.jsx");
+/* harmony import */ var _StockSearch_jsx__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./StockSearch.jsx */ "./src/StockSearch.jsx");
 /* eslint-disable linebreak-style */
 
 /* eslint-disable no-unused-vars */
@@ -3498,7 +3405,7 @@ function NavBar({
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["NavItem"], null, "Expense List")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_bootstrap__WEBPACK_IMPORTED_MODULE_2__["LinkContainer"], {
     to: "/crypto"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["NavItem"], null, "CryptoCurrency")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_bootstrap__WEBPACK_IMPORTED_MODULE_2__["LinkContainer"], {
-    to: "/Stock"
+    to: "/StockSearch"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["NavItem"], null, "Stock")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_bootstrap__WEBPACK_IMPORTED_MODULE_2__["LinkContainer"], {
     to: "/CurrencyConversion"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["NavItem"], null, "CurrencyConvert"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Col"], {
@@ -3900,10 +3807,10 @@ function Stock() {
     if (resp) console.log(resp);
   }, [resp]);
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
-    axios__WEBPACK_IMPORTED_MODULE_2___default.a.get('https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=IBM&interval=5min&outputsize=full&apikey=demo').then(response => {
+    axios__WEBPACK_IMPORTED_MODULE_2___default.a.get('https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=600104.SHH&outputsize=full&apikey=demo').then(response => {
       setResp({
         columns: resp.columns,
-        rows: Object.values(response.data['Time Series (5min)']).map(item => item)
+        rows: Object.values(response.data['Time Series (Daily)']).map(item => item)
       });
     }).catch(err => {
       console.log(err);
@@ -3922,6 +3829,126 @@ function Stock() {
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (Stock);
+
+/***/ }),
+
+/***/ "./src/StockSearch.jsx":
+/*!*****************************!*\
+  !*** ./src/StockSearch.jsx ***!
+  \*****************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react_select__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-select */ "react-select");
+/* harmony import */ var react_select__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_select__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _Stock_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Stock.jsx */ "./src/Stock.jsx");
+
+
+ // import Demo3 from './Components/Demo3.js';
+// function App() {
+//   return (
+//  <Crypto/>
+//  </demo1>
+//   );
+// }
+
+const options = [{
+  name: 'IBM',
+  value: 'ibm'
+}, {
+  name: 'English',
+  value: 'en'
+}];
+
+class StockSearch extends react__WEBPACK_IMPORTED_MODULE_1__["Component"] {
+  constructor() {
+    super();
+    this.state = {
+      name: 'React',
+      showHideDemo1: false,
+      showHideDem02: false,
+      showHideDemo3: false
+    };
+    this.hideComponent = this.hideComponent.bind(this);
+  }
+
+  hideComponent(name) {
+    console.log(name);
+
+    switch (name) {
+      case 'showHideDemo1':
+        this.setState({
+          showHideDemo1: !this.state.showHideDemo1
+        });
+        this.setState({
+          showHideDemo2: false
+        });
+        this.setState({
+          showHideDemo3: false
+        });
+        break;
+
+      case 'showHideDemo2':
+        this.setState({
+          showHideDemo2: true
+        });
+        this.setState({
+          showHideDemo1: false
+        });
+        this.setState({
+          showHideDemo3: false
+        });
+        break;
+
+      case 'showHideDemo3':
+        this.setState({
+          showHideDemo3: !this.state.showHideDemo3
+        });
+        this.setState({
+          showHideDemo1: false
+        });
+        this.setState({
+          showHideDemo2: false
+        });
+        break;
+
+      default:
+        null;
+    }
+  }
+
+  render() {
+    const {
+      showHideDemo1,
+      showHideDemo2,
+      showHideDemo3
+    } = this.state;
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("form", {
+      onSubmit: this.handleSubmit
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("label", null, "Pick your favorite:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("select", {
+      value: this.state.value,
+      onChange: this.handleChange
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("option", {
+      value: "IBM",
+      onClick: () => this.hideComponent('showHideDemo2')
+    }, "IBM"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("option", {
+      value: "lime",
+      onClick: () => this.hideComponent('showHideDemo1')
+    }, "Lime"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("option", {
+      value: "coconut",
+      onClick: () => this.hideComponent('showHideDemo3')
+    }, "Coconut"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("option", {
+      value: "mango"
+    }, "Mango"))))), showHideDemo1 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Demo1, null), showHideDemo2 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_Stock_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], null), showHideDemo3 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Demo3, null));
+  }
+
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (StockSearch);
 
 /***/ }),
 
@@ -4148,7 +4175,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _NotFound_jsx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./NotFound.jsx */ "./src/NotFound.jsx");
 /* harmony import */ var _HomeUi_jsx__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./HomeUi.jsx */ "./src/HomeUi.jsx");
 /* harmony import */ var _CurrencyConversion_jsx__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./CurrencyConversion.jsx */ "./src/CurrencyConversion.jsx");
-/* harmony import */ var _Stock_jsx__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./Stock.jsx */ "./src/Stock.jsx");
+/* harmony import */ var _StockSearch_jsx__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./StockSearch.jsx */ "./src/StockSearch.jsx");
 /* eslint-disable linebreak-style */
 
 
@@ -4178,8 +4205,8 @@ const routes = [{
   path: '/HomeUi',
   component: _HomeUi_jsx__WEBPACK_IMPORTED_MODULE_6__["default"]
 }, {
-  path: '/Stock',
-  component: _Stock_jsx__WEBPACK_IMPORTED_MODULE_8__["default"]
+  path: '/StockSearch',
+  component: _StockSearch_jsx__WEBPACK_IMPORTED_MODULE_8__["default"]
 }, {
   path: '/CurrencyConversion',
   component: _CurrencyConversion_jsx__WEBPACK_IMPORTED_MODULE_7__["default"]
@@ -4287,7 +4314,8 @@ function withToast(OriginalComponent) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(__dirname) {const path = __webpack_require__(/*! path */ "path");
+/* WEBPACK VAR INJECTION */(function(__dirname) {/* eslint-disable linebreak-style */
+const path = __webpack_require__(/*! path */ "path");
 
 const nodeExternals = __webpack_require__(/*! webpack-node-externals */ "webpack-node-externals");
 
@@ -4334,6 +4362,14 @@ const browserConfig = {
   })],
   devtool: 'source-map'
 };
+const cssLoader = {
+  module: {
+    rules: [{
+      test: /\.css$/i,
+      use: ['style-loader', 'css-loader']
+    }]
+  }
+};
 const serverConfig = {
   mode: 'development',
   entry: {
@@ -4366,7 +4402,7 @@ const serverConfig = {
   })],
   devtool: 'source-map'
 };
-module.exports = [browserConfig, serverConfig];
+module.exports = [browserConfig, serverConfig, cssLoader];
 /* WEBPACK VAR INJECTION */}.call(this, "/"))
 
 /***/ }),
@@ -4524,6 +4560,17 @@ module.exports = require("react-router-bootstrap");
 /***/ (function(module, exports) {
 
 module.exports = require("react-router-dom");
+
+/***/ }),
+
+/***/ "react-select":
+/*!*******************************!*\
+  !*** external "react-select" ***!
+  \*******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("react-select");
 
 /***/ }),
 

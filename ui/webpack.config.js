@@ -1,3 +1,4 @@
+/* eslint-disable linebreak-style */
 const path = require('path');
 const nodeExternals = require('webpack-node-externals');
 const webpack = require('webpack');
@@ -49,6 +50,17 @@ const browserConfig = {
   devtool: 'source-map',
 };
 
+const cssLoader = {
+  module: {
+    rules: [
+      {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader'],
+      },
+    ],
+  },
+};
+
 const serverConfig = {
   mode: 'development',
   entry: { server: ['./server/uiserver.js'] },
@@ -86,5 +98,4 @@ const serverConfig = {
 };
 
 
-
-module.exports = [browserConfig, serverConfig];
+module.exports = [browserConfig, serverConfig, cssLoader];

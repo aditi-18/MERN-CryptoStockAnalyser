@@ -2,216 +2,107 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable max-len */
 /* eslint-disable linebreak-style */
-import React from 'react';
+import React, { useEffect } from 'react';
+
 import Axios from 'axios';
+import { Container, Col, Row } from 'react-bootstrap';
 
-import {
-  Container, Col, Row, Image,
-} from 'react-bootstrap';
-// import CarouselCont from './Carousel.jsx';
-// import CarouselContainer from './Carousel.jsx';
-// import Button from 'react-bootstrap/Button';
-// mport {
-// Card, Button } from 'react-bootstrap';
-// import image from './image.jpg';
-
-// eslint-disable-next-line import/prefer-default-export
-// import CardHome from './Card.jsx';
-// import image from './image.jpg';
-
-/* const heading = {
-  color: 'white',
-  backgroundColor: 'DodgerBlue',
-  padding: '10px',
-  fontFamily: 'Arial',
-  columnCount: 3,
-  columnGap: 40,
-  columnRule: 100,
-  marginTop: 300,
-  //display: block,
-  width: 400,
-  height: 400,
-  borderRadius: 50,
-  //display: flex,
-
-}; */
-
-const pie = {
-  /* pieContainer: {
-    height: '150px',
-    position: 'relative',
+const team = {
+  style: {
+    padding: '128px 16px',
   },
-  pieBackground: {
-    position: 'absolute',
-    width: '150px',
-    height: '150px',
-    borderRadius: '100%',
-    boxShadow: '0px 0px 8px rgba(0,0,0,0.5)',
+  style1: {
+    marginTop: '64px',
   },
-  pie :{
-    transition: 'all 1s',
-    position: 'absolute',
-    width: '150px',
-    height: '150px',
-    borderRadius: '100%',
-    clip:'rect(0px, 75px, 150px, 0px)'
-  },
+  style2: {
+    width: '100%',
 
-  hold: {
-    position: 'absolute',
-    width: '150px',
-    height: '150px',
-    borderRadius: '100%',
-    clip: 'rect(0px, 150px, 150px, 75px)'
-  }
-
-  #pieSlice1 .pie {
-    background-color: #1b458b;
-    transform:rotate(30deg);
-  }
-
-  #pieSlice2 {
-    transform: rotate(30deg);
-  }
-
-  #pieSlice2 .pie {
-    background-color: #0a0;
-    transform: rotate(60deg);
-  }
-
-  #pieSlice3 {
-    transform: rotate(90deg);
-  }
-
-  #pieSlice3 .pie {
-    background-color: #f80;
-    transform: rotate(120deg);
-  }
-
-  #pieSlice4 {
-    transform: rotate(210deg);
-  }
-
-  #pieSlice4 .pie {
-    background-color: #08f;
-    transform: rotate(10deg);
-  }
-
-  #pieSlice5 {
-    transform: rotate(220deg);
-  }
-
-  #pieSlice5 .pie {
-    background-color: #a04;
-    transform: rotate(70deg);
-  }
-
-  #pieSlice6 {
-    transform: rotate(290deg);
-  }
-
-  #pieSlice6 .pie {
-    background-color: #ffd700;
-    transform: rotate(70deg);
-  }
-
-  .innerCircle {
-    position: absolute;
-    width: 120px;
-    height: 120px;
-    background-color: #444;
-    border-radius: 100%;
-    top: 15px;
-    left: 15px;
-    box-shadow: 0px 0px 8px rgba(0,0,0,0.5) inset;
-    color: white;
-  }
-  .innerCircle .content {
-    position: absolute;
-    display: block;
-    width: 120px;
-    top: 30px;
-    left: 0;
-    text-align: center;
-    font-size: 14px;
-  } */
-
-  pie: {
-    backgroundImage: 'linear-gradient(to bottom right,LightSlateGrey, black)',
-  },
-
-
-  row: {
-    display: 'flex',
-  },
-
-  /* Create two equal columns that sits next to each other */
-  column: {
-    flex: '52%',
-    padding: '10px',
-    height: '510px',
-    backgroundColor: '#999999',
-  },
-  column1: {
-    flex: '50%',
-    marginTop: '16%',
-    padding: '40px',
-    height: '450px',
-    backgroundColor: '#595959',
-  },
-
-  maintext: {
-    fontFamily: 'Lucida Console',
-    fontSize: '80px',
-    textAlign: 'center',
-    color: 'White',
-
-  },
-  text: {
-    paddingTop: '10%',
-    textAlign: 'left',
-    fontFamily: 'Candara',
-    fontSize: '60px',
-    // fontSize: 'large',
-    color: 'WHITE',
-  },
-  text2: {
-    fontFamily: 'Candara',
-    fontSize: '29px',
-    // fontSize: 'large',
-    color: 'WHITE',
-  },
-  text1: {
-    textAlign: 'left',
-    paddingTop: '4%',
-    fontFamily: 'Candara',
-    // fontSize: '70%',
-    // fontSize: 'large',
-    color: 'WHITE',
   },
 };
 
 function HomeUi() {
   return (
-    <div className="pie" style={pie.pie}>
-      <h1 className="maintext" style={pie.maintext}>CryptoStockAnalyzer</h1>
-      <div className="row" style={pie.row}>
-        <div className="column" style={pie.column}>
-          <h1 className="text" style={pie.text}>TRACK YOUR EXPENSES!</h1>
-          <h2 className="text2" style={pie.text2}>EXPLORE THE WORLD OF CRYPTO, STOCKS AND CURRENCY CONVERSION HERE.</h2>
-        </div>
-        <div className="column1" style={pie.column1}>
-          <h2 className="text1" style={pie.text1}>
-            We bring you the ability to track all your transactions from income to expenses to savings. All transactions are
-            displayed in a neat table with editable features! All your information is safe and secure from unauthorized access.
-            Not only that, you can also search crypto-currencies and view its prices histories, health index such as its
-            Fundamental Score or its Market Maturity Score. We also offer a currency converter to add convenience.
-            You can also review essential information about stocks.
-          </h2>
+
+    <div className="ro row1">
+      <div className="column">
+        <div className="w3-container w3-animate-top">
+          <h1 className="textcolor header ">TRACK YOUR EXPENSES!</h1>
 
         </div>
       </div>
+      <div className="column1">
+        <div className="text1">
+          <div className="hclass2 subheader">
+            We bring you the ability to track all your transactions from income to expenses to savings. All transactions are
+            displayed in a neat table with editable features! All your information is safe and secure from unauthorized access.
+
+
+          </div>
+        </div>
+      </div>
+      <div className="text1">
+        <div className="hclass1 subheader">
+          Not only that, you can also search crypto-currencies and view its prices histories, health index such as its
+          Fundamental Score or its Market Maturity Score. We also offer a currency converter to add convenience.
+          You can also review essential information about stocks.
+
+        </div>
+      </div>
+      <div className="column3">
+
+
+        <div className="w3-container" id="team" style={team.style}>
+          <h3 className="w3-center">THE TEAM</h3>
+          <p className="w3-center w3-large">The ones who runs this company</p>
+          <div className="w3-row-padding w3-grayscale" style={team.style1}>
+            <div className="w3-col l3 m6 w3-margin-bottom">
+              <div className="w3-card">
+              <img src="https://i.ibb.co/qFLY530/Whats-App-Image-2021-08-12-at-18-03-21.jpg" alt="Whats-App-Image-2021-08-12-at-18-03-21" style={team.style2}/>
+                <div className="w3-container">
+                  <h3>Aditi Shrivastava</h3>
+                  <p className="w3-opacity">Full Stack Developer</p>
+                  <p>Fun loving coder, loves to click photos. Ready everytime for chai.</p>
+                </div>
+              </div>
+            </div>
+            <div className="w3-col l3 m6 w3-margin-bottom">
+              <div className="w3-card">
+                <img src="https://i.ibb.co/xfs1Kfs/Whats-App-Image-2021-08-12-at-17-57-36.jpg" alt="John" style={team.style2} />
+                <div className="w3-container">
+                  <h3>Krina Dankhara</h3>
+                  <p className="w3-opacity">Full Stack Developer</p>
+                  <p>Friendly Teaching Assistant, but pro at making plans and planning trips.</p>
+                </div>
+              </div>
+            </div>
+            <div className="w3-col l3 m6 w3-margin-bottom">
+              <div className="w3-card">
+                <img src="https://i.ibb.co/BghCmKz/Whats-App-Image-2021-08-12-at-17-57-22.jpg" style={team.style2} />
+                <div className="w3-container">
+                  <h3>Janvi Dankhara</h3>
+                  <p className="w3-opacity">Full Stack Developer</p>
+                  <p>Strict one in the group. Never ready for photos.</p>
+                </div>
+              </div>
+            </div>
+            <div className="w3-col l3 m6 w3-margin-bottom">
+              <div className="w3-card">
+                <img src="https://i.ibb.co/vB6sCXC/Whats-App-Image-2021-08-12-at-18-29-31.jpg" alt="Whats-App-Image-2021-08-12-at-18-29-31" alt="John" style={team.style2} />
+                <div className="w3-container">
+                  <h3>Ayush Sahai</h3>
+                  <p className="w3-opacity">Full Stack Developer</p>
+                  <p>Not found.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
     </div>
+
+
   );
 }
 export default HomeUi;

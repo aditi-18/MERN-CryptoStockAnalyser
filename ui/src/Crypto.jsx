@@ -115,9 +115,6 @@ const ss = {
           </form>
           
         </div>
-        <div className="header" style={ss.header}>
-            Symbol   Coin   Price    Volume    %change    Market Cap
-          </div>
         {filteredCoins.map(coin => {
           return (
            
