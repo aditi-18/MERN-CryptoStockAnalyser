@@ -50,16 +50,6 @@ const browserConfig = {
   devtool: 'source-map',
 };
 
-const cssLoader = {
-  module: {
-    rules: [
-      {
-        test: /\.css$/i,
-        use: ['style-loader', 'css-loader'],
-      },
-    ],
-  },
-};
 
 const serverConfig = {
   mode: 'development',
@@ -98,4 +88,4 @@ const serverConfig = {
 };
 
 
-module.exports = [browserConfig, serverConfig, cssLoader];
+module.exports = [browserConfig, serverConfig];

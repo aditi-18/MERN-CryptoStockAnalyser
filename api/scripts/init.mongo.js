@@ -22,7 +22,7 @@ const issuesDB = [
     owner: 'Ravan',
     effort: 5,
     created: new Date('2019-01-15'),
-    
+
     title: 'Error in console when clicking Add',
     description: 'Steps to recreate the problem:'
     + '\n1. Refresh the browser.'
@@ -39,7 +39,7 @@ const issuesDB = [
     owner: 'Eddie',
     effort: 14,
     created: new Date('2019-01-16'),
-    
+
     title: 'Missing bottom border on panel',
     description: 'There needs to be a border in the bottom in the panel'
     + ' that appears when clicking on Add',
@@ -50,11 +50,13 @@ db.issues.insertMany(issuesDB);
 const count = db.issues.count();
 print('Inserted', count, 'issues');
 
-db.counters.remove({ _id: 'issues' });
-db.counters.insert({ _id: 'issues', current: count });
-
 db.issues.createIndex({ id: 1 }, { unique: true });
 db.issues.createIndex({ status: 1 });
 db.issues.createIndex({ owner: 1 });
 db.issues.createIndex({ created: 1 });
+db.issues.createIndex({ title: 'text', description: 'text' });
+
 db.deleted_issues.createIndex({ id: 1 }, { unique: true });
+
+db.counters.remove({ _id: 'issues' });
+db.counters.insert({ _id: 'issues', current: count });

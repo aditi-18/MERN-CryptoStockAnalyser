@@ -16,6 +16,79 @@ This application has the following features-
  4)Currency conversion tool.
 
  5)Display stock information based on comapny.
+### Iteration2
+Iteration2 Team Hodlers
+
+#Iter2-TeamHodlers
+
+Git repo: https://github.ccs.neu.edu/NEU-CS5610-SU21/CryptoStock
+
+Heroku Link: https://crypto-sui.herokuapp.com/
+
+In this iteration we continued working on our components:
+
+1) Added CSS styling to home Page
+
+2) Stock API Integration with the main website
+
+3) Select Dropdown to Stock page to support data from multiple react components
+
+4) Styling to CurrencyConversion page
+
+
+Janvi
+
+- Added styling to CurrencyConversion
+
+- Fetched Stock data from an API as a base
+
+- Added Select DropDown to main Stock page
+
+- Deployed application on Heroku for both Api and Ui servers.
+
+
+Krina
+
+- Implemented Currency Conversion to calculate foreign exchange rates
+
+- Added CSS styling to Stock page
+
+- Searched for APIs for Stock
+
+- Added stocks of different organizations using APIs
+
+Aditi
+
+- Worked on issuetracker app. Completed with deployment.
+
+- Added home component.
+
+- Added CSS styling to home component.
+
+- Designed the application and the component structure.
+
+
+Ayush
+
+- Added placeholders of Components for application.
+
+- Implemented changes in backend in mongodb and graphql schema for updated design.
+
+- Implemented changes for front end in tables for expense tracking.
+
+- Designed and implemented Crypto Page with display and search real time data for cryptocurrencies.
+
+- Used Coingecko api to fetch data of crypto currencies.
+
+#### Result from Iteration1
+MainPage(1)
+![](/Screenshots/1.PNG)
+
+MainPage(2)
+![](/Screenshots/2.PNG)
+
+Stock Page
+![](/Screenshots/3.PNG)
 
 ### Iteration1
 
