@@ -82,13 +82,13 @@ Ayush
 
 #### Result from Iteration1
 MainPage(1)
-![](/Screenshots/1.PNG)
+![](/Screenshots/1.png)
 
 MainPage(2)
-![](/Screenshots/2.PNG)
+![](/Screenshots/2.png)
 
 Stock Page
-![](/Screenshots/3.PNG)
+![](/Screenshots/3.png)
 
 ### Iteration1
 
