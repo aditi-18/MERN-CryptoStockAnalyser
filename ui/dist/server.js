@@ -22,7 +22,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "731e7ea893c216a6f894";
+/******/ 	var hotCurrentHash = "96ad9702ea102737e411";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -1724,6 +1724,81 @@ function CurrencyRow(props) {
 
 /***/ }),
 
+/***/ "./src/Dai_Stock.jsx":
+/*!***************************!*\
+  !*** ./src/Dai_Stock.jsx ***!
+  \***************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var mdbreact__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! mdbreact */ "mdbreact");
+/* harmony import */ var mdbreact__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(mdbreact__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "axios");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
+
+
+
+const outer = {
+  backgroundImage: 'linear-gradient(to bottom right,LightSlateGrey, lightgrey)'
+};
+const heading = {
+  textAlign: 'center',
+  color: 'darkblue'
+};
+
+function Stock() {
+  const [resp, setResp] = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({
+    columns: [{
+      label: 'Open',
+      field: '1. open'
+    }, {
+      label: 'High',
+      field: '2. high'
+    }, {
+      label: 'Low',
+      field: '3. low'
+    }, {
+      label: 'Close',
+      field: '4. close'
+    }, {
+      label: 'Volume',
+      field: '5. volume'
+    }]
+  });
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
+    if (resp) console.log(resp);
+  }, [resp]);
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
+    axios__WEBPACK_IMPORTED_MODULE_2___default.a.get('https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=DAI.DEX&outputsize=full&apikey=demo').then(response => {
+      setResp({
+        columns: resp.columns,
+        rows: Object.values(response.data['Time Series (Daily)']).map(item => item)
+      });
+    }).catch(err => {
+      console.log(err);
+    });
+  }, []);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+    style: heading
+  }, "Dai Stock Data"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    style: outer
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(mdbreact__WEBPACK_IMPORTED_MODULE_1__["MDBDataTable"], {
+    data: resp,
+    striped: true,
+    bordered: true,
+    hover: true,
+    searching: false
+  })));
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (Stock);
+
+/***/ }),
+
 /***/ "./src/DateInput.jsx":
 /*!***************************!*\
   !*** ./src/DateInput.jsx ***!
@@ -1825,6 +1900,81 @@ class DateInput extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
   }
 
 }
+
+/***/ }),
+
+/***/ "./src/GreenPower_Stock.jsx":
+/*!**********************************!*\
+  !*** ./src/GreenPower_Stock.jsx ***!
+  \**********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var mdbreact__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! mdbreact */ "mdbreact");
+/* harmony import */ var mdbreact__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(mdbreact__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "axios");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
+
+
+
+const outer = {
+  backgroundImage: 'linear-gradient(to bottom right,LightSlateGrey, lightgrey)'
+};
+const heading = {
+  textAlign: 'center',
+  color: 'darkblue'
+};
+
+function Stock() {
+  const [resp, setResp] = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({
+    columns: [{
+      label: 'Open',
+      field: '1. open'
+    }, {
+      label: 'High',
+      field: '2. high'
+    }, {
+      label: 'Low',
+      field: '3. low'
+    }, {
+      label: 'Close',
+      field: '4. close'
+    }, {
+      label: 'Volume',
+      field: '5. volume'
+    }]
+  });
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
+    if (resp) console.log(resp);
+  }, [resp]);
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
+    axios__WEBPACK_IMPORTED_MODULE_2___default.a.get('https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=GPV.TRV&outputsize=full&apikey=demo').then(response => {
+      setResp({
+        columns: resp.columns,
+        rows: Object.values(response.data['Time Series (Daily)']).map(item => item)
+      });
+    }).catch(err => {
+      console.log(err);
+    });
+  }, []);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+    style: heading
+  }, "GreenPower Stock Data"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    style: outer
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(mdbreact__WEBPACK_IMPORTED_MODULE_1__["MDBDataTable"], {
+    data: resp,
+    striped: true,
+    bordered: true,
+    hover: true,
+    searching: false
+  })));
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (Stock);
 
 /***/ }),
 
@@ -1970,6 +2120,13 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+const outer = {
+  backgroundImage: 'linear-gradient(to bottom right,LightSlateGrey, lightgrey)'
+};
+const heading = {
+  textAlign: 'center',
+  color: 'darkblue'
+};
 
 function Crypto1() {
   const [resp, setResp] = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({
@@ -2003,13 +2160,17 @@ function Crypto1() {
       console.log(err);
     });
   }, []);
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(mdbreact__WEBPACK_IMPORTED_MODULE_1__["MDBDataTable"], {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+    style: heading
+  }, "IBM Stock Data"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    style: outer
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(mdbreact__WEBPACK_IMPORTED_MODULE_1__["MDBDataTable"], {
+    data: resp,
     striped: true,
     bordered: true,
     hover: true,
-    data: resp,
     searching: false
-  }));
+  })));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (Crypto1);
@@ -3558,6 +3719,81 @@ class Page extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
 
 /***/ }),
 
+/***/ "./src/Saic_Stock.jsx":
+/*!****************************!*\
+  !*** ./src/Saic_Stock.jsx ***!
+  \****************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var mdbreact__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! mdbreact */ "mdbreact");
+/* harmony import */ var mdbreact__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(mdbreact__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "axios");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
+
+
+
+const outer = {
+  backgroundImage: 'linear-gradient(to bottom right,LightSlateGrey, lightgrey)'
+};
+const heading = {
+  textAlign: 'center',
+  color: 'darkblue'
+};
+
+function Stock() {
+  const [resp, setResp] = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({
+    columns: [{
+      label: 'Open',
+      field: '1. open'
+    }, {
+      label: 'High',
+      field: '2. high'
+    }, {
+      label: 'Low',
+      field: '3. low'
+    }, {
+      label: 'Close',
+      field: '4. close'
+    }, {
+      label: 'Volume',
+      field: '5. volume'
+    }]
+  });
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
+    if (resp) console.log(resp);
+  }, [resp]);
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
+    axios__WEBPACK_IMPORTED_MODULE_2___default.a.get('https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=DAI.DEX&outputsize=full&apikey=demo').then(response => {
+      setResp({
+        columns: resp.columns,
+        rows: Object.values(response.data['Time Series (Daily)']).map(item => item)
+      });
+    }).catch(err => {
+      console.log(err);
+    });
+  }, []);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+    style: heading
+  }, "Saic Stock Data"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    style: outer
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(mdbreact__WEBPACK_IMPORTED_MODULE_1__["MDBDataTable"], {
+    data: resp,
+    striped: true,
+    bordered: true,
+    hover: true,
+    searching: false
+  })));
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (Stock);
+
+/***/ }),
+
 /***/ "./src/Search.jsx":
 /*!************************!*\
   !*** ./src/Search.jsx ***!
@@ -3654,6 +3890,13 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+const outer = {
+  backgroundImage: 'linear-gradient(to bottom right,LightSlateGrey, lightgrey)'
+};
+const heading = {
+  textAlign: 'center',
+  color: 'darkblue'
+};
 
 function Crypto1() {
   const [resp, setResp] = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({
@@ -3687,13 +3930,17 @@ function Crypto1() {
       console.log(err);
     });
   }, []);
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(mdbreact__WEBPACK_IMPORTED_MODULE_1__["MDBDataTable"], {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+    style: heading
+  }, "Shopify Stock Data"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    style: outer
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(mdbreact__WEBPACK_IMPORTED_MODULE_1__["MDBDataTable"], {
+    data: resp,
     striped: true,
     bordered: true,
     hover: true,
-    data: resp,
     searching: false
-  }));
+  })));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (Crypto1);
@@ -3899,6 +4146,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _IBM_Stock_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./IBM_Stock.jsx */ "./src/IBM_Stock.jsx");
 /* harmony import */ var _Shopify_Stock_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Shopify_Stock.jsx */ "./src/Shopify_Stock.jsx");
+/* harmony import */ var _Dai_Stock_jsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Dai_Stock.jsx */ "./src/Dai_Stock.jsx");
+/* harmony import */ var _GreenPower_Stock_jsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./GreenPower_Stock.jsx */ "./src/GreenPower_Stock.jsx");
+/* harmony import */ var _Saic_Stock_jsx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Saic_Stock.jsx */ "./src/Saic_Stock.jsx");
+/* harmony import */ var _Tesco_Stock_jsx__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Tesco_Stock.jsx */ "./src/Tesco_Stock.jsx");
+
+
+
+
 
 
 
@@ -3909,7 +4164,11 @@ class StockSearch extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
     this.state = {
       name: 'React',
       showHideDemo1: true,
-      showHideDemo2: false
+      showHideDemo2: false,
+      showHideDemo3: false,
+      showHideDemo4: false,
+      showHideDemo5: false,
+      showHideDemo6: false
     };
     this.hideComponent = this.hideComponent.bind(this);
   }
@@ -3925,6 +4184,18 @@ class StockSearch extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
         this.setState({
           showHideDemo2: false
         });
+        this.setState({
+          showHideDemo3: false
+        });
+        this.setState({
+          showHideDemo4: false
+        });
+        this.setState({
+          showHideDemo5: false
+        });
+        this.setState({
+          showHideDemo6: false
+        });
         break;
 
       case 'showHideDemo2':
@@ -3933,6 +4204,102 @@ class StockSearch extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
         });
         this.setState({
           showHideDemo2: true
+        });
+        this.setState({
+          showHideDemo3: false
+        });
+        this.setState({
+          showHideDemo4: false
+        });
+        this.setState({
+          showHideDemo5: false
+        });
+        this.setState({
+          showHideDemo6: false
+        });
+        break;
+
+      case 'showHideDemo3':
+        this.setState({
+          showHideDemo1: false
+        });
+        this.setState({
+          showHideDemo2: false
+        });
+        this.setState({
+          showHideDemo3: true
+        });
+        this.setState({
+          showHideDemo4: false
+        });
+        this.setState({
+          showHideDemo5: false
+        });
+        this.setState({
+          showHideDemo6: false
+        });
+        break;
+
+      case 'showHideDemo4':
+        this.setState({
+          showHideDemo1: false
+        });
+        this.setState({
+          showHideDemo2: false
+        });
+        this.setState({
+          showHideDemo3: false
+        });
+        this.setState({
+          showHideDemo4: true
+        });
+        this.setState({
+          showHideDemo5: false
+        });
+        this.setState({
+          showHideDemo6: false
+        });
+        break;
+
+      case 'showHideDemo5':
+        this.setState({
+          showHideDemo1: false
+        });
+        this.setState({
+          showHideDemo2: false
+        });
+        this.setState({
+          showHideDemo3: false
+        });
+        this.setState({
+          showHideDemo4: false
+        });
+        this.setState({
+          showHideDemo5: true
+        });
+        this.setState({
+          showHideDemo6: false
+        });
+        break;
+
+      case 'showHideDemo6':
+        this.setState({
+          showHideDemo1: false
+        });
+        this.setState({
+          showHideDemo2: false
+        });
+        this.setState({
+          showHideDemo3: false
+        });
+        this.setState({
+          showHideDemo4: false
+        });
+        this.setState({
+          showHideDemo5: false
+        });
+        this.setState({
+          showHideDemo6: true
         });
         break;
 
@@ -3944,20 +4311,111 @@ class StockSearch extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
   render() {
     const {
       showHideDemo1,
-      showHideDemo2
+      showHideDemo2,
+      showHideDemo3,
+      showHideDemo4,
+      showHideDemo5,
+      showHideDemo6
     } = this.state;
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Pick your favorite:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
       value: "IBM",
       onClick: () => this.hideComponent('showHideDemo1')
     }, "IBM"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-      value: "lime",
+      value: "Shopify",
       onClick: () => this.hideComponent('showHideDemo2')
-    }, "Shopify"))))), showHideDemo1 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_IBM_Stock_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], null), showHideDemo2 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shopify_Stock_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], null));
+    }, "Shopify"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+      value: "Dai",
+      onClick: () => this.hideComponent('showHideDemo3')
+    }, "Dai"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+      value: "GreenPower",
+      onClick: () => this.hideComponent('showHideDemo4')
+    }, "GreenPower"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+      value: "Saic",
+      onClick: () => this.hideComponent('showHideDemo5')
+    }, "Saic"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+      value: "Tesco",
+      onClick: () => this.hideComponent('showHideDemo6')
+    }, "Tesco"))))), showHideDemo1 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_IBM_Stock_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], null), showHideDemo2 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shopify_Stock_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], null), showHideDemo3 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Dai_Stock_jsx__WEBPACK_IMPORTED_MODULE_3__["default"], null), showHideDemo4 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_GreenPower_Stock_jsx__WEBPACK_IMPORTED_MODULE_4__["default"], null), showHideDemo5 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Saic_Stock_jsx__WEBPACK_IMPORTED_MODULE_5__["default"], null), showHideDemo6 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Tesco_Stock_jsx__WEBPACK_IMPORTED_MODULE_6__["default"], null));
   }
 
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (StockSearch);
+
+/***/ }),
+
+/***/ "./src/Tesco_Stock.jsx":
+/*!*****************************!*\
+  !*** ./src/Tesco_Stock.jsx ***!
+  \*****************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var mdbreact__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! mdbreact */ "mdbreact");
+/* harmony import */ var mdbreact__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(mdbreact__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "axios");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
+
+
+
+const outer = {
+  backgroundImage: 'linear-gradient(to bottom right,LightSlateGrey, lightgrey)'
+};
+const heading = {
+  textAlign: 'center',
+  color: 'darkblue'
+};
+
+function Stock() {
+  const [resp, setResp] = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])({
+    columns: [{
+      label: 'Open',
+      field: '1. open'
+    }, {
+      label: 'High',
+      field: '2. high'
+    }, {
+      label: 'Low',
+      field: '3. low'
+    }, {
+      label: 'Close',
+      field: '4. close'
+    }, {
+      label: 'Volume',
+      field: '5. volume'
+    }]
+  });
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
+    if (resp) console.log(resp);
+  }, [resp]);
+  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
+    axios__WEBPACK_IMPORTED_MODULE_2___default.a.get('https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=TSCO.LON&outputsize=full&apikey=GCND8F72CVVG07M6').then(response => {
+      setResp({
+        columns: resp.columns,
+        rows: Object.values(response.data['Time Series (Daily)']).map(item => item)
+      });
+    }).catch(err => {
+      console.log(err);
+    });
+  }, []);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+    style: heading
+  }, "Tesco Stock Data"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    style: outer
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(mdbreact__WEBPACK_IMPORTED_MODULE_1__["MDBDataTable"], {
+    data: resp,
+    striped: true,
+    bordered: true,
+    hover: true,
+    searching: false
+  })));
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (Stock);
 
 /***/ }),
 
