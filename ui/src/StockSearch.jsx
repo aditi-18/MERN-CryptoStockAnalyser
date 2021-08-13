@@ -1,19 +1,7 @@
-import Select from 'react-select';
 import React, { Component } from 'react';
-import Stock from './Stock.jsx';
-// import Demo3 from './Components/Demo3.js';
+import IBM from './IBM_Stock.jsx';
+import Shopify from './Shopify_Stock.jsx';
 
-
-// function App() {
-//   return (
-//  <Crypto/>
-//  </demo1>
-//   );
-// }
-const options = [
-  { name: 'IBM', value: 'ibm' },
-  { name: 'English', value: 'en' },
-];
 
 class StockSearch extends Component {
   constructor() {
@@ -23,9 +11,8 @@ class StockSearch extends Component {
 
       name: 'React',
 
-      showHideDemo1: false,
-      showHideDem02: false,
-      showHideDemo3: false,
+      showHideDemo1: true,
+      showHideDemo2: false,
 
     };
 
@@ -39,27 +26,19 @@ class StockSearch extends Component {
     switch (name) {
       case 'showHideDemo1':
 
-        this.setState({ showHideDemo1: !this.state.showHideDemo1 });
+        this.setState({ showHideDemo1: true });
         this.setState({ showHideDemo2: false });
-        this.setState({ showHideDemo3: false });
+
 
         break;
 
       case 'showHideDemo2':
 
+        this.setState({ showHideDemo1: false });
         this.setState({ showHideDemo2: true });
-        this.setState({ showHideDemo1: false });
-        this.setState({ showHideDemo3: false });
 
         break;
 
-      case 'showHideDemo3':
-
-        this.setState({ showHideDemo3: !this.state.showHideDemo3 });
-        this.setState({ showHideDemo1: false });
-        this.setState({ showHideDemo2: false });
-
-        break;
 
       default:
 
@@ -69,35 +48,29 @@ class StockSearch extends Component {
 
 
   render() {
-    const { showHideDemo1, showHideDemo2, showHideDemo3 } = this.state;
+    const { showHideDemo1, showHideDemo2 } = this.state;
 
     return (
 
+
       <div>
         <div>
-
-          <form onSubmit={this.handleSubmit}>
+          <form>
             <label>
               Pick your favorite:
-              <select value={this.state.value} onChange={this.handleChange}>
-                <option value="IBM" onClick={() => this.hideComponent('showHideDemo2')}>IBM</option>
-                <option value="lime" onClick={() => this.hideComponent('showHideDemo1')}>Lime</option>
-                <option value="coconut" onClick={() => this.hideComponent('showHideDemo3')}>Coconut</option>
-                <option value="mango">Mango</option>
+              <select>
+                <option value="IBM" onClick={() => this.hideComponent('showHideDemo1')}>IBM</option>
+                <option value="lime" onClick={() => this.hideComponent('showHideDemo2')}>Shopify</option>
               </select>
+
             </label>
 
           </form>
         </div>
 
+        {showHideDemo1 && <IBM />}
 
-        {showHideDemo1 && <Demo1 />}
-
-
-        {showHideDemo2 && <Stock />}
-
-
-        {showHideDemo3 && <Demo3 />}
+        {showHideDemo2 && <Shopify />}
 
 
       </div>
