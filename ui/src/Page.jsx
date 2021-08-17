@@ -25,7 +25,7 @@ function NavBar({ user, onUserChange }) {
   return (
     <Navbar fluid>
       <Navbar.Header>
-        <Navbar.Brand>Crypto Exchange Tool</Navbar.Brand>
+        <Navbar.Brand>CryptoStockAnalyzer</Navbar.Brand>
       </Navbar.Header>
       <Nav>
         <LinkContainer exact to="/HomeUi">
