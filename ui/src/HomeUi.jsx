@@ -87,11 +87,12 @@ function HomeUi() {
             </div>
             <div className="w3-col l3 m6 w3-margin-bottom">
               <div className="w3-card">
-                <img src="https://i.ibb.co/vB6sCXC/Whats-App-Image-2021-08-12-at-18-29-31.jpg" alt="Whats-App-Image-2021-08-12-at-18-29-31" alt="John" style={team.style2} />
+                <img src="https://i.ibb.co/m8v3N6F/7077-F66-C-990-F-4-DA8-96-BC-F765-D66-C8737.jpg"
+ alt="Whats-App-Image-2021-08-12-at-18-29-31" alt="John" style={team.style2} />
                 <div className="w3-container">
                   <h3>Ayush Sahai</h3>
                   <p className="w3-opacity">Full Stack Developer</p>
-                  <p>Not found.</p>
+                  <p>You wanna meet me? Get tested at cabot.Pro at sending stickers.</p>
                 </div>
               </div>
             </div>
