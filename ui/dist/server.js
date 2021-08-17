@@ -22,7 +22,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "28f704687f84b90ac8c7";
+/******/ 	var hotCurrentHash = "b8d4a737ea88047c64ec";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -1062,6 +1062,8 @@ function template(body, initialData, userData) {
   <title>Pro MERN Stack</title>
   <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css" >
   <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/App.css">
+  
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Trirong">
 
@@ -1145,10 +1147,12 @@ const apiProxyTarget = process.env.API_PROXY_TARGET;
 
 if (apiProxyTarget) {
   app.use('/graphql', http_proxy_middleware__WEBPACK_IMPORTED_MODULE_2___default()({
-    target: apiProxyTarget
+    target: apiProxyTarget,
+    changeOrigin: true
   }));
   app.use('/auth', http_proxy_middleware__WEBPACK_IMPORTED_MODULE_2___default()({
-    target: apiProxyTarget
+    target: apiProxyTarget,
+    changeOrigin: true
   }));
 }
 
@@ -1245,10 +1249,10 @@ class About extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
 
 /***/ }),
 
-/***/ "./src/Coin.js":
-/*!*********************!*\
-  !*** ./src/Coin.js ***!
-  \*********************/
+/***/ "./src/Coin.jsx":
+/*!**********************!*\
+  !*** ./src/Coin.jsx ***!
+  \**********************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1256,109 +1260,39 @@ class About extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
- //require('./style.css');
-//import './Coin.css';
 
-const cc = {
-  coinContainer: {
-    display: "flex",
-    justifyContent: "center"
-  },
-  coinRow: {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "start",
-    alignItems: "center",
-    height: "80px",
-    borderBottom: "1px solid #d7d7d7",
-    width: "900px"
-  },
-  coin: {
-    display: "flex",
-    alignItems: "center",
-    paddingRight: "24px",
-    minWidth: "300px"
-  },
-  coinp: {
-    fontSize: "16px",
-    width: "150px"
-  },
-  coinImg: {
-    height: "30px",
-    width: "30px",
-    marginRight: "10px"
-  },
-  coinSymbol: {
-    textTransform: "uppercase"
-  },
-  coinData: {
-    display: "flex",
-    textAlign: "right",
-    justifyContent: "space-between",
-    width: "100%"
-  },
-  coinPrice: {
-    width: "110px"
-  },
-  coinVolume: {
-    width: "155px"
-  },
-  coinMarketcap: {
-    width: "230px"
-  },
-  coinPercent: {
-    width: "100px"
-  } // .red {
-  //   color: #f00606;
-  // }
-  // .green {
-  //   color: #11d811;
-  // }
-
-};
 
 const Coin = ({
   name,
-  price,
-  symbol,
-  marketcap,
-  volume,
   image,
-  priceChange
+  symbol,
+  price,
+  volume,
+  priceChange,
+  marketCap
 }) => {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "coinContainer",
-    style: cc.coinContainer
+    className: "coin-container"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "coinRow",
-    style: cc.coinRow
+    className: "row coin-row"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "coin",
-    style: cc.coin
+    className: "col-md-3 coin"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     src: image,
-    style: cc.coinImg,
     alt: "crypto"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-    className: "coinSymbol",
-    style: cc.coinSymbol
-  }, symbol)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "coinData",
-    style: cc.coinData
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-    className: "coinPrice",
-    style: cc.coinPrice
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "coin-symbol"
+  }, symbol)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "col-md-2 coin-price"
   }, "$", price), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-    className: "coinVolume",
-    style: cc.coinVolume
+    className: "col-md-2 coin-volume"
   }, "$", volume.toLocaleString()), priceChange < 0 ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-    className: "coin-percent red"
+    className: "col-md-1 coin-percent red"
   }, priceChange.toFixed(2), "%") : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-    className: "coin-percent green"
+    className: "col-md-1 coin-percent green"
   }, priceChange.toFixed(2), "%"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-    className: "coinMarketcap",
-    style: cc.coinMarketcap
-  }, "Mkt Cap: $", marketcap.toLocaleString()))));
+    className: "col-md-4 coin-marketcap"
+  }, "Market Cap: $", marketCap.toLocaleString())));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Coin);
@@ -1411,143 +1345,50 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "axios");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _Coin_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Coin.js */ "./src/Coin.js");
-/* harmony import */ var react_paginate__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-paginate */ "react-paginate");
-/* harmony import */ var react_paginate__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_paginate__WEBPACK_IMPORTED_MODULE_3__);
-
- //require('./style.css');
-//import  './App.css';
+/* harmony import */ var _Coin_jsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Coin.jsx */ "./src/Coin.jsx");
 
 
 
-const ss = {
-  coinmain: {
-    boxSizing: "border-box",
-    margin: "0",
-    padding: "0",
-    fontFamily: "'Montserrat', sans-serif",
-    backgroundColor: "#1a1a1c",
-    color: "#fff"
-  },
-  coinStyle: {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    marginTop: "64px",
-    color: "#fff"
-  },
-  coinSearch: {
-    marginBottom: "64px",
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
-    alignContent: "center"
-  },
-  coinText: {
-    marginBottom: "32px",
-    textAlign: "center"
-  },
-  coinInput: {
-    paddingLeft: "16px",
-    width: "300px",
-    height: "50px",
-    borderRadius: "4px",
-    border: "none",
-    color: "#e2e2e2" //backgroundImage: "{
-    //-225deg,
-    //#ac32e4 0%,
-    //#7918f2 48%,
-    //#4801ff 100%
-    //}"
-
-  },
-  header: {
-    display: "flex",
-    alignItems: "center",
-    paddingRight: "24px",
-    minWidth: "300px"
-  }
-};
 
 function Crypto() {
   const [coins, setCoins] = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])([]);
-  const [data, setData] = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])([]);
-  const [offset, setOffset] = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(0);
   const [search, setSearch] = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])('');
-  const [perPage] = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(10);
-  const [pageCount, setPageCount] = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(0);
-
-  const getData = async () => {
-    const res = await axios__WEBPACK_IMPORTED_MODULE_1___default.a.get(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=250&page=1&sparkline=false`).then(res => {
-      setCoins(res.data);
-    });
-    const data = res.data;
-    const slice = data.slice(offset, offset + perPage);
-    const postData = slice.map(pd => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-      key: pd.id
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, pd.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-      src: pd.thumbnailUrl,
-      alt: ""
-    })));
-    setData(postData);
-    setPageCount(Math.ceil(25));
-  };
-
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
-    getData();
-  }, [offset]);
+    axios__WEBPACK_IMPORTED_MODULE_1___default.a.get('https://api.coingecko.com/api/v3/coins/markets?vs_currency=cad&order=market_cap_desc&per_page=250&page=1&sparkline=false').then(res => {
+      setCoins(res.data);
+    }).catch(error => console.error(error));
+  }, []);
 
   const handleChange = e => {
     setSearch(e.target.value);
   };
 
-  const handlePageClick = e => {
-    const selectedPage = e.selected;
-    setOffset(selectedPage + 1);
-  };
-
   const filteredCoins = coins.filter(coin => coin.name.toLowerCase().includes(search.toLowerCase()));
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    classname: "coinmain",
-    style: ss.coinmain
+    className: "ayush"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "coinStyle",
-    style: ss.coinStyle
+    className: "container coin-app"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "coinSearch",
-    style: ss.coinSearch
+    className: "coin-search"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "row"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
-    className: "coinText",
-    style: ss.coinText
-  }, "Search a currency"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-    className: "coinInput",
-    style: ss.coinInput,
-    type: "text",
-    onChange: handleChange,
-    placeholder: "Search"
+    className: "col-md-12 coin-text"
+  }, "Search a Currency")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+    placeholder: "Search",
+    className: "coin-input",
+    onChange: handleChange
   }))), filteredCoins.map(coin => {
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Coin_js__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Coin_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], {
       key: coin.id,
       name: coin.name,
-      price: coin.current_price,
-      symbol: coin.symbol,
-      marketcap: coin.total_volume,
-      volume: coin.market_cap,
       image: coin.image,
-      priceChange: coin.price_change_percentage_24h
+      symbol: coin.symbol,
+      volume: coin.total_volume,
+      price: coin.current_price,
+      priceChange: coin.price_change_percentage_24h,
+      marketCap: coin.market_cap
     });
-  }), data, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_paginate__WEBPACK_IMPORTED_MODULE_3___default.a, {
-    previousLabel: "prev",
-    nextLabel: "next",
-    breakLabel: "...",
-    breakClassName: "break-me",
-    pageCount: pageCount,
-    marginPagesDisplayed: 2,
-    pageRangeDisplayed: 5,
-    onPageChange: handlePageClick,
-    containerClassName: "pagination",
-    subContainerClassName: "pages pagination",
-    activeClassName: "active"
   })));
 }
 
@@ -4829,14 +4670,6 @@ const browserConfig = {
   })],
   devtool: 'source-map'
 };
-const cssLoader = {
-  module: {
-    rules: [{
-      test: /\.css$/i,
-      use: ['style-loader', 'css-loader']
-    }]
-  }
-};
 const serverConfig = {
   mode: 'development',
   entry: {
@@ -4869,7 +4702,7 @@ const serverConfig = {
   })],
   devtool: 'source-map'
 };
-module.exports = [browserConfig, serverConfig, cssLoader];
+module.exports = [browserConfig, serverConfig];
 /* WEBPACK VAR INJECTION */}.call(this, "/"))
 
 /***/ }),
@@ -4994,17 +4827,6 @@ module.exports = require("react-bootstrap");
 /***/ (function(module, exports) {
 
 module.exports = require("react-dom/server");
-
-/***/ }),
-
-/***/ "react-paginate":
-/*!*********************************!*\
-  !*** external "react-paginate" ***!
-  \*********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("react-paginate");
 
 /***/ }),
 

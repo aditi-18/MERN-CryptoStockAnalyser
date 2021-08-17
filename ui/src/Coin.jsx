@@ -35,7 +35,7 @@ const Coin = ({
 					Market Cap: ${marketCap.toLocaleString()}
 				</p>
 			</div>
-		</div>
+		 </div>
 	);
 };
 

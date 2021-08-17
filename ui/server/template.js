@@ -10,6 +10,8 @@ export default function template(body, initialData, userData) {
   <title>Pro MERN Stack</title>
   <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css" >
   <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/App.css">
+  
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Trirong">
 
