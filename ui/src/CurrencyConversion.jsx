@@ -19,7 +19,7 @@ const row = {
 const box = {
   // backgroundColor: '#000000',
   padding: 80,
-  backgroundImage: 'linear-gradient(to bottom right, LightSlateGray, Black)',
+  backgroundImage: 'linear-gradient(to bottom right, LightSlateGray, grey)',
 };
 
 const equals = {

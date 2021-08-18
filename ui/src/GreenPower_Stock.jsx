@@ -7,8 +7,13 @@ const outer = {
 };
 
 const heading = {
+  color: 'white',
+  backgroundColor: 'LightSlateGrey',
   textAlign: 'center',
-  color: 'darkblue',
+  fontSize: 32,
+  paddingTop: 5,
+  paddingBottom: 10,
+
 };
 
 function Stock() {

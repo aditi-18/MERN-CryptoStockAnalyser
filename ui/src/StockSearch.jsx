@@ -20,7 +20,7 @@ class StockSearch extends Component {
     this.hideComponent = this.hideComponent.bind(this);
   }
 
- a = {
+  a = {
 
     showHideDemo1: false,
     showHideDemo2: false,
@@ -29,35 +29,35 @@ class StockSearch extends Component {
     showHideDemo5: false,
     showHideDemo6: false,
 
-  }
+  };
   hideComponent(name) {
 
     switch (name) {
       case 'IBM':
-        this.setState({...this.a, showHideDemo1: true });
+        this.setState({ ...this.a, showHideDemo1: true });
         break;
 
       case 'Shopify':
-        this.setState({...this.a, showHideDemo2: true });
+        this.setState({ ...this.a, showHideDemo2: true });
         break;
 
       case 'Dai':
-        this.setState({...this.a, showHideDemo3: true });
+        this.setState({ ...this.a, showHideDemo3: true });
         break;
 
       case 'GreenPower':
 
-        this.setState({ ...this.a,showHideDemo4: true });
+        this.setState({ ...this.a, showHideDemo4: true });
 
         break;
       case 'Saic':
-this.setState({...this.a, showHideDemo5: true });
+        this.setState({ ...this.a, showHideDemo5: true });
 
         break;
 
       case 'Tesco':
 
-        this.setState({...this.a, showHideDemo6: true });
+        this.setState({ ...this.a, showHideDemo6: true });
 
         break;
     }
@@ -74,9 +74,9 @@ this.setState({...this.a, showHideDemo5: true });
         <div>
           <form>
             <label>
-              Pick your favorite:
-              <select onChange={(e)=>{
-                this.hideComponent(e.target.value)
+              Select Stock:
+              <select className="btn btn-default btn-rounded btn-lg dropdown-toggle"onChange={(e)=> {
+                  this.hideComponent(e.target.value);
                 }
                 }
                   >

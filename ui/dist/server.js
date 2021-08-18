@@ -22,7 +22,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "b8d4a737ea88047c64ec";
+/******/ 	var hotCurrentHash = "75081fb9cafdd897013a";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -1928,7 +1928,7 @@ function HomeUi() {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "w3-card"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    src: "https://i.ibb.co/vB6sCXC/Whats-App-Image-2021-08-12-at-18-29-31.jpg",
+    src: "https://i.ibb.co/m8v3N6F/7077-F66-C-990-F-4-DA8-96-BC-F765-D66-C8737.jpg",
     alt: "Whats-App-Image-2021-08-12-at-18-29-31",
     alt: "John",
     style: team.style2
@@ -1936,7 +1936,7 @@ function HomeUi() {
     className: "w3-container"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Ayush Sahai"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "w3-opacity"
-  }, "Full Stack Developer"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Not found."))))))));
+  }, "Full Stack Developer"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "You wanna meet me? Get tested at cabot.Pro at sending stickers."))))))));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (HomeUi);
@@ -3463,7 +3463,7 @@ function NavBar({
 }) {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Navbar"], {
     fluid: true
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Navbar"].Header, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Navbar"].Brand, null, "Crypto Exchange Tool")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Nav"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_bootstrap__WEBPACK_IMPORTED_MODULE_2__["LinkContainer"], {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Navbar"].Header, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Navbar"].Brand, null, "CryptoStockAnalyzer")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["Nav"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_bootstrap__WEBPACK_IMPORTED_MODULE_2__["LinkContainer"], {
     exact: true,
     to: "/HomeUi"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_bootstrap__WEBPACK_IMPORTED_MODULE_1__["NavItem"], null, "Home ")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_bootstrap__WEBPACK_IMPORTED_MODULE_2__["LinkContainer"], {
@@ -3991,6 +3991,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _GreenPower_Stock_jsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./GreenPower_Stock.jsx */ "./src/GreenPower_Stock.jsx");
 /* harmony import */ var _Saic_Stock_jsx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Saic_Stock.jsx */ "./src/Saic_Stock.jsx");
 /* harmony import */ var _Tesco_Stock_jsx__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Tesco_Stock.jsx */ "./src/Tesco_Stock.jsx");
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 
 
 
@@ -4002,150 +4004,60 @@ __webpack_require__.r(__webpack_exports__);
 class StockSearch extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
   constructor() {
     super();
-    this.state = {
-      name: 'React',
-      showHideDemo1: true,
+
+    _defineProperty(this, "a", {
+      showHideDemo1: false,
       showHideDemo2: false,
       showHideDemo3: false,
       showHideDemo4: false,
       showHideDemo5: false,
       showHideDemo6: false
+    });
+
+    this.state = {
+      name: 'React',
+      showHideDemo1: true
     };
     this.hideComponent = this.hideComponent.bind(this);
   }
 
   hideComponent(name) {
-    console.log(name);
-
     switch (name) {
-      case 'showHideDemo1':
-        this.setState({
+      case 'IBM':
+        this.setState({ ...this.a,
           showHideDemo1: true
         });
-        this.setState({
-          showHideDemo2: false
-        });
-        this.setState({
-          showHideDemo3: false
-        });
-        this.setState({
-          showHideDemo4: false
-        });
-        this.setState({
-          showHideDemo5: false
-        });
-        this.setState({
-          showHideDemo6: false
-        });
         break;
 
-      case 'showHideDemo2':
-        this.setState({
-          showHideDemo1: false
-        });
-        this.setState({
+      case 'Shopify':
+        this.setState({ ...this.a,
           showHideDemo2: true
         });
-        this.setState({
-          showHideDemo3: false
-        });
-        this.setState({
-          showHideDemo4: false
-        });
-        this.setState({
-          showHideDemo5: false
-        });
-        this.setState({
-          showHideDemo6: false
-        });
         break;
 
-      case 'showHideDemo3':
-        this.setState({
-          showHideDemo1: false
-        });
-        this.setState({
-          showHideDemo2: false
-        });
-        this.setState({
+      case 'Dai':
+        this.setState({ ...this.a,
           showHideDemo3: true
         });
-        this.setState({
-          showHideDemo4: false
-        });
-        this.setState({
-          showHideDemo5: false
-        });
-        this.setState({
-          showHideDemo6: false
-        });
         break;
 
-      case 'showHideDemo4':
-        this.setState({
-          showHideDemo1: false
-        });
-        this.setState({
-          showHideDemo2: false
-        });
-        this.setState({
-          showHideDemo3: false
-        });
-        this.setState({
+      case 'GreenPower':
+        this.setState({ ...this.a,
           showHideDemo4: true
         });
-        this.setState({
-          showHideDemo5: false
-        });
-        this.setState({
-          showHideDemo6: false
-        });
         break;
 
-      case 'showHideDemo5':
-        this.setState({
-          showHideDemo1: false
-        });
-        this.setState({
-          showHideDemo2: false
-        });
-        this.setState({
-          showHideDemo3: false
-        });
-        this.setState({
-          showHideDemo4: false
-        });
-        this.setState({
+      case 'Saic':
+        this.setState({ ...this.a,
           showHideDemo5: true
         });
-        this.setState({
-          showHideDemo6: false
-        });
         break;
 
-      case 'showHideDemo6':
-        this.setState({
-          showHideDemo1: false
-        });
-        this.setState({
-          showHideDemo2: false
-        });
-        this.setState({
-          showHideDemo3: false
-        });
-        this.setState({
-          showHideDemo4: false
-        });
-        this.setState({
-          showHideDemo5: false
-        });
-        this.setState({
+      case 'Tesco':
+        this.setState({ ...this.a,
           showHideDemo6: true
         });
         break;
-
-      default:
-        null;
     }
   }
 
@@ -4158,24 +4070,22 @@ class StockSearch extends react__WEBPACK_IMPORTED_MODULE_0__["Component"] {
       showHideDemo5,
       showHideDemo6
     } = this.state;
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Pick your favorite:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-      value: "IBM",
-      onClick: () => this.hideComponent('showHideDemo1')
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Pick your favorite:", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+      onChange: e => {
+        this.hideComponent(e.target.value);
+      }
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
+      value: "IBM"
     }, "IBM"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-      value: "Shopify",
-      onClick: () => this.hideComponent('showHideDemo2')
+      value: "Shopify"
     }, "Shopify"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-      value: "Dai",
-      onClick: () => this.hideComponent('showHideDemo3')
+      value: "Dai"
     }, "Dai"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-      value: "GreenPower",
-      onClick: () => this.hideComponent('showHideDemo4')
+      value: "GreenPower"
     }, "GreenPower"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-      value: "Saic",
-      onClick: () => this.hideComponent('showHideDemo5')
+      value: "Saic"
     }, "Saic"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-      value: "Tesco",
-      onClick: () => this.hideComponent('showHideDemo6')
+      value: "Tesco"
     }, "Tesco"))))), showHideDemo1 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_IBM_Stock_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], null), showHideDemo2 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Shopify_Stock_jsx__WEBPACK_IMPORTED_MODULE_2__["default"], null), showHideDemo3 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Dai_Stock_jsx__WEBPACK_IMPORTED_MODULE_3__["default"], null), showHideDemo4 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_GreenPower_Stock_jsx__WEBPACK_IMPORTED_MODULE_4__["default"], null), showHideDemo5 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Saic_Stock_jsx__WEBPACK_IMPORTED_MODULE_5__["default"], null), showHideDemo6 && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Tesco_Stock_jsx__WEBPACK_IMPORTED_MODULE_6__["default"], null));
   }
 
