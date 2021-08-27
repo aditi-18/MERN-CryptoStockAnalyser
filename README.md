@@ -19,13 +19,13 @@ This application has the following features-
  #### Result 
 
  MainPage
- ![](/Screenshots/It3-1.PNG)
+ ![](/Screenshots/11.PNG)
 
 CryptoPage
-![](/Screenshots/It3-2.PNG)
+![](/Screenshots/12.PNG)
 
 StockPage
-![](/Screenshots/It3-3.PNG)
+![](/Screenshots/13.PNG)
 
 CurrencyConverter
-![](/Screenshots/It3-4.PNG)
+![](/Screenshots/14.PNG)
