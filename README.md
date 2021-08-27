@@ -19,23 +19,13 @@ This application has the following features-
  #### Result 
 
  MainPage
- ![](/Screenshots/It1.PNG)
+ ![](/Screenshots/It3-1.PNG)
 
- Expense List implementing CRUD operations.
-![](/Screenshots/It2.PNG)
+CryptoPage
+![](/Screenshots/It3-2.PNG)
 
-CryptoCurrency
-![](/Screenshots/It3.PNG)
+StockPage
+![](/Screenshots/It3-3.PNG)
 
 CurrencyConverter
-![](/Screenshots/It4.PNG)
-
-#### TeamMembers
-
-1)Aditi Shrivastava
-
-2)Janvi Dankhara
-
-3)Ayush Sahai
-
-4)Krina Dankhara
+![](/Screenshots/It3-4.PNG)
